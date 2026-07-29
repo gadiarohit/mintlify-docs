@@ -1,0 +1,144 @@
+---
+title: "Manage event types"
+description: "Create, list, update, and delete event types with the Cal ID API."
+icon: "calendar"
+keywords: ["event types api","create event type","update event type","list event types","delete event type"]
+---
+
+Event types define the bookable meetings people can schedule with you, such as a 30-minute discovery call. This recipe walks through the full lifecycle: creating an event type, listing them, updating one, and deleting it.
+
+All requests go to the base URL `https://api.cal.id` and must include your API key in the `Authorization` header:
+
+```bash
+Authorization: Bearer calid_xxxxx
+```
+
+Successful responses use a standard envelope:
+
+```json
+{
+  "success": true,
+  "data": {},
+  "message": "...",
+  "meta": {}
+}
+```
+
+<Steps>
+  <Step title="Create an event type">
+    Send a `POST` request to `/event-types/`. Only `title` and `slug` are required; `description`, `length`, `hidden`, `timeZone`, and `locations` are optional.
+
+    ```bash
+    curl -X POST https://api.cal.id/event-types/ \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "title": "30 Minute Discovery Call",
+        "slug": "discovery-call-30",
+        "description": "A short intro call",
+        "length": 30
+      }'
+    ```
+
+    The response returns the new event type, including its `id` and `slug`.
+
+    ```json
+    {
+      "success": true,
+      "data": {
+        "id": 101,
+        "title": "30 Minute Discovery Call",
+        "slug": "discovery-call-30",
+        "description": "A short intro call",
+        "length": 30
+      },
+      "message": "Event type created",
+      "meta": {}
+    }
+    ```
+
+    Save the returned `id` — you'll use it to fetch, update, or delete this event type.
+  </Step>
+
+  <Step title="List event types">
+    Send a `GET` request to `/event-types/`. Results are paginated with the `page` and `limit` query parameters, and you can filter by `title`, `slug`, or `hidden`.
+
+    ```bash
+    curl -X GET "https://api.cal.id/event-types/?page=1&limit=10" \
+      -H "Authorization: Bearer calid_xxxxx"
+    ```
+
+    ```json
+    {
+      "success": true,
+      "data": [
+        {
+          "id": 101,
+          "title": "30 Minute Discovery Call",
+          "slug": "discovery-call-30",
+          "length": 30
+        }
+      ],
+      "message": "Event types retrieved",
+      "meta": {
+        "page": 1,
+        "limit": 10
+      }
+    }
+    ```
+
+    To retrieve a single event type, send a `GET` request to `/event-types/\{id\}`.
+  </Step>
+
+  <Step title="Update an event type">
+    Send a `PATCH` request to `/event-types/\{id\}` with any of the fields you can set on create. Include only the fields you want to change.
+
+    ```bash
+    curl -X PATCH https://api.cal.id/event-types/101 \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "title": "Updated Discovery Call",
+        "length": 45
+      }'
+    ```
+
+    ```json
+    {
+      "success": true,
+      "data": {
+        "id": 101,
+        "title": "Updated Discovery Call",
+        "slug": "discovery-call-30",
+        "length": 45
+      },
+      "message": "Event type updated",
+      "meta": {}
+    }
+    ```
+  </Step>
+
+  <Step title="Delete an event type">
+    Send a `DELETE` request to `/event-types/\{id\}`.
+
+    ```bash
+    curl -X DELETE https://api.cal.id/event-types/101 \
+      -H "Authorization: Bearer calid_xxxxx"
+    ```
+
+    ```json
+    {
+      "success": true,
+      "data": null,
+      "message": "Event type deleted",
+      "meta": {}
+    }
+    ```
+  </Step>
+</Steps>
+
+## Reference
+
+- [Create an event type](/api-reference/event-types/create-an-event-type)
+- [List event types](/api-reference/event-types/list-event-types)
+- [Update an event type](/api-reference/event-types/update-an-event-type)

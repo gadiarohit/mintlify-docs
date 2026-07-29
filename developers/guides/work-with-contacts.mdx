@@ -1,0 +1,85 @@
+---
+title: "Work with contacts"
+description: "Create, search, update, and delete contacts, and look up their meetings with the Cal ID API."
+icon: "address-book"
+keywords: ["contacts api","create contact","search contacts","crm","contact meetings"]
+---
+
+Contacts are the people you meet with. You can store their details, search across them, and see the meetings tied to each one. This guide shows you how to create, search, update, and delete contacts with the Cal ID API. Each contact is identified by its `id`. All requests use the base URL `https://api.cal.id` and are authenticated with a Bearer token.
+
+<Steps>
+  <Step title="Create a contact">
+    Call `POST /contacts/` with a JSON body. `name` and `email` are required; `phone` and `notes` are optional.
+
+    ```bash
+    curl -X POST https://api.cal.id/contacts/ \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Jane Doe",
+        "email": "jane@example.com",
+        "phone": "+14155550123",
+        "notes": "Prefers morning meetings."
+      }'
+    ```
+
+    On success, the created contact is returned in `data`, including its `id`. Save this `id` to look the contact up, update it, or list its meetings later.
+
+    ```json
+    {
+      "success": true,
+      "data": {
+        "id": 789,
+        "name": "Jane Doe",
+        "email": "jane@example.com",
+        "phone": "+14155550123",
+        "notes": "Prefers morning meetings."
+      },
+      "message": "Contact created successfully.",
+      "meta": {}
+    }
+    ```
+  </Step>
+
+  <Step title="Search contacts">
+    Call `GET /contacts/` to list your contacts. Pass `search` to match by name or email, and refine with `sortBy`, `sortDirection`, `limit`, and `offset`. This endpoint pages with `limit`/`offset`, not `page`.
+
+    ```bash
+    curl -G https://api.cal.id/contacts/ \
+      -H "Authorization: Bearer calid_xxxxx" \
+      --data-urlencode "search=jane" \
+      --data-urlencode "limit=20"
+    ```
+
+    Matching contacts are returned in `data`, with pagination details in `meta`.
+  </Step>
+
+  <Step title="Update or delete a contact">
+    Use the contact's `id` to change or remove it. Call `PATCH /contacts/\{id\}` with the fields you want to update.
+
+    ```bash
+    curl -X PATCH https://api.cal.id/contacts/789 \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "notes": "Prefers afternoon meetings."
+      }'
+    ```
+
+    To remove a contact, call `DELETE /contacts/\{id\}`.
+
+    ```bash
+    curl -X DELETE https://api.cal.id/contacts/789 \
+      -H "Authorization: Bearer calid_xxxxx"
+    ```
+  </Step>
+</Steps>
+
+<Note>
+You can list a contact's meetings with `GET /contacts/\{id\}/meetings`. This endpoint pages with `limit`/`offset`.
+</Note>
+
+## Next steps
+
+- [Create a contact](/api-reference/contacts/create-a-contact) — full endpoint reference
+- [List contacts](/api-reference/contacts/list-contacts) — search and pagination options

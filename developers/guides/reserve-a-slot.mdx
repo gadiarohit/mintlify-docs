@@ -1,0 +1,66 @@
+---
+title: "Reserve a slot before booking"
+description: "Temporarily hold a time slot so two people can't book it while your user completes checkout."
+icon: "lock"
+keywords: ["reserve slot","hold slot","slot reservation","prevent double booking","checkout"]
+---
+
+When a user picks a time, you often need a few moments for them to fill out a form before the booking is final. To avoid two people grabbing the same slot, use a hold-then-confirm pattern: reserve the slot to place a temporary hold, let the user complete checkout, then confirm by creating the booking. If they never finish, the hold expires on its own. All requests use the base URL `https://api.cal.id` and are authenticated with a Bearer token.
+
+<Note>
+Before you begin, make sure you have:
+- An [API key](/developers/api-key) to authenticate your requests.
+- The [event type's ID](/developers/event-type-id) you want to book.
+</Note>
+
+<Steps>
+  <Step title="Reserve the slot">
+    Call `POST /slots/reserve` with the `eventTypeId` (integer) and the `slotStart` (ISO) you want to hold. Optionally pass `slotDuration` (minutes) and `reservationDuration` (how long to hold the slot, in minutes).
+
+    ```bash
+    curl -X POST https://api.cal.id/slots/reserve \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "eventTypeId": 123,
+        "slotStart": "2026-05-02T10:00:00.000Z",
+        "reservationDuration": 10
+      }'
+    ```
+
+    The reservation is returned in `data`, including its `uid`. Keep this `uid` — you'll need it to release the hold early.
+
+    ```json
+    {
+      "success": true,
+      "data": {
+        "uid": "res_abc123XYZ",
+        "eventTypeId": 123,
+        "slotStart": "2026-05-02T10:00:00.000Z",
+        "reservationDuration": 10
+      },
+      "message": "Slot reserved successfully.",
+      "meta": {}
+    }
+    ```
+  </Step>
+
+  <Step title="Confirm the booking">
+    While the hold is active, let your user finish checkout, then create the booking as usual with `POST /booking/` (its body includes `eventTypeId`, `start`, `end`, and `responses` with `name` and `email`). See [Create a booking](/developers/guides/create-a-booking) for the full flow.
+
+    If the booking isn't confirmed within `reservationDuration` minutes, the hold expires automatically and the slot becomes available to others again.
+  </Step>
+
+  <Step title="Release the hold">
+    If the user cancels or backs out before confirming, release the hold early instead of waiting for it to expire. Call `DELETE /slots/\{uid\}` with the reservation `uid` from Step 1.
+
+    ```bash
+    curl -X DELETE https://api.cal.id/slots/res_abc123XYZ \
+      -H "Authorization: Bearer calid_xxxxx"
+    ```
+  </Step>
+</Steps>
+
+## Next steps
+
+- [Reserve a slot](/api-reference/slots/reserve-a-slot) — full endpoint reference

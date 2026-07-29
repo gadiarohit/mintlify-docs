@@ -301,9 +301,14 @@
             "group": "Guides",
             "pages": [
               "developers/guides/create-a-booking",
-              "developers/guides/webhook-receiver",
+              "developers/guides/reserve-a-slot",
+              "developers/guides/reschedule-and-cancel",
               "developers/guides/list-and-filter-bookings",
-              "developers/guides/manage-schedules"
+              "developers/guides/manage-event-types",
+              "developers/guides/manage-schedules",
+              "developers/guides/manage-team-members",
+              "developers/guides/work-with-contacts",
+              "developers/guides/webhook-receiver"
             ]
           }
         ]

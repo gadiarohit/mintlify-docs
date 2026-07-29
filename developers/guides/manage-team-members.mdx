@@ -1,0 +1,81 @@
+---
+title: "Manage team members"
+description: "Add, list, update, and remove team members through the Cal ID API."
+icon: "users"
+keywords: ["team members","memberships api","add team member","team roles","remove member"]
+---
+
+Use the Cal ID API to manage who belongs to a team and what they can do. Every request is authenticated with a Bearer token, and you must use a **team owner or admin API key** to manage that team's memberships.
+
+All requests go to the base URL `https://api.cal.id` and include an `Authorization: Bearer calid_xxxxx` header. Successful responses return the standard envelope: `{ "success": true, "data": ..., "message": "...", "meta": {...} }`.
+
+A team is identified by a `teamId`, and each membership within it is identified by a `membershipId`.
+
+<Note>
+Team members can hold one of three roles:
+
+- **MEMBER** — the default role for a newly added member.
+- **ADMIN** — can manage the team and its members.
+- **OWNER** — full control over the team.
+</Note>
+
+<Steps>
+  <Step title="Add a member">
+    Add a user to the team by their `userId`. The `role` field is optional and defaults to `MEMBER`.
+
+    ```bash
+    curl -X POST "https://api.cal.id/teams/\{teamId\}/memberships" \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{"userId":321,"role":"MEMBER"}'
+    ```
+
+    ```json
+    {
+      "userId": 321,
+      "role": "MEMBER"
+    }
+    ```
+  </Step>
+
+  <Step title="List members">
+    Retrieve all memberships for the team. Results are paginated, with pagination details returned in `meta`.
+
+    ```bash
+    curl -X GET "https://api.cal.id/teams/\{teamId\}/memberships" \
+      -H "Authorization: Bearer calid_xxxxx"
+    ```
+  </Step>
+
+  <Step title="Change a role">
+    Update a member's role by their `membershipId`. For example, promote a member to `ADMIN`.
+
+    ```bash
+    curl -X PATCH "https://api.cal.id/teams/\{teamId\}/memberships/\{membershipId\}" \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{"role":"ADMIN"}'
+    ```
+
+    ```json
+    {
+      "role": "ADMIN"
+    }
+    ```
+  </Step>
+
+  <Step title="Remove a member">
+    Remove a member from the team by their `membershipId`.
+
+    ```bash
+    curl -X DELETE "https://api.cal.id/teams/\{teamId\}/memberships/\{membershipId\}" \
+      -H "Authorization: Bearer calid_xxxxx"
+    ```
+  </Step>
+</Steps>
+
+## Related endpoints
+
+- [Add a team member](/api-reference/team-memberships/add-a-team-member)
+- [List team members](/api-reference/team-memberships/list-team-members)
+- [Update a team member](/api-reference/team-memberships/update-a-team-member)

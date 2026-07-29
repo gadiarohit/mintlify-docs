@@ -1,0 +1,69 @@
+---
+title: "Reschedule and cancel bookings"
+description: "Move a booking to a new time or cancel it using the Cal ID booking API."
+icon: "calendar-xmark"
+keywords: ["reschedule booking","cancel booking","booking api","refund","recurring bookings"]
+---
+
+Every booking has a unique `id` that you use to reschedule or cancel it. You can get this `id` from the response of [Create a booking](/api-reference/booking/create-a-booking) or by calling [List bookings](/api-reference/booking/list-bookings). Both endpoints require an API key sent as `Authorization: Bearer calid_xxxxx`.
+
+## Reschedule a booking
+
+Send a `PATCH` request to `/booking/\{id\}/reschedule` with the new `start` time in ISO 8601 format. You can optionally include a `reschedulingReason` and the email of who rescheduled it (`rescheduledBy`).
+
+```bash
+curl -X PATCH https://api.cal.id/booking/{id}/reschedule \
+  -H "Authorization: Bearer calid_xxxxx" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "start": "2026-05-03T11:00:00.000Z",
+    "reschedulingReason": "Client requested a later slot"
+  }'
+```
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": 123,
+    "start": "2026-05-03T11:00:00.000Z"
+  },
+  "message": "Booking rescheduled successfully",
+  "meta": {}
+}
+```
+
+## Cancel a booking
+
+Send a `POST` request to `/booking/\{id\}/cancel`. Every field is optional. Include a `cancellationReason`, the email of who cancelled it (`cancelledBy`), and flags for recurring or paid bookings as needed.
+
+```bash
+curl -X POST https://api.cal.id/booking/{id}/cancel \
+  -H "Authorization: Bearer calid_xxxxx" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "cancellationReason": "No longer needed"
+  }'
+```
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": 123,
+    "status": "cancelled"
+  },
+  "message": "Booking cancelled successfully",
+  "meta": {}
+}
+```
+
+<Note>
+  Set `autoRefund` to `true` to refund paid bookings on cancellation. For a recurring series, set `allRemainingBookings` to `true` to cancel the rest of the series instead of just a single occurrence.
+</Note>
+
+## Related
+
+- [Reschedule a booking](/api-reference/booking/reschedule-a-booking)
+- [Cancel a booking](/api-reference/booking/cancel-a-booking)
+- [List bookings](/api-reference/booking/list-bookings) to find the `id`

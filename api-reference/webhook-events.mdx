@@ -1,0 +1,98 @@
+---
+title: "Webhook events"
+description: "Subscribe to Cal ID events and receive a real-time POST when bookings are created, rescheduled, cancelled, paid, and more."
+icon: "bolt"
+keywords: ["webhooks", "events", "event triggers", "payload", "booking created", "signature verification"]
+---
+
+Webhooks let your application react to Cal ID activity in real time. You register a subscriber URL and choose which events to receive; Cal ID then sends an HTTP `POST` with a JSON payload each time one of those events occurs.
+
+## Subscribe to events
+
+Create a subscription with the [Create a webhook](/api-reference/webhook/create-a-webhook) endpoint:
+
+```bash
+curl -X POST https://api.cal.id/webhook/ \
+  -H "Authorization: Bearer calid_xxxxx" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "subscriberUrl": "https://example.com/webhooks/calid",
+    "eventTriggers": ["BOOKING_CREATED", "BOOKING_CANCELLED"],
+    "secret": "whsec_your_secret"
+  }'
+```
+
+<ResponseField name="subscriberUrl" type="string" required>
+  The URL that receives the webhook `POST` requests.
+</ResponseField>
+
+<ResponseField name="eventTriggers" type="string[]" required>
+  The events to subscribe to — one or more of the triggers below.
+</ResponseField>
+
+<ResponseField name="secret" type="string">
+  Optional shared secret used to sign each payload so you can verify it's genuinely from Cal ID.
+</ResponseField>
+
+<ResponseField name="payloadTemplate" type="string">
+  Optional custom template for the payload delivered to your subscriber URL.
+</ResponseField>
+
+You can manage subscriptions with the [List](/api-reference/webhook/list-webhooks), [Get](/api-reference/webhook/get-a-webhook), [Update](/api-reference/webhook/update-a-webhook), and [Delete](/api-reference/webhook/delete-a-webhook) webhook endpoints, or from the Cal ID dashboard.
+
+## Event triggers
+
+| Trigger | Fires when |
+| --- | --- |
+| `BOOKING_CREATED` | a booking is confirmed |
+| `BOOKING_REQUESTED` | a booking that requires confirmation is requested |
+| `BOOKING_RESCHEDULED` | a booking is moved to a new time |
+| `BOOKING_CANCELLED` | a booking is cancelled |
+| `BOOKING_REJECTED` | a booking request is declined |
+| `BOOKING_PAYMENT_INITIATED` | payment for a paid booking begins |
+| `BOOKING_PAID` | a paid booking is successfully paid |
+| `BOOKING_NO_SHOW_UPDATED` | an attendee is marked as a no-show |
+| `FORM_SUBMITTED` | a routing form is submitted |
+| `OOO_CREATED` | an out-of-office entry is created |
+
+## Payload
+
+Each delivery is a JSON body containing the trigger, a timestamp, and the event `payload`:
+
+```json
+{
+  "triggerEvent": "BOOKING_CREATED",
+  "createdAt": "2026-01-14T09:30:00.000Z",
+  "payload": {
+    "title": "30 Min Meeting between Alex and John Doe",
+    "startTime": "2026-01-15T09:30:00Z",
+    "endTime": "2026-01-15T10:00:00Z",
+    "organizer": {
+      "name": "Alex",
+      "email": "alex@example.com",
+      "timeZone": "Asia/Kolkata"
+    },
+    "attendees": [
+      {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "timeZone": "Asia/Kolkata"
+      }
+    ],
+    "eventTypeId": 42,
+    "uid": "bk_1234567890"
+  }
+}
+```
+
+<Note>
+  The exact fields in `payload` vary by event. If you set a `payloadTemplate` when creating the webhook, Cal ID delivers that template instead.
+</Note>
+
+## Verify deliveries
+
+If you set a `secret`, use it to confirm each incoming request is authentic and hasn't been tampered with before you act on it. Reject any request whose signature doesn't match. Respond with a `2xx` status quickly — do the heavy work asynchronously so deliveries aren't retried unnecessarily.
+
+<Card title="Webhooks in the dashboard" icon="webhook" href="/developers/webhooks">
+  Prefer a no-code setup? Create and manage webhooks from **Settings → Webhooks** in Cal ID.
+</Card>

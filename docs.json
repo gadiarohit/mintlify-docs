@@ -311,7 +311,8 @@
           {
             "group": "Get started",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/introduction",
+              "api-reference/webhook-events"
             ]
           },
           {

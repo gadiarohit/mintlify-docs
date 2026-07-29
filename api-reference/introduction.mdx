@@ -63,7 +63,7 @@ Every response is a JSON envelope with a consistent shape.
 {
   "success": false,
   "message": "A human-readable explanation of what went wrong",
-  "error": { }
+  "error": { "code": "UNAUTHORIZED", "message": "Invalid API key" }
 }
 ```
 </CodeGroup>
@@ -79,6 +79,33 @@ The `data` field holds the resource or resources you requested. On list endpoint
 | `401` | Unauthorized — missing or invalid API key |
 | `403` | Forbidden — your key lacks permission for this resource |
 | `500` | Something went wrong on Cal ID's side |
+
+## Pagination
+
+List endpoints are paginated with `page` and `limit` query parameters, and return the current page details in `meta.pagination`.
+
+```bash
+curl "https://api.cal.id/booking/?page=1&limit=20" \
+  -H "Authorization: Bearer calid_xxxxx"
+```
+
+```json
+{
+  "success": true,
+  "data": [ ],
+  "meta": {
+    "pagination": { "page": 1, "limit": 20, "total": 134, "totalPages": 7 }
+  }
+}
+```
+
+<Note>
+  A few endpoints (such as **Contacts**) page with `limit` and `offset` instead of `page`. Check each endpoint's parameters.
+</Note>
+
+## Filtering and sorting
+
+Most list endpoints accept filters and sort keys as query parameters. For example, [List bookings](/api-reference/booking/list-bookings) supports filtering by `status`, `eventTypeIds`, `attendeeEmail`, and date ranges (`afterStartDate`, `beforeEndDate`, `afterCreatedDate`, …), plus sorting with `sortStart`, `sortCreated`, and `sortUpdated`. See each endpoint's **Query Parameters** for the full set.
 
 ## Next steps
 

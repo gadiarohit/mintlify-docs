@@ -6,11 +6,13 @@ keywords: ["paypal", "payment processor", "collect payment", "paid bookings", "c
 related: ["/apps/paid-bookings", "/apps/stripe", "/apps/razorpay", "/apps/app-store", "/apps/manage-installed"]
 ---
 
-[Cal ID](https://cal.id/home) integration with PayPal allows you to accept payments while users book your events. When someone selects your event, they must pay the amount to confirm the booking. Once the payment is successful, the meeting is automatically scheduled.
+Connect PayPal to [Cal ID](https://cal.id/home) to accept payments while users book your events. When someone selects your event, they must pay to confirm the booking, and once payment succeeds the meeting is scheduled automatically.
 
-**Cal ID uses PayPal to allow you to receive payments when someone books your paid event type.**
+<Info>
+  You'll need a PayPal Developer account to generate the **Client ID** and **Secret Key** used in setup. Cal ID uses PayPal to let you receive payments when someone books your paid event type.
+</Info>
 
-To start taking payments, please follow these steps:
+## Connect PayPal to Cal ID
 
 <Steps>
   <Step title="Search for PayPal">
@@ -46,14 +48,19 @@ To start taking payments, please follow these steps:
   </Step>
 </Steps>
 
-## How to add PayPal to an event type?
+## How to add PayPal to an event type
 
-1. Go to **Event Types**.
-2. Select the event type you want to add PayPal to, and click **Edit**.
-3. Go to the **Apps** section.
-4. Turn **ON** the PayPal app toggle.
-5. Enter the amount you want to collect for this event type.
-6. Save it.
+<Steps>
+  <Step title="Open Event Types">
+    Go to **Event Types**, select the event type you want to add PayPal to, and click **Edit**.
+  </Step>
+  <Step title="Turn on PayPal">
+    Go to the **Apps** section and turn **ON** the PayPal app toggle.
+  </Step>
+  <Step title="Set the amount and save">
+    Enter the amount you want to collect for this event type, then save it.
+  </Step>
+</Steps>
 
 <Frame>
   ![PayPal toggle in the event type Apps section](/images/apps/paypal-4.png)
@@ -67,4 +74,6 @@ Now your booking page looks like this:
 
 Once the user fills in the required questions, they need to click the **Pay to Book** button and complete the payment. After the payment is successful, the meeting will be scheduled.
 
-That's it. You will receive payments as soon as someone books you using this event type.
+<Check>
+  That's it. You will receive payments as soon as someone books you using this event type.
+</Check>

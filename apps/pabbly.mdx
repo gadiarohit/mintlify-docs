@@ -36,6 +36,10 @@ related: ["/apps/make", "/apps/slack", "/apps/app-store", "/event-types/event-we
 
 ## Step 2: Get the webhook URL from Pabbly
 
+<Info>
+  The **Webhook URL** is the link that connects Pabbly to Cal ID. Copy it in this step and keep it ready — you'll paste it into Cal ID in Step 3.
+</Info>
+
 <Steps>
   <Step title="Select Cal ID as the trigger app">
     In your Pabbly workflow, select **Cal ID** as your trigger app.
@@ -56,57 +60,58 @@ related: ["/apps/make", "/apps/slack", "/apps/app-store", "/event-types/event-we
 
 You can set up the webhook globally (for all events) or for just one specific event type.
 
-### Option A: for ALL event types (global)
+<Tabs>
+  <Tab title="For ALL event types (global)">
+    <Steps>
+      <Step title="Open Webhooks in Developer settings">
+        Navigate to **Settings** \> **Developer** section in Cal ID. Click on **Webhooks** and then click the **\+ New Webhook** button.
 
-<Steps>
-  <Step title="Open Webhooks in Developer settings">
-    Navigate to **Settings** \> **Developer** section in Cal ID. Click on **Webhooks** and then click the **\+ New Webhook** button.
+        <Frame>
+          ![New Webhook button in Developer settings](/images/apps/pabbly-5.png)
+        </Frame>
+      </Step>
+      <Step title="Select the account">
+        Choose which account you want to add the webhook for, either Personal or any Team.
 
-    <Frame>
-      ![New Webhook button in Developer settings](/images/apps/pabbly-5.png)
-    </Frame>
-  </Step>
-  <Step title="Select the account">
-    Choose which account you want to add the webhook for, either Personal or any Team.
+        <Frame>
+          ![Account selection for the webhook](/images/apps/pabbly-6.png)
+        </Frame>
+      </Step>
+      <Step title="Paste the URL">
+        Paste the link you copied from Pabbly into the **Subscriber URL** field.
 
-    <Frame>
-      ![Account selection for the webhook](/images/apps/pabbly-6.png)
-    </Frame>
-  </Step>
-  <Step title="Paste the URL">
-    Paste the link you copied from Pabbly into the **Subscriber URL** field.
+        <Frame>
+          ![Subscriber URL field](/images/apps/pabbly-7.png)
+        </Frame>
+      </Step>
+      <Step title="Select event triggers and create">
+        Choose **Booking Created, Booking Canceled, Booking Rejected, Meeting Started**, and so on — you can choose any of the available triggers. Click **Create Webhook**.
 
-    <Frame>
-      ![Subscriber URL field](/images/apps/pabbly-7.png)
-    </Frame>
-  </Step>
-  <Step title="Select event triggers and create">
-    Choose **Booking Created, Booking Canceled, Booking Rejected, Meeting Started**, and so on — you can choose any of the available triggers. Click **Create Webhook**.
+        <Frame>
+          ![Selecting event triggers](/images/apps/pabbly-8.png)
+        </Frame>
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="For ONE specific event type">
+    <Steps>
+      <Step title="Open the event's Webhooks tab">
+        Go to the **Event Types** tab and click **Edit** (pencil icon) on your chosen event. Go to the **Webhooks** tab inside that event's settings.
 
-    <Frame>
-      ![Selecting event triggers](/images/apps/pabbly-8.png)
-    </Frame>
-  </Step>
-</Steps>
+        <Frame>
+          ![Webhooks tab in event settings](/images/apps/pabbly-9.png)
+        </Frame>
+      </Step>
+      <Step title="Add the webhook and create">
+        Click **Add Webhook**, paste the **Subscriber URL**, and select **Event Triggers**. Click **Create Webhook**.
 
-### Option B: for ONE specific event type
-
-<Steps>
-  <Step title="Open the event's Webhooks tab">
-    Go to the **Event Types** tab and click **Edit** (pencil icon) on your chosen event. Go to the **Webhooks** tab inside that event's settings.
-
-    <Frame>
-      ![Webhooks tab in event settings](/images/apps/pabbly-9.png)
-    </Frame>
-  </Step>
-  <Step title="Add the webhook and create">
-    Click **Add Webhook**, paste the **Subscriber URL**, and select **Event Triggers**. Click **Create Webhook**.
-
-    <Frame>
-      ![Adding a webhook to an event type](/images/apps/pabbly-10.png)
-    </Frame>
-  </Step>
-</Steps>
+        <Frame>
+          ![Adding a webhook to an event type](/images/apps/pabbly-10.png)
+        </Frame>
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
 
 ## Step 4: Capture and map your data
 

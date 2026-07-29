@@ -8,68 +8,97 @@ related: ["/apps/app-store", "/apps/make", "/apps/pabbly", "/insights/booking-pe
 
 Integrating Google Analytics (GA) and Google Tag Manager (GTM) allows you to track visitor behavior on your booking pages, measure conversion rates, and analyze the effectiveness of your marketing campaigns.
 
+<Info>
+  Before you start, have your tracking ID ready — a Google Analytics **Measurement ID** (`G-XXXXXXX`, or a legacy `UA-XXXXXX-Y`) or a Google Tag Manager **container ID** (`GTM-XXXXXX`). You'll paste it into Cal ID during setup.
+</Info>
+
 ## Accessing the app store
 
-1. **Log in to** [**Cal ID**](https://cal.id/home): Open your main dashboard.
-2. **Navigate to Apps**: Click on [**Apps**](https://cal.id/apps) in the left-hand sidebar menu.
-3. **Filter by Category**: Choose **Analytics** from the featured categories at the top to quickly find tracking tools.
+<Steps>
+  <Step title="Log in to Cal ID">
+    Open your main dashboard at [Cal ID](https://cal.id/home).
+  </Step>
+  <Step title="Navigate to Apps">
+    Click on [**Apps**](https://cal.id/apps) in the left-hand sidebar menu.
+  </Step>
+  <Step title="Filter by category">
+    Choose **Analytics** from the featured categories at the top to quickly find tracking tools.
 
-<Frame>
-  ![Analytics category in the App store](/images/apps/google-analytics-1.png)
-</Frame>
+    <Frame>
+      ![Analytics category in the App store](/images/apps/google-analytics-1.png)
+    </Frame>
+  </Step>
+</Steps>
 
 ## Setting up Google Analytics
 
 Google Analytics helps you understand how visitors find and interact with your booking page.
 
-1. **Locate Google Analytics**: Find the **Google Analytics** card within the Analytics category.
-2. **Click Install**: Click the **Install** button on the card.
+<Steps>
+  <Step title="Locate and install Google Analytics">
+    Find the **Google Analytics** card within the Analytics category and click the **Install** button on the card.
 
-<Frame>
-  ![Google Analytics card with Install button](/images/apps/google-analytics-2.png)
-</Frame>
+    <Frame>
+      ![Google Analytics card with Install button](/images/apps/google-analytics-2.png)
+    </Frame>
+  </Step>
+  <Step title="Choose account">
+    Select the specific account where you want to install the integration.
 
-3. **Choose Account**: Select the specific account where you want to install the integration.
+    <Frame>
+      ![Account selection for Google Analytics](/images/apps/google-analytics-3.png)
+    </Frame>
+  </Step>
+  <Step title="Select event types">
+    Choose the specific **Event Types** you wish to track, or select **Set up later** if you prefer to configure this at a different time.
 
-<Frame>
-  ![Account selection for Google Analytics](/images/apps/google-analytics-3.png)
-</Frame>
+    <Frame>
+      ![Selecting event types to track](/images/apps/google-analytics-4.png)
+    </Frame>
+  </Step>
+  <Step title="Enter Tracking ID">
+    If you selected event types, a pop-up will appear asking for your **Tracking ID** (formatted as `UA-XXXXXX-Y` or `G-XXXXXXX`).
 
-4. **Select Event Types**: Choose the specific **Event Types** you wish to track, or select **Set up later** if you prefer to configure this at a different time.
-
-<Frame>
-  ![Selecting event types to track](/images/apps/google-analytics-4.png)
-</Frame>
-
-5. **Enter Tracking ID**: If you selected event types, a pop-up will appear asking for your **Tracking ID** (formatted as `UA-XXXXXX-Y` or `G-XXXXXXX`).
-
-<Frame>
-  ![Entering the Google Analytics tracking ID](/images/apps/google-analytics-5.png)
-</Frame>
-
-6. **Save**: Click the **Save** button to activate tracking.
+    <Frame>
+      ![Entering the Google Analytics tracking ID](/images/apps/google-analytics-5.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Click the **Save** button to activate tracking.
+  </Step>
+</Steps>
 
 ## Where to find your tracking IDs
 
-1. Log in to Google Analytics.
-2. Click **Admin** (gear icon) in the bottom left.
+<Steps>
+  <Step title="Log in to Google Analytics">
+    Open your Google Analytics account.
+  </Step>
+  <Step title="Open Admin">
+    Click **Admin** (gear icon) in the bottom left.
 
-<Frame>
-  ![Google Analytics Admin gear icon](/images/apps/google-analytics-6.png)
-</Frame>
+    <Frame>
+      ![Google Analytics Admin gear icon](/images/apps/google-analytics-6.png)
+    </Frame>
+  </Step>
+  <Step title="Open Data Streams">
+    Under the Data Collection and modification column, click **Data Streams**.
 
-3. Under the Data Collection and modification column, click **Data Streams**.
+    <Frame>
+      ![Data Streams in Google Analytics](/images/apps/google-analytics-7.png)
+    </Frame>
+  </Step>
+  <Step title="Select your data stream">
+    Select your website data stream and copy the Measurement ID, or if you do not see any data stream, create one.
+  </Step>
+  <Step title="Copy the Measurement ID">
+    Copy your **MEASUREMENT ID** from the top right corner and paste it in the Tracking ID field.
 
-<Frame>
-  ![Data Streams in Google Analytics](/images/apps/google-analytics-7.png)
-</Frame>
-
-4. Select your website data stream and copy the Measurement ID, or if you do not see any data stream, create one.
-5. Copy your **MEASUREMENT ID** from the top right corner and paste it in the Tracking ID field.
-
-<Frame>
-  ![Copying the Measurement ID](/images/apps/google-analytics-8.png)
-</Frame>
+    <Frame>
+      ![Copying the Measurement ID](/images/apps/google-analytics-8.png)
+    </Frame>
+  </Step>
+</Steps>
 
 ## What to set up in Google Analytics
 
@@ -83,32 +112,39 @@ To get the most out of your data, configure the following in your Google Analyti
 
 Google Tag Manager allows you to manage and deploy marketing tags without modifying code directly.
 
-1. **Locate Google Tag Manager**: Find the **Google Tag Manager** card in the App Store.
-2. **Click Install**: Click the **Install** button.
+<Steps>
+  <Step title="Locate and install Google Tag Manager">
+    Find the **Google Tag Manager** card in the App Store and click the **Install** button.
 
-<Frame>
-  ![Google Tag Manager card with Install button](/images/apps/google-analytics-9.png)
-</Frame>
+    <Frame>
+      ![Google Tag Manager card with Install button](/images/apps/google-analytics-9.png)
+    </Frame>
+  </Step>
+  <Step title="Choose account">
+    Select your preferred account for installation.
 
-3. **Choose Account**: Select your preferred account for installation.
+    <Frame>
+      ![Account selection for Google Tag Manager](/images/apps/google-analytics-10.png)
+    </Frame>
+  </Step>
+  <Step title="Select event types">
+    Pick the event types to be tracked by GTM.
 
-<Frame>
-  ![Account selection for Google Tag Manager](/images/apps/google-analytics-10.png)
-</Frame>
+    <Frame>
+      ![Selecting event types for GTM](/images/apps/google-analytics-11.png)
+    </Frame>
+  </Step>
+  <Step title="Enter Tracking ID">
+    Enter your **Tracking ID** (formatted as `GTM-XXXXXX`) in the pop-up field.
 
-4. **Select Event Types**: Pick the event types to be tracked by GTM.
-
-<Frame>
-  ![Selecting event types for GTM](/images/apps/google-analytics-11.png)
-</Frame>
-
-5. **Enter Tracking ID**: Enter your **Tracking ID** (formatted as `GTM-XXXXXX`) in the pop-up field.
-
-<Frame>
-  ![Entering the GTM tracking ID](/images/apps/google-analytics-12.png)
-</Frame>
-
-6. **Save**: Click the **Save** button to integrate GTM.
+    <Frame>
+      ![Entering the GTM tracking ID](/images/apps/google-analytics-12.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Click the **Save** button to integrate GTM.
+  </Step>
+</Steps>
 
 ## What to set up in Google Tag Manager
 
@@ -127,21 +163,30 @@ After installing, you can verify if the tracking is working:
 
 ## How to add or change IDs for a specific event
 
-1. **Go to** [**Event Types**](https://cal.id/event-types): From your main dashboard, click on the **Event Types** tab in the left-hand sidebar.
-2. **Select and Edit**: Find the specific event you want to configure and click **Edit** to open its settings.
-3. **Navigate to Apps**: In the top navigation bar of the event editor, click on the **Apps** tab.
-4. **Toggle Tracking Tools**:
-   - Locate **Google Analytics** and/or **Google Tag Manager** in the list.
-   - Switch the toggle to **ON** for the tool you want to use for this specific event.
+<Steps>
+  <Step title="Go to Event Types">
+    From your main dashboard, click on the [**Event Types**](https://cal.id/event-types) tab in the left-hand sidebar.
+  </Step>
+  <Step title="Select and edit">
+    Find the specific event you want to configure and click **Edit** to open its settings.
+  </Step>
+  <Step title="Navigate to Apps">
+    In the top navigation bar of the event editor, click on the **Apps** tab.
+  </Step>
+  <Step title="Toggle tracking tools">
+    Locate **Google Analytics** and/or **Google Tag Manager** in the list. Switch the toggle to **ON** for the tool you want to use for this specific event.
 
-<Frame>
-  ![Toggling tracking tools for an event type](/images/apps/google-analytics-13.png)
-</Frame>
-
-5. **Enter Tracking ID**:
-   - For **Google Analytics**, paste your specific `G-XXXXXXX` or `UA-XXXXXX-Y` ID into the input field.
-   - For **Google Tag Manager**, paste your specific `GTM-XXXXXX` container ID into the input field.
-6. **Save Changes**: Click the **Save** button in the top right corner to apply these unique tracking IDs to this event type.
+    <Frame>
+      ![Toggling tracking tools for an event type](/images/apps/google-analytics-13.png)
+    </Frame>
+  </Step>
+  <Step title="Enter Tracking ID">
+    For **Google Analytics**, paste your specific `G-XXXXXXX` or `UA-XXXXXX-Y` ID into the input field. For **Google Tag Manager**, paste your specific `GTM-XXXXXX` container ID into the input field.
+  </Step>
+  <Step title="Save changes">
+    Click the **Save** button in the top right corner to apply these unique tracking IDs to this event type.
+  </Step>
+</Steps>
 
 ### Why use event-specific tracking?
 

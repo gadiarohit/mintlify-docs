@@ -14,16 +14,30 @@ Stay on top of your schedule by getting instant alerts where you already work. B
 - **Team Sync:** Send notifications to a shared channel so your team stays updated.
 - **All-in-One Place:** Track new bookings, reschedules, and cancellations without leaving Slack.
 
+<Info>
+  To post into a channel, your automation tool (Zapier, Pabbly, Make, or ViaSocket) needs permission to your Slack workspace. When you connect Slack, you'll be asked to authorize it — if you want alerts in a private or shared channel, make sure you have permission to add apps to that workspace, or ask a Slack workspace admin to approve the connection.
+</Info>
+
 ## Step 1: Install Zapier (any automation tool) in Cal ID
 
-1. Log in to your **Cal ID** account.
-2. Go to the **App Store** in the sidebar.
-3. Find the **Zapier** app and click **Install**.
-4. **Generate** the API key and **Copy** it.
+<Steps>
+  <Step title="Log in to Cal ID">
+    Log in to your **Cal ID** account.
+  </Step>
+  <Step title="Open the App Store">
+    Go to the **App Store** in the sidebar.
+  </Step>
+  <Step title="Install Zapier">
+    Find the **Zapier** app and click **Install**.
+  </Step>
+  <Step title="Generate your API key">
+    **Generate** the API key and **Copy** it.
+  </Step>
+</Steps>
 
 ## Step 2: Create your automation (the Zap)
 
-Log in to your [Zapier account](https://zapier.com) and follow these 3 mini-steps:
+Log in to your [Zapier account](https://zapier.com) and follow these 3 mini-steps.
 
 ### A. The trigger (when this happens...)
 
@@ -44,7 +58,11 @@ Log in to your [Zapier account](https://zapier.com) and follow these 3 mini-step
 ### C. The finish
 
 - Click **Test** to see a sample message appear in Slack.
-- If it looks good, click **Publish**. **That's it!**
+- If it looks good, click **Publish**.
+
+<Check>
+  That's it — new bookings will now post to Slack automatically.
+</Check>
 
 ## Other useful triggers
 

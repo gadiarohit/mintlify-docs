@@ -6,13 +6,13 @@ keywords: ["google calendar", "connect calendar", "calendar sync", "check for co
 related: ["/apps/apple-calendar", "/apps/zoom", "/apps/app-store", "/getting-started/unified-calendar", "/event-types/advanced/add-to-calendar"]
 ---
 
-## Google Calendar permission setting
+Connecting [Cal ID](https://cal.id/home) to your Google Calendar lets it create events, read your schedule, and avoid conflicts automatically, so bookings stay in sync without any manual work. To do this reliably, Cal ID needs a few permissions from Google Calendar during setup.
 
-[Cal ID](https://cal.id/home) integrates seamlessly with your Google Calendar. This integration allows Cal ID to create events, view your schedule, and avoid conflicts, ensuring a smooth and efficient booking experience for everyone involved. However, to achieve this level of synchronization, Cal ID needs certain permissions from Google Calendar.
+<Info>
+  Grant **all** requested permissions when prompted. Without them, the Cal ID integration may be blocked from creating, updating, or viewing events, and scheduling will not work as expected.
+</Info>
 
-For Apple Calendar, you can follow [**this link**](/apps/apple-calendar).
-
-Please make sure to allow these requested permissions when prompted. Without these permissions, the **Cal ID** integration might not work as expected, as it could be blocked from carrying out necessary actions like creating, updating, or viewing events. The following explains the necessary permissions and why it is crucial for users to accept them all.
+Prefer Apple Calendar instead? Follow [**this guide**](/apps/apple-calendar).
 
 {/* TODO: missing image /images/apps/google-calendar-1.png — Google Calendar permission prompt */}
 
@@ -22,26 +22,34 @@ Please make sure to allow these requested permissions when prompted. Without the
 
 ## Why does Cal ID need these permissions?
 
-### View your calendar
-
-**Cal ID** needs permission to view your calendar events. This permission enables the platform to look at your current schedule and find available time-slots that can be offered to other people for booking. The software uses this information to prevent double-booking and to ensure that your schedule is always up-to-date.
-
-### Create events
-
-To automate the scheduling process, Cal ID needs the ability to create events directly on your Google Calendar. This means that when someone books a time with you via Cal ID, the platform can automatically create an event on your calendar, blocking off that time to prevent other bookings.
-
-### Edit events
-
-In addition to creating events, Cal ID also needs permission to edit events. This allows the platform to update events when necessary. For instance, if a scheduled meeting gets cancelled or rescheduled via Cal ID, the platform can automatically update the event on your Google Calendar to reflect the change.
-
-### Delete events
-
-Similarly, if an event is cancelled via Cal ID, the platform may need to remove the event from your Google Calendar. This is to ensure your calendar remains accurate and up-to-date.
+<Steps>
+  <Step title="View your calendar">
+    Cal ID reads your existing events to find open time slots it can offer to others. This is what prevents double-booking and keeps your availability current.
+  </Step>
+  <Step title="Create events">
+    When someone books a time with you through Cal ID, the platform adds the event directly to your Google Calendar, blocking off that slot from other bookings.
+  </Step>
+  <Step title="Edit events">
+    If a meeting is rescheduled through Cal ID, the platform updates the matching event on your Google Calendar so it always reflects the latest change.
+  </Step>
+  <Step title="Delete events">
+    If a booking is cancelled through Cal ID, the platform can remove the event from your Google Calendar, keeping it accurate and up to date.
+  </Step>
+</Steps>
 
 <Note>
   Please ensure to grant all requested permissions to sync your Google Calendar.
 </Note>
 
-For **Cal ID** to function optimally and ensure an efficient scheduling process, it is essential that users grant all the requested permissions during the Google Calendar integration process. It's important to note that Cal ID respects user privacy and will only use these permissions for scheduling purposes, in accordance with our privacy policy.
+Cal ID respects your privacy and uses these permissions only for scheduling purposes, in accordance with our privacy policy. By accepting them, you let Cal ID synchronise seamlessly with your Google Calendar, automating your scheduling and saving you valuable time.
 
-By accepting these permissions, you enable Cal ID to synchronise seamlessly with your Google Calendar, automating your scheduling process and saving you valuable time.
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Connect Apple Calendar" icon="calendar" href="/apps/apple-calendar">
+    Sync your iCloud events with an app-specific password.
+  </Card>
+  <Card title="Add Zoom to events" icon="video" href="/apps/zoom">
+    Set Zoom as the meeting location for your event types.
+  </Card>
+</CardGroup>

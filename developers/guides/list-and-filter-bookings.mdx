@@ -1,0 +1,65 @@
+---
+title: "List and filter bookings"
+description: "Query bookings with filters, sorting, and pagination using the Cal ID API."
+icon: "list"
+keywords: ["list bookings","filter bookings","pagination","query bookings","booking api"]
+---
+
+The `GET /booking/` endpoint returns your bookings wrapped in the standard response envelope. Use query parameters to narrow results with filters, control the ordering, and page through large result sets. All requests require a bearer token:
+
+```bash
+Authorization: Bearer calid_xxxxx
+```
+
+## Filter
+
+Combine filter parameters to return only the bookings you need. Available filters include `status`, `teamId`, `eventTypeIds`, `attendeeEmail`, `attendeeName`, and `bookingUid`, plus date-range filters for start, creation, and update times: `afterStartDate`, `beforeEndDate`, `afterCreatedDate`, `beforeCreatedDate`, `afterUpdatedDate`, and `beforeUpdatedDate`.
+
+The example below returns accepted bookings for a specific attendee that start within a date range:
+
+```bash
+curl -G "https://api.cal.id/booking/" \
+  -H "Authorization: Bearer calid_xxxxx" \
+  --data-urlencode "status=accepted" \
+  --data-urlencode "attendeeEmail=jane@example.com" \
+  --data-urlencode "afterStartDate=2026-07-01T00:00:00Z" \
+  --data-urlencode "beforeEndDate=2026-07-31T23:59:59Z"
+```
+
+## Sort
+
+Order results with `sortStart`, `sortEnd`, `sortCreated`, or `sortUpdated`. Each accepts `asc` or `desc`. This request lists the most recently created bookings first:
+
+```bash
+curl -G "https://api.cal.id/booking/" \
+  -H "Authorization: Bearer calid_xxxxx" \
+  --data-urlencode "sortCreated=desc"
+```
+
+## Paginate
+
+Use `page` and `limit` to page through results. `page` selects the page number and `limit` sets the number of bookings per page:
+
+```bash
+curl -G "https://api.cal.id/booking/" \
+  -H "Authorization: Bearer calid_xxxxx" \
+  --data-urlencode "page=1" \
+  --data-urlencode "limit=20"
+```
+
+Every response includes a `meta.pagination` object describing the current page and total result set:
+
+```json
+{
+  "page": 1,
+  "limit": 20,
+  "total": 134,
+  "totalPages": 7
+}
+```
+
+To retrieve all bookings, request `page=1`, then keep incrementing `page` and refetching until `page === totalPages`. Once the current `page` equals `totalPages`, you have reached the last page and can stop.
+
+## Reference
+
+For the complete list of parameters and response fields, see the full [List bookings](/api-reference/booking/list-bookings) endpoint.

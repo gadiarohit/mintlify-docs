@@ -1,0 +1,77 @@
+---
+title: "Create a booking"
+description: "Book a meeting end-to-end with the Cal ID API by finding an open slot and posting a booking."
+icon: "calendar-check"
+keywords: ["create booking","api booking","book a meeting","post booking","slots"]
+---
+
+This guide walks you through booking a meeting with the Cal ID API from start to finish: first find an open time slot for an event type, then create the booking for that slot. All requests use the base URL `https://api.cal.id` and are authenticated with a Bearer token.
+
+<Note>
+Before you begin, make sure you have:
+- An [API key](/developers/api-key) to authenticate your requests.
+- The [event type's ID](/developers/event-type-id) you want to book.
+</Note>
+
+<Steps>
+  <Step title="Find an open slot">
+    Call `GET /slots/` to list available times for an event type within a date range. Pass the event type, an ISO `start` and `end` window, the attendee's `timeZone`, and the meeting `duration` in minutes.
+
+    ```bash
+    curl -G https://api.cal.id/slots/ \
+      -H "Authorization: Bearer calid_xxxxx" \
+      --data-urlencode "eventTypeId=123" \
+      --data-urlencode "start=2026-05-01T00:00:00.000Z" \
+      --data-urlencode "end=2026-05-02T00:00:00.000Z" \
+      --data-urlencode "timeZone=Asia/Kolkata" \
+      --data-urlencode "duration=30"
+    ```
+
+    The available times are returned in `data`. Pick one and use it as the `start` for your booking. The `end` is the `start` plus the event's duration.
+  </Step>
+
+  <Step title="Create the booking">
+    Call `POST /booking/` with a JSON body. `start`, `end`, and `responses` (containing at least `name` and `email`) are required. Identify the event with `eventTypeId` (integer) or `eventTypeSlug` (string), and include `timeZone` and a `location` inside `responses` as needed.
+
+    ```bash
+    curl -X POST https://api.cal.id/booking/ \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "eventTypeId": 12,
+        "start": "2026-05-02T10:00:00.000Z",
+        "end": "2026-05-02T10:30:00.000Z",
+        "timeZone": "Asia/Kolkata",
+        "responses": {
+          "name": "Jane Doe",
+          "email": "jane@example.com",
+          "location": {
+            "value": "integrations:google:meet",
+            "optionValue": ""
+          }
+        }
+      }'
+    ```
+
+    On success, the created booking is returned in `data`, including its `uid`.
+
+    ```json
+    {
+      "success": true,
+      "data": {
+        "uid": "abc123XYZ",
+        "start": "2026-05-02T10:00:00.000Z",
+        "end": "2026-05-02T10:30:00.000Z"
+      },
+      "message": "Booking created successfully.",
+      "meta": {}
+    }
+    ```
+  </Step>
+</Steps>
+
+## Next steps
+
+- [Reschedule a booking](/api-reference/booking/reschedule-a-booking) — `PATCH /booking/{id}/reschedule`
+- [Cancel a booking](/api-reference/booking/cancel-a-booking) — `POST /booking/{id}/cancel`
+- [Create a booking](/api-reference/booking/create-a-booking) — full endpoint reference

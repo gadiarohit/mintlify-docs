@@ -1,0 +1,103 @@
+---
+title: "Build a webhook receiver"
+description: "Subscribe to Cal ID events and handle incoming webhook deliveries in your own service."
+icon: "webhook"
+keywords: ["webhook receiver","subscribe","event triggers","payload","verify webhook"]
+---
+
+Webhooks let Cal ID push events to your service in real time instead of you polling the API. You register a `subscriberUrl`, choose which events you care about, and Cal ID sends an HTTP POST to that URL every time a matching event happens.
+
+This guide walks through subscribing to events, receiving deliveries, and verifying them.
+
+<Steps>
+  <Step title="Subscribe to events">
+    Create a webhook subscription with `POST /webhook/`. Provide the `subscriberUrl` Cal ID should call, the `eventTriggers` you want to receive, and a `secret` you'll use to verify incoming deliveries.
+
+    ```bash
+    curl -X POST https://api.cal.id/webhook/ \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "subscriberUrl": "https://example.com/webhooks/cal-id",
+        "eventTriggers": ["BOOKING_CREATED", "BOOKING_RESCHEDULED", "BOOKING_CANCELLED"],
+        "secret": "your-shared-secret",
+        "active": true
+      }'
+    ```
+
+    Common event triggers include `BOOKING_CREATED`, `BOOKING_RESCHEDULED`, `BOOKING_CANCELLED`, `BOOKING_PAID`, `FORM_SUBMITTED`, and `OOO_CREATED`. See the full list in the [Webhook events](/api-reference/webhook-events) reference.
+
+    You can also pass an optional `payloadTemplate` (string) to customize the delivery body, and set `active` to `false` to register the webhook without receiving deliveries yet.
+  </Step>
+
+  <Step title="Receive the POST">
+    Each delivery is an HTTP POST to your `subscriberUrl` with a JSON body shaped like this:
+
+    ```json
+    {
+      "triggerEvent": "BOOKING_CREATED",
+      "createdAt": "2026-07-29T12:00:00.000Z",
+      "payload": { "...": "event data" }
+    }
+    ```
+
+    Read `req.body.triggerEvent` to know what happened and `req.body.payload` for the event data. Switch on the trigger to route each event:
+
+    ```javascript
+    import express from "express";
+
+    const app = express();
+    app.use(express.json());
+
+    app.post("/webhooks/cal-id", (req, res) => {
+      const { triggerEvent, payload } = req.body;
+
+      switch (triggerEvent) {
+        case "BOOKING_CREATED":
+          // handle a new booking
+          break;
+        case "BOOKING_RESCHEDULED":
+          // handle a rescheduled booking
+          break;
+        case "BOOKING_CANCELLED":
+          // handle a cancelled booking
+          break;
+        default:
+          // ignore or log unrecognized events
+          break;
+      }
+
+      res.status(200).send("OK");
+    });
+
+    app.listen(3000);
+    ```
+  </Step>
+
+  <Step title="Verify and respond">
+    If you set a `secret` when subscribing, use it to confirm the request genuinely came from Cal ID before acting on it. Only process the delivery once you've established the request is authentic.
+
+    Respond with a `2xx` status quickly. Send the response as soon as you've accepted the delivery, and move any slow work (sending emails, updating downstream systems, etc.) to a background job so the connection isn't held open.
+
+    ```javascript
+    app.post("/webhooks/cal-id", (req, res) => {
+      if (!isAuthentic(req, process.env.CAL_ID_WEBHOOK_SECRET)) {
+        return res.status(401).send("Invalid signature");
+      }
+
+      // Acknowledge fast, then process asynchronously.
+      res.status(200).send("OK");
+      queue.enqueue(req.body);
+    });
+    ```
+  </Step>
+</Steps>
+
+<Tip>
+  Design your handler to be idempotent. Deliveries can be retried, so the same event may arrive more than once. Track a stable identifier from the `payload` (or your own dedupe key) and make repeated processing of the same event a no-op.
+</Tip>
+
+## Next steps
+
+- [Webhook events](/api-reference/webhook-events) — the full list of event triggers and their payloads.
+- [Create a webhook](/api-reference/webhook/create-a-webhook) — full request and response reference for `POST /webhook/`.

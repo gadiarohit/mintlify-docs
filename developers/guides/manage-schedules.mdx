@@ -1,0 +1,80 @@
+---
+title: "Manage availability schedules"
+description: "Create and manage the availability schedules that define when you're bookable with the Cal ID API."
+icon: "clock"
+keywords: ["availability api","schedules","working hours","create schedule","set availability"]
+---
+
+Availability schedules define the hours when you're bookable. Once created, you assign a schedule to an event type so it controls when that event can be booked. This guide shows you how to create, list, update, and delete schedules with the Cal ID API. All requests use the base URL `https://api.cal.id` and are authenticated with a Bearer token.
+
+<Steps>
+  <Step title="Create a schedule">
+    Call `POST /schedule/` with a JSON body. `name` is required; pass an optional `timeZone` to set the schedule's default time zone.
+
+    ```bash
+    curl -X POST https://api.cal.id/schedule/ \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Weekday Working Hours",
+        "timeZone": "Asia/Kolkata"
+      }'
+    ```
+
+    On success, the created schedule is returned in `data`, including its `id`.
+
+    ```json
+    {
+      "success": true,
+      "data": {
+        "id": 456,
+        "name": "Weekday Working Hours",
+        "timeZone": "Asia/Kolkata"
+      },
+      "message": "Schedule created successfully.",
+      "meta": {}
+    }
+    ```
+  </Step>
+
+  <Step title="List your schedules">
+    Call `GET /schedule/` to retrieve your schedules. Results are paginated — use `page` and `limit` to page through them.
+
+    ```bash
+    curl -G https://api.cal.id/schedule/ \
+      -H "Authorization: Bearer calid_xxxxx" \
+      --data-urlencode "page=1" \
+      --data-urlencode "limit=10"
+    ```
+
+    Your schedules are returned in `data`, with pagination details in `meta`.
+  </Step>
+
+  <Step title="Update or delete a schedule">
+    Use the schedule's `id` to change or remove it. Call `PATCH /schedule/\{scheduleId\}` with the fields you want to update.
+
+    ```bash
+    curl -X PATCH https://api.cal.id/schedule/456 \
+      -H "Authorization: Bearer calid_xxxxx" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Weekday Working Hours (IST)"
+      }'
+    ```
+
+    To remove a schedule, call `DELETE /schedule/\{scheduleId\}`.
+
+    ```bash
+    curl -X DELETE https://api.cal.id/schedule/456 \
+      -H "Authorization: Bearer calid_xxxxx"
+    ```
+  </Step>
+</Steps>
+
+<Note>
+Creating a schedule doesn't affect bookings on its own. To make a schedule apply, assign it to an event type — see [Set availability for an event type](/event-types/setup/event-availability).
+</Note>
+
+## Next steps
+
+- [Create a schedule](/api-reference/schedule/create-a-schedule) — full endpoint reference

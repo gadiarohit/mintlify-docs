@@ -289,18 +289,21 @@
         "tab": "Developers",
         "groups": [
           {
-            "group": "Overview",
+            "group": "Get started",
             "pages": [
-              "developers/overview"
+              "developers/overview",
+              "developers/api-key",
+              "developers/event-type-id",
+              "developers/webhooks"
             ]
           },
           {
-            "group": "API & Webhooks",
+            "group": "Guides",
             "pages": [
-              "developers/api-key",
-              "developers/event-type-id",
-              "developers/api-integration",
-              "developers/webhooks"
+              "developers/guides/create-a-booking",
+              "developers/guides/webhook-receiver",
+              "developers/guides/list-and-filter-bookings",
+              "developers/guides/manage-schedules"
             ]
           }
         ]
@@ -851,11 +854,15 @@
     },
     {
       "source": "/en/article/cal-id-api-integration-by3i8j",
-      "destination": "/developers/api-integration"
+      "destination": "/api-reference/introduction"
     },
     {
       "source": "/en/article/webhook-in-cal-id-5fwxgn",
       "destination": "/developers/webhooks"
+    },
+    {
+      "source": "/developers/api-integration",
+      "destination": "/api-reference/introduction"
     }
   ],
   "thumbnails": {

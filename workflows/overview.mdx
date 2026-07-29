@@ -1,0 +1,130 @@
+---
+title: "Workflows Setup to Cal ID"
+description: "Automate reminders and follow-up notifications by attaching Email, SMS, or WhatsApp workflows to your event types."
+icon: "bell"
+---
+
+Workflows allow you to automate notifications and reminders. A workflow can be attached to different event types, has one specific trigger event, and can have several action steps. For example, you can use workflows for sending Email or SMS or WhatsApp reminders before an event starts to the person who booked the meeting to avoid no-shows.
+
+Workflows can also be used for sending follow-up Emails or SMS or WhatsApp messages to the attendee after a meeting ends. That could be a feedback survey, providing some additional information to the meeting, or just a simple thank you note.
+
+Each Workflow is made up of a single trigger and one or more actions. Triggers include things like the cancellation of an event, start times, end times, and new bookings.
+
+## Steps to Set up your workflows
+
+<Steps>
+  <Step title="Access the Workflow Tab">
+    - **Log In** to your Cal ID account.
+    - Look at the sidebar on the left side of your screen.
+    - Click on **Workflows**.
+    - You can either use the default template for the Email/ SMS/ WhatsApp or even use a custom template and use additional inputs as variables within that.
+    - For custom template, Click the **\+ Add Custom** button.
+
+    <Frame>
+      ![Workflows tab in the Cal ID sidebar](/images/workflows/overview-1.png)
+    </Frame>
+
+    - You can also directly set it from event types: Event type \>\> Workflows \>\> Create a workflow.
+
+    <Frame>
+      ![Creating a workflow from event types](/images/workflows/overview-2.png)
+    </Frame>
+  </Step>
+  <Step title="Name and Assign Your Workflow">
+    Before adding the logic, you need to identify what this workflow is for:
+
+    - **Name your workflow:** Give it a title (e.g., **"My 24-Hour Reminder"**).
+    - **Select Event Type:** Check the boxes for the specific meetings you want this workflow to apply to.
+
+    <Frame>
+      ![Naming and assigning a workflow to event types](/images/workflows/overview-3.png)
+    </Frame>
+  </Step>
+  <Step title="Choose Your Trigger (When should it happen?)">
+    A trigger is the event that **starts** the automation. Select one from the dropdown menu:
+
+    - Minutes/Hours/Days before an event starts
+    - When an event is cancelled
+    - When a new event is booked
+    - Minutes/Hours/Days after an event ends
+    - When event is rescheduled
+
+    <Frame>
+      ![Selecting a workflow trigger](/images/workflows/overview-4.png)
+    </Frame>
+  </Step>
+  <Step title="Add Your Action (What should happen?)">
+    Now, decide how you want to reach out. Select one from the dropdown menu:
+
+    - Send an email to the host
+    - Send an email to the attendee
+    - Send an SMS to the attendee
+    - Send an SMS to a specific number
+    - Send Whatsapp message to the attendee
+    - Send Whatsapp message to a specific number
+
+    Actions are a designated notification type. For example, sending a reminder to an attendee, a specific phone number or an email address.
+
+    <Frame>
+      ![Selecting a workflow action](/images/workflows/overview-5.png)
+    </Frame>
+
+    - Save it.
+  </Step>
+</Steps>
+
+## Custom template
+
+You can either use the default template for the email or even use a custom template and use additional inputs as variables within that.
+
+For more details, visit [Customizing your Workflow](/workflows/custom-messages).
+
+## Dynamic text variables
+
+If the location is a video conferencing app then the \{LOCATION\} would be 'Zoom' or 'Google Meet' and \{MEETING\_URL\} would be the actual link to the meeting. If the location is not a video conferencing app then \{MEETING\_URL\} is empty.
+
+You can insert dynamic text into your messages using variables. These variables will be replaced with real booking data when the message is sent.
+
+| Variables | Description |
+| --- | --- |
+| `{{event_name}}` | The title or name of the scheduled event |
+| `{{event_date}}` | The date when the event is scheduled |
+| `{{event_time}}` | The start time of the event |
+| `{{event_end_time}}` | The end time of the event |
+| `{{timezone}}` | The timezone of the person receiving the message |
+| `{{location}}` | The location of the event |
+| `{{organizer_name}}` | The organizer's (host's) name |
+| `{{attendee_name}}` | Full name of the attendee/person booking |
+| `{{attendee_first_name}}` | First name of the attendee |
+| `{{attendee_last_name}}` | Last name of the attendee |
+| `{{attendee_email}}` | The email address of the event attendee |
+| `{{additional_notes}}` | Any additional notes or comments for the event |
+| `{{meeting_url}}` | The URL to join the meeting or event |
+| `{{cancel_url}}` | The URL to cancel the event |
+| `{{reschedule_url}}` | The URL to reschedule the event |
+| `{{rating_url}}` | The URL for attendees to rate the event |
+| `{{no_show_url}}` | The URL to report a no-show for the event |
+| `{{attendee_timezone}}` | The timezone of the attendee |
+| `{{start_time_tz_booker}}` | The event start time converted to the attendee's timezone |
+| `{{end_time_tz_booker}}` | The event end time converted to the attendee's timezone |
+| `{{event_type_name}}` | The title or name of the event type |
+
+Workflow is one of many tools that Cal ID users can take advantage of in order to simplify scheduling, save time, and focus on what really matters.
+
+## For WhatsApp Workflow
+
+If you choose **Action = WhatsApp**, the message will be sent **by default from the Cal ID WhatsApp number**. If you want the message to be sent **from your own WhatsApp number**, you need to **integrate WhatsApp Business** from the **Cal ID App Store**. For more details, refer to this link: [Integrate WhatsApp Business](/workflows/whatsapp-business).
+
+Steps after integrating WhatsApp Business:
+
+- Create or edit a workflow.
+- Select **Action related to WhatsApp**.
+- Choose your **WhatsApp Business Phone Number**.
+- Select an **approved WhatsApp template** (created and approved in Meta).
+- Save the workflow.
+
+<Frame>
+  ![Selecting a WhatsApp Business number and template in a workflow](/images/workflows/overview-6.png)
+</Frame>
+
+Once the setup is complete, **WhatsApp messages will be sent from your Selected number to the attendee** **or to the Specific WhatsApp number.**

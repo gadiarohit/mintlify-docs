@@ -1,0 +1,114 @@
+---
+title: "How to Get Your Cal ID API Key"
+description: "Create, secure, and use a Cal ID API key to connect your scheduling data with external applications and the API documentation."
+icon: "key"
+---
+
+The Cal ID API Key is a secure credential used to connect your scheduling data with external applications, custom websites, or our API documentation. It allows different software systems to communicate with your Cal ID account safely.
+
+## Step-by-Step Instructions to Get Your API Key
+
+### Access the Developer Dashboard
+
+- **Log in** to your **Cal ID** account.
+- Click on the **Settings**.
+- Scroll down the left-hand sidebar menu until you see the **Developer** category.
+- **Click API Keys** to open your management dashboard.
+
+<Frame>
+  ![API Keys management dashboard](/images/developers/api-key-1.png)
+</Frame>
+
+### Start the Creation Process
+
+- Click the button labeled **Create an API Key**.
+- A configuration window will appear.
+
+<Frame>
+  ![Create an API Key button](/images/developers/api-key-2.png)
+</Frame>
+
+### Fill in the Details
+
+- **Name:** Enter a descriptive name in the "Name this key" field.
+- **Example:** "My Personal Portfolio" or "Zapier Integration."
+- **Why?** This helps you identify which app is using which key later on.
+
+### Set the Expiration (Choose One)
+
+You must decide how long this key should remain active:
+
+**Option A: Long-term Use**
+
+- Switch the **"Never expires"** toggle button to **ON**.
+- The key will remain active until you manually delete it.
+
+**Option B: Temporary/Secure Use**
+
+- Leave the toggle **OFF**.
+- Go to the **"Expiration date"** dropdown field.
+- Select your preferred duration: **7 days**, **30 days**, **3 months**, or **1 year**.
+
+<Note>
+  Once this time passes, the key will expire and the integration will stop working until you create a new one.
+</Note>
+
+### Finalize and Save
+
+- Click the **Create** button.
+- A "Secret Key" will be displayed on your screen.
+
+### Copy and Secure Your Key (Important)
+
+- **Copy immediately:** Click the copy icon or highlight the text and copy it.
+- **Store safely:** Paste this key into a secure location like a password manager.
+
+<Warning>
+  For your protection, **Cal ID will never show this key to you again.** If you close the window without copying it, you will have to delete the entry and create a new one.
+</Warning>
+
+## Using this Key with API Documentation
+
+You can use your newly created key to get live data and endpoints on our official documentation page.
+
+### Try our Swagger Collection
+
+- We've created a small collection of frequently made API calls that you can try in our [API docs](https://cal.id/docs/api/).
+- **Authorize:** Look for the **"Authorize"** button (a lock icon at the start of the page).
+
+<Frame>
+  ![Authorize button in API docs](/images/developers/api-key-3.png)
+</Frame>
+
+- **Enter Key:** Paste your API Key into the value field and click on the Authorize button.
+
+<Frame>
+  ![Enter API key to authorize](/images/developers/api-key-4.png)
+</Frame>
+
+- You can now try any endpoint (like `/event-types`) to see your real account data in action.
+
+## Key Security Rules
+
+- **Never Share:** Do not share your API key in emails, chat messages, or public code repositories like GitHub.
+- **Multiple Keys:** You can create different keys for different purposes. This is safer than using one key for everything.
+- **Revoking Access:** If you no longer use an integration, go back to the **API Keys** page and click the **Delete** (trash icon) next to the key to instantly revoke its access.
+
+## Make your first request
+
+To make your first request, send an authenticated request to the `me` endpoint. This will share your profile details.
+
+```text
+GET https://api.cal.id/users/me
+```
+
+Take a look at how you might call this method via `curl`:
+
+```bash
+curl -X 'GET' \
+  'https://api.cal.id/users/me' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer calid_XXXXXX'
+```
+
+Replace `calid_XXXXXX` with your API key.

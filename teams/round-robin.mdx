@@ -1,0 +1,69 @@
+---
+title: "Round-Robin Scheduling"
+description: "Automatically rotate team bookings to the next available host using priority, weights, and fixed hosts."
+icon: "arrows-rotate"
+---
+
+## How to Set Round-robin scheduling?
+
+Cal ID round robin scheduling creates a team event type with a pool of users, automatically assigning upcoming bookings to the next available host in rotation based on their calendars, skipping busy ones for even distribution. This balances workloads for members of the team.
+
+## Underlying Mechanism
+
+Round robin in Cal ID evenly distributes team bookings by first computing the union of available slots across all hosts, then assigning to the highest-priority or weighted host who's free, skipping unavailable ones for fair rotation. The mechanism has a couple of options:
+
+<Frame>
+  ![Round-robin mechanism options](/images/teams/round-robin-1.png)
+</Frame>
+
+## Priority Ranking
+
+Every round-robin host has a priority (default: medium). Higher priorities get selected first when multiple hosts are available in a slot. Ties go to the least recently booked host. This system ensures that hosts with higher designated priorities are given precedence in the booking process, optimizing the allocation of resources and streamlining event organization.
+
+For instance, if John & Jane are both available in the same slot, but John has a priority High compared to Jane's priority of Medium, John will be booked. If several users have the same priority it will choose the least recently booked user.
+
+You have the option to select priority for each host and based on their priority (and availability in the selected slot), the hosts will be booked.
+
+<Frame>
+  ![Selecting priority for each host](/images/teams/round-robin-2.png)
+</Frame>
+
+## Weights
+
+Weights are optional and must be enabled to use. They allow you to determine how meetings should be distributed among hosts. When enabled, every host has a default weight of 100%. This means each host should end up with the same number of bookings by default. However, hosts with fewer availabilities can still end up with fewer bookings. Only confirmed bookings count towards past bookings.
+
+For instance, Jane Doe has a weight of 100% and already has 8 bookings while John Doe has a weight of 200% and already has 12 bookings. Assuming both of them are available, the next bookings would go to John Doe until a total of 16 bookings is reached.
+
+Weight Adjustment: If new hosts are added to a round-robin event type that has weights enabled, their weights will be adjusted accordingly. New hosts will have their bookings adjusted proportionally to their weight, taking into account the bookings that existing hosts already have. This ensures a fair distribution of bookings when new hosts are added.
+
+Example:
+
+Existing host 1: 100% weight, 5 bookings
+
+Existing host 2: 200% weight, 9 bookings
+
+New host: 50% weight
+
+Weight Adjustment = (Bookings of existing hosts / Sum of weights of existing hosts) \* New host weight
+
+Weight Adjustment = 14 / 300 \* 50 = 2.33
+
+The new host will have a weight adjustment of 2 bookings.
+
+**Least Recently Booked**
+
+This is the fallback method where the available round robin host who was booked least recently is chosen. If more than one host meets this criteria, one of them is chosen at random.
+
+## Fixed hosts
+
+If you wish to bring in Collective behavior into round-robin events, it is possible with Cal ID. You can now select which hosts you wish to always attend the meeting whilst the other selected team members who are booked on a round-robin basis.
+
+**Fixed Hosts** are individuals who are consistently present at every meeting.
+
+**Round-Robin Hosts** are members of a group who take turns attending meetings. Rather than everyone in this group attending every meeting, only one person from the group will attend each time.
+
+<Frame>
+  ![Configuring fixed and round-robin hosts](/images/teams/round-robin-3.png)
+</Frame>
+
+For tasks like scheduling sales calls or product demos, where you have a pool of people among whom you'd like to distribute meetings, round robin is the perfect choice.

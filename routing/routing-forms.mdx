@@ -1,0 +1,178 @@
+---
+title: "Setting Up Routing Forms in Cal ID"
+description: "Build a routing form that asks a few questions and automatically directs bookers to the right person, event, or website."
+icon: "diagram-project"
+---
+
+## Overview
+
+Cal ID's Routing Forms helps people quickly book the right appointment with the right person.
+
+It works by asking the person booking to answer a few questions. Based on their answers, the system automatically directs them to the correct person, a specific event, or an external website.
+
+This saves time for everyone and avoids mistakes, like booking with the wrong person or choosing the wrong type of meeting.
+
+## Step 1: Create a New Form
+
+<Steps>
+  <Step title="Access Routing">
+    Log in to your Cal ID account and click on **Routing** in the left-hand sidebar.
+  </Step>
+  <Step title="Start Creation">
+    Click the **\+ New** button (or "Create Routing form") in the top right corner.
+
+    <Frame>
+      ![New routing form button](/images/routing/routing-forms-1.png)
+    </Frame>
+  </Step>
+  <Step title="Choose Ownership">
+    If you are part of a team, the system will ask if this form is for your **Personal** account or for a specific **Team**.
+
+    <Frame>
+      ![Choose personal or team ownership](/images/routing/routing-forms-2.png)
+    </Frame>
+  </Step>
+  <Step title="Form Details">
+    An **Add new form** pop-up will appear:
+
+    - **Title**: Give your form a clear name (e.g., "New Client Inquiry").
+    - **Description**: Briefly explain the purpose of the form for your internal reference.
+
+    <Frame>
+      ![Add new form pop-up with title and description](/images/routing/routing-forms-3.png)
+    </Frame>
+  </Step>
+  <Step title="Create">
+    Click the **Create** button to proceed.
+  </Step>
+</Steps>
+
+## Step 2: Design the Form (Questions)
+
+You will be redirected to the **Form** tab to build your questionnaire.
+
+<Steps>
+  <Step title="Add Questions">
+    Click the **Add question** button to create your first field. You can add as many as you want.
+
+    <Frame>
+      ![Add question button](/images/routing/routing-forms-4.png)
+    </Frame>
+  </Step>
+  <Step title="Configure Each Question">
+    - **Label**: The question the user will see (e.g., "What is your budget?").
+    - **Identifier**: A unique internal name used for setting up routing rules later.
+    - **Type**: Choose the format of the answer: **Short Text**, **Long Text**, **Single Select**, **Multi-select**, **Email**, **Phone**, or **Number**.
+    - **Required**: Select **Yes** if the user must answer this to proceed.
+
+    <Frame>
+      ![Question configuration fields](/images/routing/routing-forms-5.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    After adding all your questions, click the **Save** button in the top right corner.
+  </Step>
+  <Step title="Review your form">
+    After adding the required questions, your page will look like this:
+
+    <Frame>
+      ![Completed form with questions](/images/routing/routing-forms-6.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## Step 3: Set Up Routing Rules
+
+Navigate to the **Routing** tab to decide where users go based on their answers.
+
+If you don't want to add any route, then set the Fallback route, where you want to send the booker after filling out the required questions.
+
+<Frame>
+  ![Routing tab with fallback route](/images/routing/routing-forms-7.png)
+</Frame>
+
+To add a route:
+
+<Steps>
+  <Step title="Add a new Route">
+    Click **\+ Add a new Route** to add a route.
+
+    <Frame>
+      ![Add a new route button](/images/routing/routing-forms-8.png)
+    </Frame>
+  </Step>
+  <Step title="Add Rules">
+    Click **\+ Add rule** to link a question to a value (e.g., "If Budget is Greater than 5000").
+
+    <Frame>
+      ![Add rule to a route](/images/routing/routing-forms-9.png)
+    </Frame>
+  </Step>
+  <Step title="Define Logic">
+    If you add more than one Rule then you have to define logic. Next to "For responses matching the following criteria," choose a logic filter:
+
+    - **All**: The user must meet **every** rule in this route to be redirected.
+    - **Any**: The user only needs to meet **one** of the rules.
+    - **None**: The route applies if the user meets **none** of the rules.
+
+    <Frame>
+      ![Logic filter options](/images/routing/routing-forms-10.png)
+    </Frame>
+  </Step>
+  <Step title="Select Destination (Send Booker To)">
+    - **Custom Page**: Display a specific "Thank You" or "Waitlist" message.
+
+    <Frame>
+      ![Custom page destination](/images/routing/routing-forms-11.png)
+    </Frame>
+
+    - **External Redirect**: Send the user to another website (e.g., your homepage).
+
+    <Frame>
+      ![External redirect destination](/images/routing/routing-forms-12.png)
+    </Frame>
+
+    - **Event Redirect**: Send the user directly to a specific booking page (e.g., a "Career Counselling" event).
+
+    <Frame>
+      ![Event redirect destination](/images/routing/routing-forms-13.png)
+    </Frame>
+  </Step>
+  <Step title="Fallback Route">
+    At the bottom, set a **Fallback route** for users who do not match any of your specific rules.
+
+    <Frame>
+      ![Fallback route setting](/images/routing/routing-forms-14.png)
+    </Frame>
+  </Step>
+</Steps>
+
+If you want to embed the routing form on your website or page, then follow Step 4.
+
+## Step 4: Embed the Form on Your Website
+
+Once your logic is set, go to the **Embed** tab and choose the type.
+
+<Frame>
+  ![Embed tab with type options](/images/routing/routing-forms-15.png)
+</Frame>
+
+<Steps>
+  <Step title="Configure Settings">
+    Adjust the display settings for your form (such as theme, width, or Brand Color) if needed.
+
+    <Frame>
+      ![Embed display settings](/images/routing/routing-forms-16.png)
+    </Frame>
+  </Step>
+  <Step title="Copy Code">
+    Click the **Copy Code** button. A pop-up will appear showing the snippet.
+
+    <Frame>
+      ![Copy code pop-up](/images/routing/routing-forms-17.png)
+    </Frame>
+  </Step>
+  <Step title="Publish">
+    Paste this code into your website's HTML where you want the form to appear.
+  </Step>
+</Steps>

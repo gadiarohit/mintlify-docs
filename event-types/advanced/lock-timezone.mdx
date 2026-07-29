@@ -1,0 +1,61 @@
+---
+title: "Lock Timezone On Booking Page"
+description: "Fix your booking page to a chosen timezone for in-person events and fixed-time webinars."
+icon: "clock"
+---
+
+In **Cal ID**, the **Lock timezone on booking page** feature is an essential setting for events that happen at a specific physical location or for webinars tied to a fixed broadcast time. It prevents the booking page from automatically detecting and switching to the guest's local timezone.
+
+## Locking the Timezone on Your Booking Page
+
+Typically, scheduling platforms automatically translate your availability into the booker's local time. Enabling this feature stops that translation and keeps the display fixed to your chosen timezone.
+
+## Why use "Lock Timezone"?
+
+- **In-Person Events:** If you are hosting a workshop in London, it starts at 10:00 AM GMT regardless of where the person booking is currently located. Locking the timezone prevents confusion.
+- **Travel and Tours:** For business owners in the travel industry, guests often book from a different timezone but need to see the "local" time of the destination.
+- **Fixed Broadcasts:** If you are running a live stream at a set time in a specific region, locking the timezone ensures everyone refers to the same "master" clock.
+
+## How to set it up
+
+<Steps>
+  <Step title="Go to Event Types">
+    Click on **Event Types** in the left sidebar.
+  </Step>
+  <Step title="Select an Event">
+    Click on the specific event you want to lock.
+  </Step>
+  <Step title="Navigate to Advanced">
+    Click on the **Advanced** tab in the top navigation bar.
+  </Step>
+  <Step title="Find the Toggle">
+    Locate the **Lock timezone on booking page** option.
+  </Step>
+  <Step title="Enable">
+    Switch the toggle to **ON**.
+  </Step>
+  <Step title="Select the timezone">
+    Choose the timezone you want to lock the booking page to.
+  </Step>
+  <Step title="Save">
+    Click the **Save** button at the top right.
+
+    <Frame>
+      ![Lock timezone on booking page toggle](/images/event-types/lock-timezone-1.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## How it Works for the Booker
+
+- **Standard Behavior:** A guest in New York booking a meeting with someone in London (5 hours ahead) would see "9:00 AM" for a 2:00 PM GMT slot.
+- **Locked Behavior:** With the timezone locked to GMT, the guest in New York will see "2:00 PM" on the calendar, with a clear indication that the time is in **GMT**.
+- **Clarity:** It effectively tells the guest: "This event happens at this specific time in this specific place."
+
+<Frame>
+  ![Booking page with locked timezone indicator](/images/event-types/lock-timezone-2.png)
+</Frame>
+
+<Tip>
+  If you have multiple event types where some are virtual (needs local timezone) and some are in-person (needs locked timezone), make sure to check this setting individually for each event. This is an event-level setting, not a global one!
+</Tip>

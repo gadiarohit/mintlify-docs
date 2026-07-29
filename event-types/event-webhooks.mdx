@@ -1,0 +1,56 @@
+---
+title: "Setting Up Event-Specific Webhooks"
+description: "Send real-time booking data from a specific event type to another application using event-level webhooks."
+icon: "webhook"
+---
+
+Webhooks allow you to send real-time data from Cal ID to another application whenever a booking event occurs. Setting them up at the **Event Type** level gives you fine-grained control, ensuring notifications are only sent for specific meetings.
+
+## Steps to Create a Webhook for an Event Type
+
+<Steps>
+  <Step title="Access Event Types">
+    Log in to your [Cal ID](https://cal.id/home) account and navigate to the **Event Types** tab in your dashboard.
+  </Step>
+  <Step title="Edit Event Type">
+    Locate the specific event type you want to track, click the **three dots** on its card, and select **Edit**.
+  </Step>
+  <Step title="Open Webhooks Tab">
+    Within the event editor, click on the **Webhooks** tab at the top of the page.
+  </Step>
+  <Step title="Add New Webhook">
+    Click the **\+ Create** button.
+
+    <Frame>
+      ![Create button in the Webhooks tab](/images/event-types/event-webhooks-1.png)
+    </Frame>
+  </Step>
+  <Step title="Configure Webhook Details">
+    - **Subscriber URL**: Paste the listener URL provided by the application you are sending data to (e.g., Zapier, Pipedream, or your own server).
+
+    <Frame>
+      ![Subscriber URL field](/images/event-types/event-webhooks-2.png)
+    </Frame>
+
+    - **Secret (Optional but Recommended)**: Enter a secret key to verify that the payload is authentic and has not been tampered with.
+
+    <Frame>
+      ![Secret key field](/images/event-types/event-webhooks-3.png)
+    </Frame>
+
+    - **Event Triggers**: Select the specific events that will trigger this webhook, such as **Booking Created**, **Booking Cancelled**, or **Meeting Ended**.
+
+    <Frame>
+      ![Event triggers selection](/images/event-types/event-webhooks-4.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Click the **Create Webhook** button to activate the webhook.
+  </Step>
+</Steps>
+
+### Important Considerations
+
+- **Scopes**: Event-type level webhooks trigger only for that specific event. To track all events for a user or team, you should create a webhook at the **User** or **Team** level instead. To create a webhook at the user or team level, visit [**Webhook in Cal ID**](/developers/webhooks).
+- **Team Managed Events**: For team-managed events, it is highly recommended to create the webhook directly on the **parent event type** within the team dashboard to ensure it captures all bookings.
+- **Custom Payloads**: You can customize the data structure sent to your URL by using custom payload templates.

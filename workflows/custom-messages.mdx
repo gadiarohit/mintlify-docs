@@ -1,0 +1,63 @@
+---
+title: "Customizing Your Workflow Messages"
+description: "Personalize your workflow reminders with custom sender names, dynamic subject lines, and booking variables."
+icon: "pen-to-square"
+---
+
+Choosing a custom template in Cal ID gives you full creative control over how your reminders and notifications look. Here is a clear breakdown of how you can personalize your workflows.
+
+The Cal ID Workflow system is designed for flexibility. While the **Default Template** is great for a quick setup, switching to a **Custom Template** unlocks several advanced personalization options:
+
+## Enable Customization
+
+To start personalizing, first go to the **Message template** field and select **Custom** from the dropdown menu. This action unlocks the ability to edit the Sender Name, Subject, and Email Body.
+
+<Frame>
+  ![Selecting the custom message template](/images/workflows/custom-messages-1.png)
+</Frame>
+
+## Personalize the Sender Identity
+
+When you select a custom template, you aren't stuck with a generic "Cal ID" name.
+
+- **Sender Name:** You can change this to your own name, your company's name, or even the name of a specific department to build trust with your attendees.
+
+<Frame>
+  ![Editing the sender name](/images/workflows/custom-messages-2.png)
+</Frame>
+
+## Craft a Dynamic Subject Line
+
+The subject line is the first thing your attendees see. With a custom template:
+
+- **Custom Subject:** You can write a catchy, relevant subject line from scratch.
+- **Dynamic Variables:** Don't just say "Meeting Reminder." Use the **Add variable** dropdown to include the `{EVENT_NAME}` or `{ATTENDEE}` name directly in the subject to make it stand out in a crowded inbox.
+
+<Frame>
+  ![Adding a dynamic variable to the subject line](/images/workflows/custom-messages-3.png)
+</Frame>
+
+## Use the Power of Variables
+
+To ensure every email feels personal and contains accurate data, always use the **Add variable** dropdown menu located in the Subject and Email Body sections.
+
+**Commonly used variables include:**
+
+- `{EVENT_NAME}`: The title of the meeting.
+- `{EVENT_DATE}`: Automatically formats the date of the session.
+- `{MEETING_URL}`: Drops in the specific link for your video call (Zoom, Google Meet, etc.).
+- `{LOCATION}`: Provides the physical address or meeting details
+- `{MEETING_URL}`: URL of the meeting
+- `{ATTENDEE}`: Full Name of the attendee
+- `{ATTENDEE_FIRST_NAME}`: First Name of the attendee
+- `{ATTENDEE_LAST_NAME}`: Last Name of the attendee
+- `{CANCEL_URL}`: URL for cancellation the meeting
+- `{ORGANIZER_NAME}`: Name of the Organizer
+- `{RESCHEDULE_URL}`: URL for rescheduling the meeting
+- `{ATTENDEE_TIMEZONE}`: Timezone of the attendee
+
+<Note>
+  You can't customize the template of SMS workflow.
+</Note>
+
+If you want to customize the template for WhatsApp, then you have to [Integrate WhatsApp Business App](/workflows/whatsapp-business).

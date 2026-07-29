@@ -1,0 +1,68 @@
+---
+title: "Event Buffers or Break between the Events"
+description: "Add padding before or after your Cal ID events so you never end up with back-to-back meetings."
+icon: "hourglass-half"
+---
+
+In **Cal ID**, **Event Buffers** are a great way to ensure you never have back-to-back meetings without a break. This feature automatically adds "padding" before or after your appointments so you have time to prep, take a breath, or wrap up notes.
+
+## Adding Buffer Time to Your Events
+
+Buffer times are "blocked" periods on your calendar that guests cannot book. They act as a protective layer around your meetings.
+
+### Why use Event Buffers?
+
+- **Avoid Exhaustion:** Prevent back-to-back calls that leave you no time to even grab water.
+- **Prep & Wrap-up:** Use "Before" buffers to prepare for a call and "After" buffers to finish your meeting notes.
+- **Travel Time:** If you meet in person, buffers provide the time needed to get from one location to another.
+
+## How to set up Buffers
+
+<Steps>
+  <Step title="Go to Event Types">
+    Click on **Event Types** in the left sidebar.
+  </Step>
+  <Step title="Select an Event">
+    Click on the event you want to edit (e.g., "Introductory Call").
+  </Step>
+  <Step title="Navigate to Limits">
+    Click on the **Limits** tab in the top menu bar of the event editor.
+  </Step>
+  <Step title="Set Your Buffers">
+    - **After Event:** Enter the number of minutes you want free **after** every booking.
+    - **Before Event:** Enter the number of minutes you want free **before** every booking.
+
+    <Frame>
+      ![Setting before and after event buffers in the Limits tab](/images/event-types/buffers-1.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Click the **Save** button at the top right.
+  </Step>
+</Steps>
+
+## How it Works with Availability
+
+- **Invisible to Guests:** Guests don't see your buffer times; they simply see those slots as "Unavailable" on your booking page.
+- **Automatic Calculation:** If you have a 30-minute meeting with a 15-minute "After" buffer, Cal ID will block a total of 45 minutes on your calendar to ensure you stay protected.
+- **Multiple Durations:** If you use **Multiple Durations**, the buffer applies to whichever length the guest chooses.
+
+## Pro Tips for Buffers
+
+- **Balanced Padding:** A common setup is a 5-minute "Before" buffer for quick prep and a 10-minute "After" buffer for follow-up tasks.
+- **Team Events:** For team-based meetings, buffers apply to the specific team member who is booked, keeping their individual schedule manageable.
+
+## An example
+
+Given the availability from 9am to 5pm (09:00-17:00) and a 60-minute event with a 30-minute buffer before and a 30-minute buffer after, the total calendar time required for an event is indeed 120 minutes. But the buffer is applied around busy times and **not to the start or end of the working day**. So, in this scenario (considering you didn't modify the **Custom time-slot intervals** in this example):
+
+1. The first available time slot starts at 9am. The buffer before doesn't push this since there's no preceding busy time.
+2. The event itself is for 60 minutes.
+3. There's a 30-minute buffer before & 30-minute buffer after the event. But again, if there's no following busy time immediately after, this buffer doesn't push the next available slot.
+
+Thus, the sequence is:
+
+- **9:00-10:00am**: First available slot
+- a. **10:00-11:00am**: If Slot 1 is booked, this slot will be blocked as buffer (after) to allow the buffer period relative to the 9-10am slot.
+- b. **10:00-11:00am**: If Slot 1 is free, this slot will be free.
+- c. **10:00-11:00am**: If Slot 2 (10:00-11:00) is booked, since booking slot 1 (9:00-10:00) would imply that there will not be an after buffer (as 10-11 is already booked). Hence, slot 1 will not remain bookable anymore.

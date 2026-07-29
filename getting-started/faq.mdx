@@ -1,0 +1,135 @@
+---
+title: "Cal ID FAQs"
+description: "Answers to frequently asked questions about accounts, event types, calendars, workflows, payments, teams, and more in Cal ID."
+icon: "circle-question"
+---
+
+<AccordionGroup>
+  <Accordion title="Can I have multiple email addresses associated with my account?">
+    Yes. In **Profile Settings**, you can add multiple emails and choose one as your **Primary** address for notifications.
+  </Accordion>
+
+  <Accordion title="Will changing my username affect my existing booking links?">
+    Yes. Your Cal ID is `cal.id/username`. If you change it, old links will break and you must share the new one.
+  </Accordion>
+
+  <Accordion title="Can I integrate more than 1 Google Calendar?">
+    Yes. Go to **Apps \> Calendars \> Install** to connect multiple Google accounts and check them all for conflicts.
+  </Accordion>
+
+  <Accordion title="What is the difference between changing the title and changing the URL slug?">
+    The **Title** is the Event name people see (e.g., "Intro Call"). The **URL slug** is the web address (e.g., `/intro`). Changing the slug breaks old links; changing the title does not.
+  </Accordion>
+
+  <Accordion title="How do I add questions on the booking page?">
+    Edit your Event Type and go to the **Advanced** tab and go to the **Booking questions** section. There, you can add, edit, or require custom fields like phone numbers or text boxes.
+  </Accordion>
+
+  <Accordion title="Can I disable the default confirmation email?">
+    Yes, in the **Advanced** tab of your Event Type. Toggle ON the Disable Confirmation Email field.
+
+    <Note>
+      You must have a custom **Workflow** active to send a replacement confirmation before you can toggle this ON.
+    </Note>
+  </Accordion>
+
+  <Accordion title="How can I redirect users to a different URL after they have booked?">
+    Edit your Event Type, go to the **Advanced** tab, and enter your destination link in the **Redirect on booking** field.
+  </Accordion>
+
+  <Accordion title="How to share a different schedule for different events?">
+    Go to **Availability**, create different "Schedules" (e.g., "Sales" vs "Support"), then edit your Event Type and select the specific schedule you want to use.
+  </Accordion>
+
+  <Accordion title="Why is Google Meet not present in my team meetings?">
+    Google Meet doesn't show up directly in the location dropdown for team events — this is how our platform works. To use Google Meet for team meetings, select "Organizer's default app" from the location dropdown instead. Then make sure all team members have Google Meet set as their default conferencing app at [https://app.cal.id/apps/installed/conferencing](https://app.cal.id/apps/installed/conferencing). Keep in mind that Google Meet requires Google Calendar to be installed first. Once everyone has it set as their default, Google Meet links will automatically generate when the team event is booked.
+  </Accordion>
+
+  <Accordion title="How to set Zoom as a video conferencing app?">
+    Install the **Zoom App** from the Cal ID App Store. Then, edit your Event Type and select **Zoom** from the **Location** dropdown menu.
+  </Accordion>
+
+  <Accordion title='Why does it show "No Availability" for my team?'>
+    This usually happens:
+
+    a) If team members haven't connected their calendars.
+
+    b) In the Team tab of that event type, check whether you have added the team member for hosting the meeting. Add the team member in the **Add all team members, including future members** field.
+  </Accordion>
+
+  <Accordion title="How to add a payment method or collect payments?">
+    Install the **Razorpay** or **PayPal** or **Stripe** app from the App Store. Once connected, edit your Event Type, go to the **Apps** tab, set the price and currency, and Save it.
+  </Accordion>
+
+  <Accordion title="How do I connect automation tools like Zapier or Make?">
+    Install the **Zapier** or **Make** app from the App Store. Copy the API key provided and paste it into your Zapier/Make account to link them.
+  </Accordion>
+
+  <Accordion title="Can I customize the template of the workflow?">
+    a) For Email, yes you can change the template.
+
+    b) For WhatsApp, you have to integrate the WhatsApp Business App from the App Store.
+
+    c) For SMS, you cannot edit the existing template.
+  </Accordion>
+
+  <Accordion title="How to set unavailable for a limited period of time?">
+    You can set Out of office. To set: Go to **Settings \>\> Select Out of Office \>\> Add**. Cal ID will automatically block that period of time.
+  </Accordion>
+
+  <Accordion title="Can I embed my booking page on my website?">
+    Yes. Click the **Embed** button on your Event Type card to get the code snippet for an Inline, Popup, or Floating Button embed.
+  </Accordion>
+
+  <Accordion title="Can I change an event's location after it's made?">
+    Yes, as the host of the meeting, you can easily change the location of an existing booking. To do this, follow these steps:
+
+    1. Go to **Bookings** in your dashboard.
+    2. Click on the **three dots** next to the specific booking you want to update.
+    3. Select **Edit Location** from the menu.
+    4. A pop-up window will open where you can select or enter your new location, then click **Update**.
+
+    Once updated, the attendee will automatically receive an email notification informing them about the change of location.
+  </Accordion>
+
+  <Accordion title="How do I add team members for hosting meetings?">
+    To add team members for hosting meetings, you first need to invite them to your team and then assign them to an event type:
+
+    1. **Invite Team Members:** Go to **Teams** in your dashboard, select your team, and head to the **Members** tab. Click **Invite Members**, enter their email address, assign their role (Member, Admin, or Owner), and send the invitation.
+    2. **Assign to Event Types:** Once they accept, open a team event type (like a Round Robin or Collective event) and go to the **Team** tab. From the dropdown of the Hosts section, select the team members you want to host the meetings and click **Save**.
+
+    Your team members are now ready to host or co-host incoming bookings!
+  </Accordion>
+
+  <Accordion title="Does Cal ID provide API and MCP?">
+    Yes, Cal ID provides API and MCP both.
+
+    For API, please visit: [https://cal.id/docs/api/](https://cal.id/docs/api/)
+
+    For MCP, please visit: [https://cal.id/docs/mcp/](https://cal.id/docs/mcp/)
+  </Accordion>
+
+  <Accordion title="How can I edit the confirmation, reschedule, and cancellation email templates?">
+    These email templates cannot be edited directly on the current plan. Customizing confirmation, reschedule, and cancellation email templates is available on the Enterprise plan. To discuss this further, please schedule a call with us at [https://cal.id/manas](https://cal.id/manas).
+  </Accordion>
+
+  <Accordion title="Is WhatsApp and SMS Workflow free?">
+    Yes, both WhatsApp & SMS are free with a fair usage policy.
+  </Accordion>
+
+  <Accordion title="Why are my WhatsApp reminders or notifications not being sent?">
+    If your WhatsApp reminders or notifications are not being sent, first let us know whether you're using **your own WhatsApp Business account** or the **Cal ID WhatsApp number** to send them.
+
+    If you're using **your own WhatsApp Business account**, please also let us know which **Cal ID plan** you're on. Using your own WhatsApp Business account is supported only on the **Business** and **Enterprise** plans. If you're on the **Startup** plan, you'll need to upgrade to the **Business** plan or above to use this feature.
+
+    Once you share these details, we'll be happy to help you troubleshoot the issue further.
+  </Accordion>
+
+  <Accordion title='Why is my routing form showing "Not Available" or not working?'>
+    If your routing form is showing **"Not Available"** or isn't working as expected, please make sure you're on the **Business** or **Enterprise** plan, as Routing Forms are available only on these plans. If you're already on one of these plans and the issue persists, please let us know, and we'll be happy to help.
+  </Accordion>
+
+  <Accordion title="Why was my routing form working before, but now it's not?">
+    Routing Forms were previously available on the **Startup** plan. They are now available only on the **Business** and **Enterprise** plans. If you're currently on the **Startup** plan, you'll need to upgrade to the **Business** plan or above to continue using Routing Forms.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,50 @@
+---
+title: "How to Find Your Event Type ID"
+description: "Locate the unique Event Type ID for any Cal ID event directly from your browser's address bar for API and integration use."
+icon: "hashtag"
+---
+
+In **Cal ID**, every event type has a unique **Event Type ID**. You might need this ID if you are using our API, setting up advanced integrations, or troubleshooting specific booking workflows.
+
+## How to Find Your Event Type ID
+
+Finding your ID is quick and can be done directly from your browser's address bar while editing your event.
+
+### Steps to Locate the ID
+
+<Steps>
+  <Step title="Log in to your Cal ID dashboard">
+    Open your [Cal ID](https://cal.id/home) dashboard.
+  </Step>
+  <Step title="Navigate to Event Types">
+    Go to the **Event Types** tab in the left-hand sidebar.
+  </Step>
+  <Step title="Edit the event">
+    Find the specific event you are interested in and click the **Edit** button.
+  </Step>
+  <Step title="Look at the URL">
+    Once the edit page loads, look at the **URL in your browser's address bar**.
+  </Step>
+  <Step title="Read the ID">
+    The **Event Type ID** is the number located in the URL.
+  </Step>
+</Steps>
+
+<Note>
+  **Example:** If your URL looks like this: `https://cal.id/event-types/12345?tabName=Setup` — your Event Type ID is **12345**.
+</Note>
+
+<Frame>
+  ![Event Type ID in the browser address bar](/images/developers/event-type-id-1.png)
+</Frame>
+
+## Why would you need this ID?
+
+- **API Integrations**: If you are building a custom app or website that needs to trigger actions based on a specific event.
+- **Webhooks**: To identify which event type triggered a specific notification.
+- **Custom Styles**: When using advanced CSS or scripts to modify the look of a specific booking page.
+- **Support**: Our team may ask for this ID to help investigate issues with a particular event.
+
+<Tip>
+  If you need to share multiple IDs for a team project, it's a good idea to keep a simple spreadsheet or document with the **Event Name** and its corresponding **Event Type ID**. This saves you from having to click into every event type every time you need a specific ID for an integration.
+</Tip>

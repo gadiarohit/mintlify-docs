@@ -1,0 +1,97 @@
+---
+title: "How to Hide and Prefill Booking Questions?"
+description: "Pre-fill known booker data or hide internal-only fields using URL query parameters and identifiers."
+icon: "eye-slash"
+---
+
+## Hiding and Prefilling Booking Questions
+
+In **Cal ID**, you can streamline the booking experience by pre-filling information you already know about your client or hiding specific fields that are only meant for internal tracking (like referral sources or Lead IDs). This ensures your calendar stays organized while keeping the booking form short and friction-free.
+
+## Step 1: Accessing the Event type Settings
+
+<Steps>
+  <Step title="Login to Cal ID">
+    Login to your Cal ID account.
+  </Step>
+  <Step title="Select your event">
+    Navigate to the **Event Types** tab in the left sidebar and select the specific event you wish to modify.
+  </Step>
+  <Step title="Open the Advanced tab">
+    Click on the **Advanced** tab in the top navigation bar.
+  </Step>
+  <Step title="Add a question">
+    In the **Booking questions** section, click on **\+ Add a question**.
+
+    <Frame>
+      ![The Add a question button in the Booking questions section](/images/event-types/hide-prefill-1.png)
+    </Frame>
+  </Step>
+  <Step title="Fill out the question details">
+    - **Label:** The question text (e.g., "Referral Source").
+    - **Identifier:** Take note of this unique ID (e.g., `referral`). You will need this exact word to pre-fill the data later.
+
+    <Frame>
+      ![Setting the label and identifier for a new booking question](/images/event-types/hide-prefill-2.png)
+    </Frame>
+  </Step>
+  <Step title="Add the question">
+    Click **Add**.
+  </Step>
+</Steps>
+
+## Step 2: Hiding a Booking Question
+
+If you want a field to be recorded in your calendar but kept invisible to the attendee, you can hide it:
+
+<Steps>
+  <Step title="Locate your question">
+    Locate your newly added question in the list.
+  </Step>
+  <Step title="Disable the toggle">
+    Click the switch next to the question to set it to **Hidden**.
+
+    <Frame>
+      ![Setting a booking question to Hidden](/images/event-types/hide-prefill-3.png)
+    </Frame>
+  </Step>
+  <Step title="Optional Security">
+    If you want to ensure a user cannot change a pre-filled value even if they find the field, click **Edit** and check the box: **"Disable input if the URL identifier is prefilled"**.
+
+    <Frame>
+      ![The Disable input if the URL identifier is prefilled option](/images/event-types/hide-prefill-4.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Click **Save** at the top right of the page.
+  </Step>
+</Steps>
+
+## Step 3: Pre-filling the Booking Question
+
+To automatically fill a field, you must append a **query parameter** to your booking URL that matches your question's **Identifier**.
+
+- **The Logic:** Use a `?` for the first parameter and an `&` for any additional parameters.
+- **The Structure:** `URL?identifier=value`
+
+<Frame>
+  ![Appending a query parameter to a booking URL](/images/event-types/hide-prefill-5.png)
+</Frame>
+
+### Example Scenario
+
+- **Your Booking URL:** `https://cal.id/username/eventtype`
+- **Your Identifier:** `referral`
+- **The Value you want to set:** `Instagram`
+
+**Your modified URL becomes:** `https://cal.id/username/eventtype?referral=Instagram`
+
+### Example with multiple parameters
+
+If your URL already has parameters (like `?overlayCalendar=true`), use the `&` symbol to add your pre-fill data: `https://cal.id/username/eventtype?overlayCalendar=true&referral=Instagram`
+
+## Why use this method?
+
+- **Data Integrity:** As long as the question is **Hidden**, the booker will not see it on the page, but the information (e.g., "Referral: Instagram") will still appear in your **Google/Outlook Calendar** and your **Cal ID Dashboard** once scheduled.
+- **Seamless Personalization:** You can send custom links to different partners, each with their own name pre-filled, to see exactly who is driving your bookings.
+- **Clean Forms:** Keeps the visible form short by capturing background data (like Campaign IDs or User IDs) behind the scenes.

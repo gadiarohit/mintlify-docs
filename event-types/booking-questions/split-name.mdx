@@ -1,0 +1,71 @@
+---
+title: "How to Split Full Name into First Name and Last Name on Public Booking Page?"
+description: "Replace the single full-name field with separate first name and last name inputs on your booking form."
+icon: "user-pen"
+---
+
+By default, Cal ID booking page has a fullname text input field for the scheduler to put their name in. This usually works just fine for most people. However, at times, it is preferable to take the firstname and lastname of the scheduler as separate inputs in the booking form.
+
+Cal ID provides the option to split the fullname input field in the booking form into firstname and lastname. To do that, you can do the following:
+
+- Head to the event type where you wish to split the fullname into firstname and lastname.
+- Click on the three dot (at right side of the event) and choose Edit.
+- Navigate to the Advanced tab.
+- Scroll to the Booking questions section.
+- Click on the **Edit** button in front of the "Your name" field.
+
+<Frame>
+  ![Editing the Your name booking question](/images/event-types/split-name-1.png)
+</Frame>
+
+- In the dialog that opens, click on the toggle that says **`Split "Full name" into "First name" and "Last name"`**.
+
+<Frame>
+  ![The toggle to split full name into first and last name](/images/event-types/split-name-2.png)
+</Frame>
+
+- Fill the label and optional placeholder values, and click on **Save**.
+
+<Frame>
+  ![Setting labels and placeholders for the first and last name fields](/images/event-types/split-name-3.png)
+</Frame>
+
+- Remember to click on the **save** (at top right) button in the event type settings as well.
+- Head to the public booking page of this event type, you will notice the Full name is now split into First name and Last name with the labels provided by you.
+
+<Frame>
+  ![The public booking page showing separate first and last name fields](/images/event-types/split-name-4.png)
+</Frame>
+
+You're all set!
+
+## How this affects the Booking API requests?
+
+Please note that in case of API requests, your usual **responses object**
+
+```json
+"responses": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "location": {
+            "optionValue": "",
+            "value": "Acme Industries"
+        }
+    }
+```
+
+will now be updated to allow **name** to be converted into an object containing **firstName** and **lastName** as follows:
+
+```json
+"responses": {
+        "name": {
+            "firstName": "John",
+            "lastName": "Doe"
+        },
+        "email": "john.doe@example.com",
+        "location": {
+            "optionValue": "",
+            "value": "Acme Industries"
+        }
+    }
+```

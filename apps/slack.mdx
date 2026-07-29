@@ -1,0 +1,53 @@
+---
+title: "How to Get Notified on Slack When an Event is Booked?"
+description: "Connect Cal ID to Slack via Zapier, Pabbly, Make, or ViaSocket to get instant booking alerts where you work."
+icon: "slack"
+---
+
+Stay on top of your schedule by getting instant alerts where you already work. By connecting **Cal ID** to **Slack** via **Zapier**, **Pabbly**, **Make** or **ViaSocket** you can stop checking your email and get notified the moment a booking happens.
+
+### Why use this?
+
+- **Instant Alerts:** Know immediately when a new client books you.
+- **Team Sync:** Send notifications to a shared channel so your team stays updated.
+- **All-in-One Place:** Track new bookings, reschedules, and cancellations without leaving Slack.
+
+## Step 1: Install Zapier (any automation tool) in Cal ID
+
+1. Log in to your **Cal ID** account.
+2. Go to the **App Store** in the sidebar.
+3. Find the **Zapier** app and click **Install**.
+4. **Generate** the API key and **Copy** it.
+
+## Step 2: Create Your Automation (The Zap)
+
+Log in to your [Zapier account](https://zapier.com) and follow these 3 mini-steps:
+
+### A. The Trigger (When this happens...)
+
+- **App:** Choose **Cal ID**.
+- **Event:** Select **Booking Created**.
+- **Account:** Connect your Cal ID account (you may be asked for your API Key).
+
+### B. The Action (Do this...)
+
+- **App:** Choose **Slack**.
+- **Event:** Select **Send Channel Message** (to alert a team) or **Send Direct Message** (to alert only yourself).
+- **Message:** Type what you want the alert to say. You can click the "Insert Data" button to include the **Booker's Name** and **Meeting Time**.
+
+<Frame>
+  ![Configuring the Slack message in Zapier](/images/apps/slack-1.png)
+</Frame>
+
+### C. The Finish
+
+- Click **Test** to see a sample message appear in Slack.
+- If it looks good, click **Publish**. **That's it!**
+
+## Other Useful Triggers
+
+You can create separate **Zaps** for these other common events:
+
+- **Booking Rescheduled:** Get an alert if a client moves the meeting.
+- **Booking Cancelled:** Know instantly if a slot has opened back up.
+- **Meeting Ended:** Get a reminder in Slack to send a follow-up email right after the call.

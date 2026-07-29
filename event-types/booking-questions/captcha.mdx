@@ -1,0 +1,59 @@
+---
+title: "Enable Captcha on Booking Page"
+description: "Protect your calendar from spam bots and malicious scripts by adding a captcha challenge to your booking page."
+icon: "shield-halved"
+---
+
+In **Cal ID**, the **Enable captcha on Booking page** feature is a vital security layer designed to protect your calendar from automated spam bots and malicious booking scripts.
+
+## Why use "Enable captcha on Booking page"?
+
+- **Bot Mitigation:** Prevents automated bots from flooding your schedule with fake appointments, ensuring your availability is reserved for real clients.
+- **Protect Public Links:** Essential for "Discovery Calls" or public booking links that are easily accessible to web scrapers.
+- **Prevent "Denial of Service" on Slots:** Bots can be used to "snatch" every available slot in seconds to prevent others from booking. Captcha blocks these scripts.
+- **Clean Data:** Keeps your dashboard and connected CRM free from junk data and "trash" leads.
+
+## How to set it up
+
+<Steps>
+  <Step title="Log in to Cal ID">
+    Log in to your [**Cal ID**](https://cal.id/home) account.
+  </Step>
+  <Step title="Go to Event Types">
+    Select the specific event you want to protect.
+  </Step>
+  <Step title="Navigate to Advanced">
+    Click on the **Advanced** tab in the top navigation bar.
+  </Step>
+  <Step title="Toggle Captcha">
+    Locate the **Enable captcha on booking page** option and switch it to **ON**.
+
+    <Frame>
+      ![Enabling the captcha toggle in the Advanced tab](/images/event-types/captcha-1.png)
+    </Frame>
+  </Step>
+  <Step title="Select Captcha Strength">
+    Once enabled, a new dropdown field will appear labeled **Select captcha strength**. Choose the level that fits your needs:
+
+    - **Low:** Minimal friction; only challenges highly suspicious traffic.
+    - **Medium:** The standard balance between security and user experience.
+    - **High:** Strict verification; more likely to present visual challenges (like selecting traffic lights) to all users.
+
+    <Frame>
+      ![Selecting the captcha strength from the dropdown](/images/event-types/captcha-2.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Click the blue **Save** button at the top right.
+  </Step>
+</Steps>
+
+## How it Works for the Booker
+
+- **Frictionless Experience:** Cal ID uses advanced reCAPTCHA technology. For most users, the check happens silently in the background without them having to do anything.
+- **Interactive Challenges:** If the guest's browser behavior appears "bot-like," the system will present a visual or audio challenge (e.g., "Select all crosswalks") that they must solve before clicking "Confirm Booking".
+- **Strength Impact:** At **High** strength, the system is much more sensitive, which increases security but may cause slight delays for legitimate users.
+
+<Note>
+  If you are using **Requires booker email verification** alongside Captcha, your booking page will be extremely secure. However, keep in mind that every extra step (Captcha \+ Email Verification) adds "friction." For internal team links or private 1-on-1s, we recommend keeping these settings at **Medium** or **Low** to ensure a smooth booking flow.
+</Note>

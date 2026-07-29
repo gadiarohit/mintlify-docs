@@ -1,0 +1,63 @@
+---
+title: "Custom Event Name in Booking"
+description: "Use dynamic variables to customize how meetings appear on your calendar and the guest's calendar."
+icon: "pen"
+---
+
+In **Cal ID**, the **Custom Event Names** feature allows you to change how meetings appear on both your calendar and the guest's calendar. Instead of a generic title, you can use dynamic variables to include specific details from the booking automatically.
+
+## Setting Up Custom Event Names
+
+By default, Cal ID often titles events as "\{Event type title\} with \{Scheduler\}". This feature lets you break away from that default to make your calendar more scannable.
+
+## Why use Custom Event Names?
+
+- **Instant Context:** Identify who you are meeting with and the topic without opening the event details.
+- **Better Organization:** Useful if you manage multiple locations or a high volume of similar meetings.
+- **Professional Branding:** Create clear, customized titles.
+
+## Available Variables
+
+You can use these tags to pull information directly from the booking request:
+
+- **`{Event type title}`**: The name you gave the event (e.g., "Weekly Sync").
+- **`{Event Duration}`**: The Event Duration.
+- **`{Organiser}`**: Your full name.
+- **`{Organiser first name}`**: Your first name.
+- **`{Scheduler}`**: The full name of the person who booked the meeting.
+- **`{Schedular first name}`**: The first name of the person who booked the meeting.
+
+## How to set it up
+
+<Steps>
+  <Step title="Go to Event Types">
+    Click on **Event Types** in the left sidebar.
+  </Step>
+  <Step title="Select an Event">
+    Click on the event you want to customize.
+  </Step>
+  <Step title="Navigate to Advanced">
+    Click on the **Advanced** tab in the top navigation bar.
+  </Step>
+  <Step title='Find "Event Name"'>
+    Navigate to the **Event name** field.
+
+    <Frame>
+      ![Event name field](/images/event-types/custom-event-name-1.png)
+    </Frame>
+  </Step>
+  <Step title="Edit the Title">
+    Type your desired format using the variables (e.g., `{Event type title} | {Scheduler}`).
+
+    <Frame>
+      ![Editing the custom event title](/images/event-types/custom-event-name-2.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Click the **Save** button at the top right.
+  </Step>
+</Steps>
+
+<Note>
+  **Important Note on "Split Names":** If you have enabled "Split full name into first and last name" on your booking page, you can also use more specific variables like **`{Scheduler first name}`** in your event title.
+</Note>

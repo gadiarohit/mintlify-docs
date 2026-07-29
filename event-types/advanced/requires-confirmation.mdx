@@ -1,0 +1,80 @@
+---
+title: "How to Set Up Requires Confirmation for a Booking?"
+description: "Manually approve bookings before they are finalized, synced to calendars, or confirmed to guests."
+icon: "circle-check"
+---
+
+## Using the "Requires Confirmation" Feature
+
+In **Cal ID**, the **Requires confirmation** feature acts as a "gatekeeper" for your appointments. When enabled, bookings must be manually approved before they are finalized, pushed to your calendar integrations, or a confirmation email is sent to the guest.
+
+## Configuration Options
+
+Once you toggle the feature **ON**, you can customize exactly when and how confirmation is triggered:
+
+- **Always:** Every single booking for this event type will require your manual approval.
+- **When booked with less than \[X\] notice:** (e.g., 30 mins/hours/days). This allows for "instant" bookings if they are far in the future, but requires your approval for last-minute requests that might disrupt your immediate flow.
+- **Unconfirmed bookings still block calendar slots:** If checked, the time slot the guest requested will be held (marked as busy) while you decide whether to approve or reject it.
+- **Only require confirmation for free email providers:** This automatically approves guests using professional/work domains (e.g., @company.com) while requiring you to manually vet guests using free services like **@gmail.com** or **@outlook.com**.
+
+## How to set it up
+
+<Steps>
+  <Step title="Log in to Cal ID">
+    Log in to your [**Cal ID**](https://cal.id/home) account.
+  </Step>
+  <Step title="Go to Event Types">
+    Click on **Event Types** in the left sidebar.
+  </Step>
+  <Step title="Edit Event">
+    Select the event you wish to modify.
+  </Step>
+  <Step title="Enable Confirmation">
+    Locate the **`Requires Confirmation`** section and toggle the switch to **ON**.
+  </Step>
+  <Step title="Select your Logic">
+    Choose between "Always" or the "Notice period" threshold.
+  </Step>
+  <Step title="Refine Settings">
+    Check the boxes for "blocking slots" or "filtering free email providers" based on your preference.
+  </Step>
+  <Step title="Save">
+    Click the blue **Save** button at the top right of the screen.
+
+    <Frame>
+      ![Requires Confirmation settings](/images/event-types/requires-confirmation-1.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## How it Works for the Booker
+
+- The guest selects their time and submits their details.
+- Instead of a "Confirmed" message, they receive a notification that their request is pending approval.
+- **Crucial:** No confirmation email is sent, and integrations (like Zoom or Google Meet links) are not generated until you hit approve.
+
+<Frame>
+  ![Booker pending approval notification](/images/event-types/requires-confirmation-2.png)
+</Frame>
+
+## How to Approve a Booking
+
+- **Email:** You will receive a notification with a direct link to approve or reject.
+
+<Frame>
+  ![Email approval notification](/images/event-types/requires-confirmation-3.png)
+</Frame>
+
+- **Dashboard:** Navigate to the **Bookings** tab in the left sidebar to see all pending requests.
+
+<Frame>
+  ![Bookings dashboard with pending requests](/images/event-types/requires-confirmation-4.png)
+</Frame>
+
+- **Action:** Once you click **Confirm**, the guest receives their confirmation email and the event is synced to your calendar.
+
+## What happens when more than one booking is submitted for the same slot and date?
+
+If more than one user submits a booking request for confirmation for the same slot and date, you can accept only one booking from those requests. Once you accept a booking, the remaining bookings will remain in **unconfirmed** status.
+
+If you want to accept another user's booking from the remaining requests, you must first **cancel the booking that was previously accepted** for that slot and date. After canceling that booking, you will then be able to **accept another booking request**.

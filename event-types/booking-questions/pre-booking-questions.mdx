@@ -1,0 +1,95 @@
+---
+title: "Add Pre-Booking Questions for Events"
+description: "Customize the information bookers must provide before scheduling, using a wide variety of input types."
+icon: "circle-question"
+---
+
+In **Cal ID**, the **Booking Questions** section allows you to customize the information your bookers must provide before they can schedule a meeting with you. You can tailor these questions to gather exactly the data you need, using a wide variety of input types.
+
+## Customizing Booking Questions
+
+By default, Cal ID asks for a name and email address. However, you can add, edit, or hide fields to streamline your intake process.
+
+## How to Add a Question
+
+<Steps>
+  <Step title="Navigate to Event Types">
+    Open your desired event and go to the **Advanced** tab.
+  </Step>
+  <Step title="Locate Booking Questions">
+    Scroll down to the **Booking questions** section.
+  </Step>
+  <Step title="Add New">
+    Click the **\+ Add a question** button.
+
+    <Frame>
+      ![The Add a question button in the Booking questions section](/images/event-types/pre-booking-questions-1.png)
+    </Frame>
+  </Step>
+  <Step title="Configure">
+    A pop-up will appear where you can select the **Input type**, set a **Label** (the question text), and provide a **Placeholder** (example text).
+
+    <Frame>
+      ![Configuring a new booking question input type and label](/images/event-types/pre-booking-questions-2.png)
+    </Frame>
+
+    <Frame>
+      ![Setting the label and placeholder for a booking question](/images/event-types/pre-booking-questions-3.png)
+    </Frame>
+  </Step>
+  <Step title="Required Toggle">
+    Choose **Yes** or **No** to determine if the booker must answer the question to proceed.
+  </Step>
+</Steps>
+
+## Available Input Types
+
+You can select from a robust list of input types to ensure data is formatted correctly:
+
+| Input Type | Best Used For... |
+| --- | --- |
+| **Email** | Collecting additional contact emails. |
+| **Phone** | Capturing contact numbers for SMS or calls. |
+| **Address** | Physical locations for in-person meetings. |
+| **Number** | Quantitative data (e.g., "How many guests?"). |
+| **Long Text** | Detailed explanations or background info. |
+| **Select** | A single-choice dropdown menu. |
+| **Multi select** | Allowing guests to pick several options from a list. |
+| **Multi Email** | Inviting multiple guests to the same meeting. |
+| **Checkbox group** | Multiple choice options shown as a list of boxes. |
+| **Radio Group** | Forcing a single choice from a visible list. |
+| **Checkbox** | Simple "Yes/No" or "I agree to terms" confirmations. |
+| **URL** | Collecting website links or social media profiles. |
+| **Attachment** | Allowing guests to upload resumes, briefs, or screenshots. |
+
+## Managing Existing Questions
+
+- **Editing:** Click the **Edit** button next to any question to change its type, label, or requirement status.
+
+<Frame>
+  ![Editing an existing booking question](/images/event-types/pre-booking-questions-4.png)
+</Frame>
+
+- **Hiding:** Use the toggle switch to make a question **Hidden**. This is useful for internal tracking via URL identifiers.
+
+<Frame>
+  ![Hiding a booking question with the toggle switch](/images/event-types/pre-booking-questions-5.png)
+</Frame>
+
+- **Reordering:** Use the arrow icons next to a question to move it up or down in the list.
+
+<Frame>
+  ![Reordering booking questions with the arrow icons](/images/event-types/pre-booking-questions-6.png)
+</Frame>
+
+<Tip>
+  If you use **URL identifiers**, you can pre-fill certain fields for your guests by appending data to the end of your booking link. You can even **Disable input if the URL identifier is prefilled** to prevent guests from changing that specific data.
+</Tip>
+
+## Booking field identifier
+
+The `identifier` for booking questions is a unique text input that users provide when creating a booking question. This identifier serves as a distinctive key for each specific booking question, establishing a clear and unique reference that can be used throughout the platform wherever that question is addressed or its answers are processed.
+
+The primary utility of the identifier emerges when individuals schedule meetings. As they fill out booking forms, the responses they provide are tied back to the specific booking questions via these identifiers. This system ensures precision and clarity, as each answer is unmistakably linked to its corresponding question, eliminating any potential confusion especially when similar or related questions are present.
+
+By utilizing the `identifier` for booking questions, users benefit from a more organized, efficient, and error-resistant way of handling booking data, both within the platform and in conjunction with external systems. This streamlined approach not only enhances data management and integrity but also contributes significantly to the overall user experience.

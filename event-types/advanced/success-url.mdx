@@ -1,0 +1,57 @@
+---
+title: "Booking Success URL"
+description: "Redirect guests to a custom webpage immediately after they finish scheduling instead of the default screen."
+icon: "arrow-up-right-from-square"
+---
+
+In **Cal ID**, the **Redirect on booking** feature (also known as the **Booking Success URL**) allows you to bypass the standard confirmation screen and send your guests directly to a specific webpage of your choice immediately after they finish scheduling.
+
+## Setting Up a Booking Success Redirect
+
+This feature is ideal for moving guests further down your funnel, whether that's to a "Thank You" page, a resource download, or a payment portal.
+
+## Why use a Custom Success URL?
+
+- **Track Conversions:** By redirecting to a specific page on your website (e.g., `/thank-you`), you can easily track successful bookings in Google Analytics or Facebook Pixel.
+- **Provide Next Steps:** Send guests to a page with a video greeting, a preparation form, or a "What to expect" guide.
+- **Branding:** Keep the experience entirely within your own website domain rather than showing the Cal ID confirmation screen.
+- **Offer Downloads:** Automatically deliver a PDF, whitepaper, or digital asset the moment they book a session.
+
+## How to set it up
+
+<Steps>
+  <Step title="Go to Event Types">
+    Click on **Event Types** in the left sidebar.
+  </Step>
+  <Step title="Select an Event">
+    Click on the specific event where you want to add the redirect.
+  </Step>
+  <Step title="Navigate to Advanced">
+    Click on the **Advanced** tab in the top navigation bar.
+  </Step>
+  <Step title='Find "Redirect on booking"'>
+    Locate the section labeled **Redirect on booking**.
+  </Step>
+  <Step title="Enter Your URL">
+    Paste the full destination URL into the field.
+
+    **Important:** You must include the protocol (e.g., `https://www.yourwebsite.com/success`).
+
+    <Frame>
+      ![Redirect on booking URL field](/images/event-types/success-url-1.png)
+    </Frame>
+  </Step>
+  <Step title="Save">
+    Click the **Save** button at the top right.
+  </Step>
+</Steps>
+
+## What the Guest Experiences
+
+- The guest fills out your **Booking Questions** and clicks "Confirm".
+- Instead of seeing the default "Meeting Confirmed" message from Cal ID, their browser will automatically load your custom URL.
+- The transition is typically seamless, keeping the guest engaged with your brand.
+
+## Technical Tip: Passing Data (Advanced)
+
+Many scheduling platforms allow you to "forward" the guest's information (like their name or email) to your success page via the URL. This allows your "Thank You" page to say something like, **"Thanks for booking, John!"** automatically.

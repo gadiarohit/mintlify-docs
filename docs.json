@@ -1,0 +1,325 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Cal ID",
+  "colors": {
+    "primary": "#1972F5",
+    "light": "#5B9BFF",
+    "dark": "#0B4FB8"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "tabs": [
+      {
+        "tab": "Get Started",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "index",
+              "getting-started/onboarding",
+              "getting-started/share-your-url",
+              "getting-started/schedule-a-meeting",
+              "getting-started/unified-calendar",
+              "getting-started/contacts",
+              "getting-started/import-from-calendly",
+              "getting-started/command-bar",
+              "getting-started/mobile-apps"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "getting-started/glossary",
+              "getting-started/faq"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Event Types",
+        "groups": [
+          {
+            "group": "Basics",
+            "pages": [
+              "event-types/basics/overview",
+              "event-types/basics/edit-details",
+              "event-types/basics/reorder",
+              "event-types/basics/duplicate",
+              "event-types/basics/custom-icons",
+              "event-types/basics/secret-events",
+              "event-types/basics/delete"
+            ]
+          },
+          {
+            "group": "Event Setup",
+            "pages": [
+              "event-types/setup/location",
+              "event-types/setup/multiple-durations",
+              "event-types/setup/event-availability"
+            ]
+          },
+          {
+            "group": "Booking Limits",
+            "pages": [
+              "event-types/limits/buffers",
+              "event-types/limits/minimum-notice",
+              "event-types/limits/time-slot-intervals",
+              "event-types/limits/booking-frequency",
+              "event-types/limits/first-slot-only",
+              "event-types/limits/total-duration",
+              "event-types/limits/booker-limit",
+              "event-types/limits/future-booking"
+            ]
+          },
+          {
+            "group": "Booking Questions",
+            "pages": [
+              "event-types/booking-questions/pre-booking-questions",
+              "event-types/booking-questions/hide-prefill",
+              "event-types/booking-questions/email-domains",
+              "event-types/booking-questions/attachments",
+              "event-types/booking-questions/phone-only",
+              "event-types/booking-questions/split-name",
+              "event-types/booking-questions/verify-email",
+              "event-types/booking-questions/captcha",
+              "event-types/booking-questions/disable-guests"
+            ]
+          },
+          {
+            "group": "Advanced",
+            "pages": [
+              "event-types/advanced/add-to-calendar",
+              "event-types/advanced/disable-confirmation-emails",
+              "event-types/advanced/look-busy",
+              "event-types/advanced/custom-event-name",
+              "event-types/advanced/requires-confirmation",
+              "event-types/advanced/disable-reschedule-cancel",
+              "event-types/advanced/hide-notes",
+              "event-types/advanced/hide-calendar-details",
+              "event-types/advanced/success-redirect-params",
+              "event-types/advanced/private-links",
+              "event-types/advanced/offer-seats",
+              "event-types/advanced/success-url",
+              "event-types/advanced/hide-organizer-email",
+              "event-types/advanced/lock-timezone",
+              "event-types/advanced/reschedule-past",
+              "event-types/advanced/book-via-reschedule-link",
+              "event-types/advanced/custom-reply-to"
+            ]
+          },
+          {
+            "group": "Recurring & Embed",
+            "pages": [
+              "event-types/group-events",
+              "event-types/recurring",
+              "event-types/embed",
+              "event-types/event-webhooks",
+              "event-types/enable-apps"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Scheduling & Teams",
+        "groups": [
+          {
+            "group": "Availability",
+            "pages": [
+              "availability/create",
+              "availability/multiple-schedules",
+              "availability/multiple-time-slots",
+              "availability/date-overrides",
+              "availability/out-of-office",
+              "availability/team-availability"
+            ]
+          },
+          {
+            "group": "Bookings",
+            "pages": [
+              "bookings/view-details",
+              "bookings/export",
+              "bookings/no-show",
+              "bookings/workflow-status"
+            ]
+          },
+          {
+            "group": "Routing",
+            "pages": [
+              "routing/routing-forms"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
+              "workflows/overview",
+              "workflows/custom-messages",
+              "workflows/whatsapp-business",
+              "workflows/connect-whatsapp-app",
+              "workflows/create-whatsapp-account"
+            ]
+          },
+          {
+            "group": "Teams",
+            "pages": [
+              "teams/overview",
+              "teams/invite-members",
+              "teams/remove-member",
+              "teams/leave-team",
+              "teams/settings",
+              "teams/advanced-settings",
+              "teams/round-robin",
+              "teams/collective",
+              "teams/managed",
+              "teams/internal-meeting"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Apps & Integrations",
+        "groups": [
+          {
+            "group": "Calendars & Conferencing",
+            "pages": [
+              "apps/google-calendar",
+              "apps/apple-calendar",
+              "apps/zoom"
+            ]
+          },
+          {
+            "group": "Payments",
+            "pages": [
+              "apps/paid-bookings",
+              "apps/stripe",
+              "apps/razorpay",
+              "apps/paypal"
+            ]
+          },
+          {
+            "group": "Automation & Analytics",
+            "pages": [
+              "apps/make",
+              "apps/pabbly",
+              "apps/slack",
+              "apps/google-analytics"
+            ]
+          },
+          {
+            "group": "Managing Apps",
+            "pages": [
+              "apps/app-store",
+              "apps/install-app",
+              "apps/manage-installed"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Customization & Settings",
+        "groups": [
+          {
+            "group": "Appearance",
+            "pages": [
+              "appearance/appearance",
+              "appearance/team-appearance"
+            ]
+          },
+          {
+            "group": "Branding",
+            "pages": [
+              "branding/personal",
+              "branding/teams",
+              "branding/banner",
+              "branding/banner-team",
+              "branding/social-profiles",
+              "branding/brand-colors",
+              "branding/brand-colors-team",
+              "branding/logo-favicon",
+              "branding/logo-favicon-team"
+            ]
+          },
+          {
+            "group": "Account Settings",
+            "pages": [
+              "settings/profile",
+              "settings/general",
+              "settings/time-format",
+              "settings/start-of-week",
+              "settings/dynamic-group-links",
+              "settings/push-notifications",
+              "settings/password"
+            ]
+          },
+          {
+            "group": "Insights",
+            "pages": [
+              "insights/booking-performance",
+              "insights/workflow-performance",
+              "insights/routing-performance"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Developers",
+        "groups": [
+          {
+            "group": "API & Webhooks",
+            "pages": [
+              "developers/api-key",
+              "developers/event-type-id",
+              "developers/api-integration",
+              "developers/webhooks"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@cal.id"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Go to Cal ID",
+      "href": "https://cal.id"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/OneHash",
+      "linkedin": "https://www.linkedin.com/company/onehash"
+    }
+  },
+  "description": "Cal ID help center — scheduling, event types, availability, teams, apps, workflows, and developer tools for the Cal ID meeting scheduler."
+}

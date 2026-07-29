@@ -321,5 +321,506 @@
       "linkedin": "https://www.linkedin.com/company/onehash"
     }
   },
-  "description": "Cal ID help center — scheduling, event types, availability, teams, apps, workflows, and developer tools for the Cal ID meeting scheduler."
+  "description": "Cal ID help center — scheduling, event types, availability, teams, apps, workflows, and developer tools for the Cal ID meeting scheduler.",
+  "redirects": [
+    {
+      "source": "/en/article/complete-your-cal-id-onboarding-9we5nm",
+      "destination": "/getting-started/onboarding"
+    },
+    {
+      "source": "/en/article/how-to-find-and-share-your-cal-id-url-1f6zk3u",
+      "destination": "/getting-started/share-your-url"
+    },
+    {
+      "source": "/en/article/how-to-schedule-a-meeting-through-cal-id-1et8an0",
+      "destination": "/getting-started/schedule-a-meeting"
+    },
+    {
+      "source": "/en/article/mastering-the-unified-calendar-in-cal-id-1uv0pkj",
+      "destination": "/getting-started/unified-calendar"
+    },
+    {
+      "source": "/en/article/managing-your-contacts-in-cal-id-122ocy6",
+      "destination": "/getting-started/contacts"
+    },
+    {
+      "source": "/en/article/how-to-seamlessly-import-your-data-from-calendly-to-cal-id-w52nft",
+      "destination": "/getting-started/import-from-calendly"
+    },
+    {
+      "source": "/en/article/quick-actions-using-command-bar-fvwmxa",
+      "destination": "/getting-started/command-bar"
+    },
+    {
+      "source": "/en/article/cal-id-mobile-apps-1ksj2vc",
+      "destination": "/getting-started/mobile-apps"
+    },
+    {
+      "source": "/en/article/cal-id-glossary-1axpgyt",
+      "destination": "/getting-started/glossary"
+    },
+    {
+      "source": "/en/article/cal-id-faqs-1wb6aqa",
+      "destination": "/getting-started/faq"
+    },
+    {
+      "source": "/en/article/event-types-ofkezz",
+      "destination": "/event-types/basics/overview"
+    },
+    {
+      "source": "/en/article/editing-event-type-details-title-url-language-ljh27x",
+      "destination": "/event-types/basics/edit-details"
+    },
+    {
+      "source": "/en/article/changing-the-order-of-event-types-fjjj1c",
+      "destination": "/event-types/basics/reorder"
+    },
+    {
+      "source": "/en/article/duplicate-the-event-type-5drh2v",
+      "destination": "/event-types/basics/duplicate"
+    },
+    {
+      "source": "/en/article/add-custom-icons-in-the-events-1hh6v6i",
+      "destination": "/event-types/basics/custom-icons"
+    },
+    {
+      "source": "/en/article/secret-or-private-events-etoi81",
+      "destination": "/event-types/basics/secret-events"
+    },
+    {
+      "source": "/en/article/delete-the-event-type-h589al",
+      "destination": "/event-types/basics/delete"
+    },
+    {
+      "source": "/en/article/set-event-location-162pcyk",
+      "destination": "/event-types/setup/location"
+    },
+    {
+      "source": "/en/article/set-multiple-durations-1j1wjbe",
+      "destination": "/event-types/setup/multiple-durations"
+    },
+    {
+      "source": "/en/article/how-to-set-availability-for-an-event-type-12ngw5m",
+      "destination": "/event-types/setup/event-availability"
+    },
+    {
+      "source": "/en/article/event-buffers-or-break-between-the-events-ct3clz",
+      "destination": "/event-types/limits/buffers"
+    },
+    {
+      "source": "/en/article/minimum-notice-for-the-booking-1xe1ynw",
+      "destination": "/event-types/limits/minimum-notice"
+    },
+    {
+      "source": "/en/article/custom-or-fixed-time-slot-intervals-1jlkfp0",
+      "destination": "/event-types/limits/time-slot-intervals"
+    },
+    {
+      "source": "/en/article/limit-booking-frequency-1br80ts",
+      "destination": "/event-types/limits/booking-frequency"
+    },
+    {
+      "source": "/en/article/only-show-the-first-slot-of-each-day-as-available-1tuas3h",
+      "destination": "/event-types/limits/first-slot-only"
+    },
+    {
+      "source": "/en/article/limit-total-booking-duration-kxjvku",
+      "destination": "/event-types/limits/total-duration"
+    },
+    {
+      "source": "/en/article/booker-active-booking-limit-1is33ti",
+      "destination": "/event-types/limits/booker-limit"
+    },
+    {
+      "source": "/en/article/limit-future-booking-to-restrict-the-future-booking-qwjs4o",
+      "destination": "/event-types/limits/future-booking"
+    },
+    {
+      "source": "/en/article/add-pre-booking-questions-for-events-q10s9j",
+      "destination": "/event-types/booking-questions/pre-booking-questions"
+    },
+    {
+      "source": "/en/article/how-to-hide-and-prefill-booking-questions-ahp2zs",
+      "destination": "/event-types/booking-questions/hide-prefill"
+    },
+    {
+      "source": "/en/article/requireexclude-email-domains-booking-question-1emhkkv",
+      "destination": "/event-types/booking-questions/email-domains"
+    },
+    {
+      "source": "/en/article/adding-attachments-in-booking-pages-1t787fo",
+      "destination": "/event-types/booking-questions/attachments"
+    },
+    {
+      "source": "/en/article/create-a-phone-only-event-type-531yn6",
+      "destination": "/event-types/booking-questions/phone-only"
+    },
+    {
+      "source": "/en/article/how-to-split-full-name-into-first-name-and-last-name-on-public-booking-page-2cjbe9",
+      "destination": "/event-types/booking-questions/split-name"
+    },
+    {
+      "source": "/en/article/verify-email-on-booking-page-before-the-booking-19zj7jx",
+      "destination": "/event-types/booking-questions/verify-email"
+    },
+    {
+      "source": "/en/article/enable-captcha-on-booking-page-103het8",
+      "destination": "/event-types/booking-questions/captcha"
+    },
+    {
+      "source": "/en/article/how-to-disable-adding-guests-in-cal-id-1ls0c4c",
+      "destination": "/event-types/booking-questions/disable-guests"
+    },
+    {
+      "source": "/en/article/add-events-to-calendar-ubr0dx",
+      "destination": "/event-types/advanced/add-to-calendar"
+    },
+    {
+      "source": "/en/article/disabling-default-confirmation-emails-for-attendees-in-cal-id-d4fl0f",
+      "destination": "/event-types/advanced/disable-confirmation-emails"
+    },
+    {
+      "source": "/en/article/limiting-availability-with-the-look-busy-feature-1t6i46p",
+      "destination": "/event-types/advanced/look-busy"
+    },
+    {
+      "source": "/en/article/custom-event-name-in-booking-13gkvt2",
+      "destination": "/event-types/advanced/custom-event-name"
+    },
+    {
+      "source": "/en/article/how-to-set-up-requires-confirmation-for-a-booking-12dze4w",
+      "destination": "/event-types/advanced/requires-confirmation"
+    },
+    {
+      "source": "/en/article/disable-rescheduling-and-cancelling-k39xui",
+      "destination": "/event-types/advanced/disable-reschedule-cancel"
+    },
+    {
+      "source": "/en/article/hide-notes-in-calendar-1tz35vu",
+      "destination": "/event-types/advanced/hide-notes"
+    },
+    {
+      "source": "/en/article/hide-calendar-event-details-on-shared-calendars-w6isyx",
+      "destination": "/event-types/advanced/hide-calendar-details"
+    },
+    {
+      "source": "/en/article/booking-success-redirect-parameters-kru1cf",
+      "destination": "/event-types/advanced/success-redirect-params"
+    },
+    {
+      "source": "/en/article/single-use-or-time-based-private-links-1tbjayg",
+      "destination": "/event-types/advanced/private-links"
+    },
+    {
+      "source": "/en/article/how-to-use-offer-seats-in-cal-id-wi3pyx",
+      "destination": "/event-types/advanced/offer-seats"
+    },
+    {
+      "source": "/en/article/booking-success-url-d2lpby",
+      "destination": "/event-types/advanced/success-url"
+    },
+    {
+      "source": "/en/article/hide-organizers-email-1knn4sc",
+      "destination": "/event-types/advanced/hide-organizer-email"
+    },
+    {
+      "source": "/en/article/lock-timezone-on-booking-page-ehfmk3",
+      "destination": "/event-types/advanced/lock-timezone"
+    },
+    {
+      "source": "/en/article/allow-rescheduling-past-events-1wyp7g5",
+      "destination": "/event-types/advanced/reschedule-past"
+    },
+    {
+      "source": "/en/article/allow-booking-through-rescheduled-link-17bgl72",
+      "destination": "/event-types/advanced/book-via-reschedule-link"
+    },
+    {
+      "source": "/en/article/custom-reply-to-email-qjk762",
+      "destination": "/event-types/advanced/custom-reply-to"
+    },
+    {
+      "source": "/en/article/scheduling-a-one-time-group-event-webinars-gds-n84mni",
+      "destination": "/event-types/group-events"
+    },
+    {
+      "source": "/en/article/setting-up-recurring-events-in-cal-id-uyyohu",
+      "destination": "/event-types/recurring"
+    },
+    {
+      "source": "/en/article/embed-meeting-scheduling-link-5usabx",
+      "destination": "/event-types/embed"
+    },
+    {
+      "source": "/en/article/setting-up-event-specific-webhooks-19yb7bp",
+      "destination": "/event-types/event-webhooks"
+    },
+    {
+      "source": "/en/article/enabling-apps-for-specific-event-types-1ewt2wb",
+      "destination": "/event-types/enable-apps"
+    },
+    {
+      "source": "/en/article/create-availability-in-cal-id-uk557v",
+      "destination": "/availability/create"
+    },
+    {
+      "source": "/en/article/multiple-schedules-1525u03",
+      "destination": "/availability/multiple-schedules"
+    },
+    {
+      "source": "/en/article/multiple-time-slots-per-day-1hq8spx",
+      "destination": "/availability/multiple-time-slots"
+    },
+    {
+      "source": "/en/article/date-overrides-or-set-unavailable-1gvl0sc",
+      "destination": "/availability/date-overrides"
+    },
+    {
+      "source": "/en/article/out-of-office-18amnu8",
+      "destination": "/availability/out-of-office"
+    },
+    {
+      "source": "/en/article/team-availability-1vystdo",
+      "destination": "/availability/team-availability"
+    },
+    {
+      "source": "/en/article/how-to-see-booking-details-1e7w6g3",
+      "destination": "/bookings/view-details"
+    },
+    {
+      "source": "/en/article/exporting-booking-details-1m38bf5",
+      "destination": "/bookings/export"
+    },
+    {
+      "source": "/en/article/mark-guests-as-no-show-n6qxww",
+      "destination": "/bookings/no-show"
+    },
+    {
+      "source": "/en/article/monitoring-notification-delivery-with-workflow-status-x8ivj0",
+      "destination": "/bookings/workflow-status"
+    },
+    {
+      "source": "/en/article/setting-up-routing-forms-in-cal-id-wvs6zb",
+      "destination": "/routing/routing-forms"
+    },
+    {
+      "source": "/en/article/workflows-setup-to-cal-id-q5w5m8",
+      "destination": "/workflows/overview"
+    },
+    {
+      "source": "/en/article/customizing-your-workflow-messages-16m35ri",
+      "destination": "/workflows/custom-messages"
+    },
+    {
+      "source": "/en/article/integrate-whatsapp-business-1gw0ezw",
+      "destination": "/workflows/whatsapp-business"
+    },
+    {
+      "source": "/en/article/connect-with-whatsapp-business-app-1x90dl7",
+      "destination": "/workflows/connect-whatsapp-app"
+    },
+    {
+      "source": "/en/article/create-new-whatsapp-business-account-8grruf",
+      "destination": "/workflows/create-whatsapp-account"
+    },
+    {
+      "source": "/en/article/teams-in-cal-id-9xi8av",
+      "destination": "/teams/overview"
+    },
+    {
+      "source": "/en/article/inviting-members-to-an-existing-team-azdxxj",
+      "destination": "/teams/invite-members"
+    },
+    {
+      "source": "/en/article/how-to-remove-a-member-from-the-team-14dfk5u",
+      "destination": "/teams/remove-member"
+    },
+    {
+      "source": "/en/article/how-to-leave-a-team-in-cal-id-17cqq08",
+      "destination": "/teams/leave-team"
+    },
+    {
+      "source": "/en/article/managing-team-settings-and-profile-11lw7f1",
+      "destination": "/teams/settings"
+    },
+    {
+      "source": "/en/article/team-advanced-settings-vqycf9",
+      "destination": "/teams/advanced-settings"
+    },
+    {
+      "source": "/en/article/round-robin-scheduling-1uvthzp",
+      "destination": "/teams/round-robin"
+    },
+    {
+      "source": "/en/article/collective-events-1luedba",
+      "destination": "/teams/collective"
+    },
+    {
+      "source": "/en/article/managed-events-rr5iqo",
+      "destination": "/teams/managed"
+    },
+    {
+      "source": "/en/article/internal-team-meeting-xekj6k",
+      "destination": "/teams/internal-meeting"
+    },
+    {
+      "source": "/en/article/setting-necessary-permission-for-google-calendar-integration-1v0p0vf",
+      "destination": "/apps/google-calendar"
+    },
+    {
+      "source": "/en/article/connect-apple-calendar-with-cal-id-14yk7bw",
+      "destination": "/apps/apple-calendar"
+    },
+    {
+      "source": "/en/article/cal-id-to-zoom-integration-1w9ni9u",
+      "destination": "/apps/zoom"
+    },
+    {
+      "source": "/en/article/paid-bookings-xtbadm",
+      "destination": "/apps/paid-bookings"
+    },
+    {
+      "source": "/en/article/integrate-cal-id-with-stripe-ls1yns",
+      "destination": "/apps/stripe"
+    },
+    {
+      "source": "/en/article/integrate-cal-id-with-razorpay-1pfxx34",
+      "destination": "/apps/razorpay"
+    },
+    {
+      "source": "/en/article/integrate-cal-id-with-paypal-1gjwjp2",
+      "destination": "/apps/paypal"
+    },
+    {
+      "source": "/en/article/integrating-cal-id-with-make-fubbm6",
+      "destination": "/apps/make"
+    },
+    {
+      "source": "/en/article/integrating-cal-id-with-pabbly-1nertrp",
+      "destination": "/apps/pabbly"
+    },
+    {
+      "source": "/en/article/how-to-get-notified-on-slack-when-an-event-is-booked-16ircpf",
+      "destination": "/apps/slack"
+    },
+    {
+      "source": "/en/article/setting-up-google-analytics-tag-manager-yibpkd",
+      "destination": "/apps/google-analytics"
+    },
+    {
+      "source": "/en/article/app-store-1owj73c",
+      "destination": "/apps/app-store"
+    },
+    {
+      "source": "/en/article/install-new-app-on-cal-id-1ijnrun",
+      "destination": "/apps/install-app"
+    },
+    {
+      "source": "/en/article/managing-installed-apps-f9py8n",
+      "destination": "/apps/manage-installed"
+    },
+    {
+      "source": "/en/article/customizing-your-appearance-in-cal-id-14tmepl",
+      "destination": "/appearance/appearance"
+    },
+    {
+      "source": "/en/article/team-appearance-settings-bq9gme",
+      "destination": "/appearance/team-appearance"
+    },
+    {
+      "source": "/en/article/custom-branding-for-personal-ewx8uh",
+      "destination": "/branding/personal"
+    },
+    {
+      "source": "/en/article/custom-branding-for-teams-1kgn8d4",
+      "destination": "/branding/teams"
+    },
+    {
+      "source": "/en/article/public-page-banner-1jyhqbp",
+      "destination": "/branding/banner"
+    },
+    {
+      "source": "/en/article/public-page-banner-for-team-iqcgkw",
+      "destination": "/branding/banner-team"
+    },
+    {
+      "source": "/en/article/how-to-add-social-profiles-in-cal-id-1jeifo",
+      "destination": "/branding/social-profiles"
+    },
+    {
+      "source": "/en/article/managing-custom-brand-colors-in-cal-id-12q94ji",
+      "destination": "/branding/brand-colors"
+    },
+    {
+      "source": "/en/article/managing-custom-brand-colors-in-cal-id-for-team-c7tv6o",
+      "destination": "/branding/brand-colors-team"
+    },
+    {
+      "source": "/en/article/customize-your-brand-logo-and-favicon-in-cal-id-7cbci1",
+      "destination": "/branding/logo-favicon"
+    },
+    {
+      "source": "/en/article/customize-your-brand-logo-and-favicon-in-cal-id-for-team-611v60",
+      "destination": "/branding/logo-favicon-team"
+    },
+    {
+      "source": "/en/article/managing-your-cal-id-profile-settings-buagzh",
+      "destination": "/settings/profile"
+    },
+    {
+      "source": "/en/article/configuring-language-timezone-and-travel-schedule-in-cal-id-heoxl3",
+      "destination": "/settings/general"
+    },
+    {
+      "source": "/en/article/how-to-set-your-internal-time-format-1txunap",
+      "destination": "/settings/time-format"
+    },
+    {
+      "source": "/en/article/start-of-the-week-128tctr",
+      "destination": "/settings/start-of-week"
+    },
+    {
+      "source": "/en/article/dynamic-group-links-1meof9k",
+      "destination": "/settings/dynamic-group-links"
+    },
+    {
+      "source": "/en/article/managing-push-notifications-in-cal-id-1omf0in",
+      "destination": "/settings/push-notifications"
+    },
+    {
+      "source": "/en/article/managing-your-cal-id-account-password-ansob9",
+      "destination": "/settings/password"
+    },
+    {
+      "source": "/en/article/analyzing-booking-performance-with-cal-id-insights-12crw83",
+      "destination": "/insights/booking-performance"
+    },
+    {
+      "source": "/en/article/analyzing-workflow-performance-in-cal-id-insights-ejp70w",
+      "destination": "/insights/workflow-performance"
+    },
+    {
+      "source": "/en/article/analyzing-routing-form-performance-in-cal-id-insights-tkfe38",
+      "destination": "/insights/routing-performance"
+    },
+    {
+      "source": "/en/article/how-to-get-your-cal-id-api-key-1k4oioj",
+      "destination": "/developers/api-key"
+    },
+    {
+      "source": "/en/article/how-to-find-your-event-type-id-16leesl",
+      "destination": "/developers/event-type-id"
+    },
+    {
+      "source": "/en/article/cal-id-api-integration-by3i8j",
+      "destination": "/developers/api-integration"
+    },
+    {
+      "source": "/en/article/webhook-in-cal-id-5fwxgn",
+      "destination": "/developers/webhooks"
+    }
+  ],
+  "thumbnails": {
+    "background": "https://cal.id/og-default.png"
+  }
 }

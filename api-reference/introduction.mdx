@@ -1,0 +1,98 @@
+---
+title: "Introduction"
+description: "Build on Cal ID — a REST API for scheduling: event types, availability, slots, bookings, teams, contacts, and webhooks."
+icon: "book-open"
+keywords: ["cal id api", "rest api", "api introduction", "authentication", "base url", "bearer token"]
+---
+
+The Cal ID API is a REST API that lets you manage everything in Cal ID programmatically — event types, availability and schedules, bookable slots, bookings, teams, memberships, contacts, and webhooks. All requests and responses use JSON, and every endpoint is authenticated with an API key.
+
+<Card title="Base URL" icon="server" horizontal>
+  All requests are made to `https://api.cal.id`.
+</Card>
+
+## Authentication
+
+Cal ID authenticates requests with an **API key** sent as a **Bearer token** in the `Authorization` header.
+
+<Steps>
+  <Step title="Create an API key">
+    In the Cal ID dashboard, go to **Settings → Developer → API keys** and create a key. Keys are prefixed with `calid_`. See [Get your API key](/developers/api-key) for the full walkthrough.
+  </Step>
+  <Step title="Send it with every request">
+    Include the key in the `Authorization` header:
+
+    ```bash
+    Authorization: Bearer calid_xxxxx
+    ```
+  </Step>
+</Steps>
+
+<Note>
+  To manage a team's resources (team event types, memberships, and schedules), use an API key belonging to a team **owner or admin**.
+</Note>
+
+<Warning>
+  Your API key grants full access to your account. Keep it secret — never commit it to source control, embed it in client-side code, or share it in public links.
+</Warning>
+
+## Quickstart
+
+Retrieve the authenticated user's profile to confirm your key works:
+
+```bash
+curl https://api.cal.id/users/me \
+  -H "Authorization: Bearer calid_xxxxx"
+```
+
+## Response format
+
+Every response is a JSON envelope with a consistent shape.
+
+<CodeGroup>
+```json Success
+{
+  "success": true,
+  "data": { },
+  "message": "Request completed successfully",
+  "meta": { }
+}
+```
+
+```json Error
+{
+  "success": false,
+  "message": "A human-readable explanation of what went wrong",
+  "error": { }
+}
+```
+</CodeGroup>
+
+The `data` field holds the resource or resources you requested. On list endpoints, `meta` carries pagination and contextual information.
+
+## Status codes
+
+| Code | Meaning |
+| --- | --- |
+| `200` | Success |
+| `400` | Bad request — check your parameters |
+| `401` | Unauthorized — missing or invalid API key |
+| `403` | Forbidden — your key lacks permission for this resource |
+| `500` | Something went wrong on Cal ID's side |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Get your API key" icon="key" href="/developers/api-key">
+    Create and manage the keys that authenticate your requests.
+  </Card>
+  <Card title="Find your Event Type ID" icon="hashtag" href="/developers/event-type-id">
+    Locate the IDs you'll pass to booking and event-type endpoints.
+  </Card>
+  <Card title="Webhooks" icon="webhook" href="/developers/webhooks">
+    Subscribe to booking and meeting events in real time.
+  </Card>
+  <Card title="Integration overview" icon="plug" href="/developers/api-integration">
+    How the API is structured, from servers to authentication.
+  </Card>
+</CardGroup>

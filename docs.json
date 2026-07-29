@@ -307,7 +307,18 @@
       },
       {
         "tab": "API Reference",
-        "openapi": "openapi.json"
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "openapi": "openapi.json"
+          }
+        ]
       }
     ]
   },

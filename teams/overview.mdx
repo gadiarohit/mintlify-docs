@@ -6,15 +6,15 @@ keywords: ["teams", "create a team", "team scheduling", "shared team page", "tea
 related: ["/teams/invite-members", "/teams/settings", "/teams/round-robin", "/teams/collective", "/availability/team-availability"]
 ---
 
-The **Teams** feature in Cal ID is a powerful tool designed to streamline collaborative scheduling. By grouping users together, you can manage shared availability, distribute workloads evenly, and ensure that clients can always find a time to meet with your department.
+Group your colleagues into a **team** to share availability, distribute incoming bookings automatically, and give clients one polished page to book with your whole department.
 
 ## Benefits of using teams
 
-- **Shared Availability**: Instantly find times when team members are free to avoid scheduling conflicts.
-- **Efficient Workload Distribution**: Automatically distribute meetings among available team members.
-- **Cohesive Brand Image**: Present a unified scheduling page for your entire team.
+- **Shared availability** — instantly find times when team members are free and avoid scheduling conflicts.
+- **Efficient workload distribution** — automatically spread meetings across available team members.
+- **Cohesive brand image** — present a single, unified scheduling page for your entire team.
 
-## Step-by-step team creation
+## Create a team
 
 <Steps>
   <Step title="Log in to Cal ID">
@@ -39,7 +39,7 @@ The **Teams** feature in Cal ID is a powerful tool designed to streamline collab
     </Frame>
   </Step>
   <Step title="Add team members">
-    - Now, enter the email address of the person you want to invite.
+    - Enter the email address of the person you want to invite.
     - Select their role: **Owner**, **Admin**, or **Member**.
     - Click on **Send invite**.
 
@@ -47,45 +47,71 @@ The **Teams** feature in Cal ID is a powerful tool designed to streamline collab
       ![Adding team members and selecting roles](/images/teams/overview-2.png)
     </Frame>
   </Step>
-  <Step title="Understand roles">
-    - **Owner/Admin**: Can change any settings for the team.
-    - **Member**: Can only see applied settings but cannot modify them.
-  </Step>
   <Step title="Finalize team">
     Click **Continue** to move to event creation.
   </Step>
 </Steps>
 
+## Roles and permissions
+
+Every team member has a role that determines what they can change.
+
+| Role | Permissions |
+| --- | --- |
+| **Owner** | Can change any settings for the team. |
+| **Admin** | Can change any settings for the team. |
+| **Member** | Can see applied settings but cannot modify them. |
+
 ## Create a team event type
 
-After creating the team, you need to define how they will be booked:
+After creating the team, define how they will be booked:
 
-1. **Title & Duration**: Enter a clear title for the event type and select the duration.
-2. **Scheduling Type**: Choose how the meeting should be booked based on your use case.
-3. **Description**: Write a brief description about the event type for your clients.
+- **Title & Duration** — enter a clear title for the event type and select the duration.
+- **Scheduling Type** — choose how the meeting should be booked based on your use case.
+- **Description** — write a brief description about the event type for your clients.
 
 <Frame>
   ![Creating a team event type](/images/teams/overview-3.png)
 </Frame>
 
-## Understanding scheduling types
+## Scheduling types
 
-- **Round Robin**
-  **Use Case**: Evenly distributing sales demos among account executives.
-  **Description**: Meeting is booked with one available team member automatically, reducing wait times for clients. For more details, visit [Round Robin Events](/teams/round-robin).
-- **Collective**
-  **Use Case**: Panel interviews or technical consultations requiring multiple team members.
-  **Description**: Meeting is booked only when **all** selected team members are free simultaneously. For more details, visit [Collective Events](/teams/collective).
-- **Managed**
-  **Use Case**: Ensuring consistent event settings across the team.
-  **Description**: Meetings are booked based on a template controlled strictly by the admin, ensuring standardized booking processes. For more details, visit [Managed Events](/teams/managed).
+Choose the scheduling type that matches how your team meets clients.
+
+<CardGroup cols={3}>
+  <Card title="Round Robin" icon="arrows-rotate" href="/teams/round-robin">
+    Books the meeting with one available team member automatically, reducing wait times for clients. Ideal for evenly distributing sales demos among account executives.
+  </Card>
+  <Card title="Collective" icon="users" href="/teams/collective">
+    Books the meeting only when **all** selected team members are free simultaneously. Ideal for panel interviews or technical consultations requiring multiple team members.
+  </Card>
+  <Card title="Managed" icon="shield-check" href="/teams/managed">
+    Books meetings from a template controlled strictly by the admin, ensuring standardized booking processes. Ideal for keeping event settings consistent across the team.
+  </Card>
+</CardGroup>
 
 ## Customize your team settings
 
-- [Managing Team Settings and Profile](/teams/settings)
-- [Inviting Members to an Existing Team](/teams/invite-members)
-- [How to Leave a Team in Cal ID?](/teams/leave-team)
-- [How to Remove a Member from the Team](/teams/remove-member)
-- [Custom Branding for Team](/branding/teams)
-- [Team Appearance Settings](/appearance/team-appearance)
-- [Team Advanced Settings](/teams/advanced-settings)
+<CardGroup cols={2}>
+  <Card title="Team settings and profile" icon="gear" href="/teams/settings">
+    Edit your team name, bio, and logo, or disband a team.
+  </Card>
+  <Card title="Invite members" icon="user-plus" href="/teams/invite-members">
+    Add new members to an existing team.
+  </Card>
+  <Card title="Leave a team" icon="right-from-bracket" href="/teams/leave-team">
+    Remove yourself from a team you belong to.
+  </Card>
+  <Card title="Remove a member" icon="user-minus" href="/teams/remove-member">
+    Take a member off your team.
+  </Card>
+  <Card title="Custom branding" icon="palette" href="/branding/teams">
+    Apply your brand to the team's booking pages.
+  </Card>
+  <Card title="Team appearance" icon="paintbrush" href="/appearance/team-appearance">
+    Adjust how your team page looks.
+  </Card>
+  <Card title="Advanced settings" icon="sliders" href="/teams/advanced-settings">
+    Fine-tune advanced team configuration.
+  </Card>
+</CardGroup>

@@ -6,46 +6,72 @@ keywords: ["no show", "mark no-show", "missed meeting", "attendee didn't join", 
 related: ["/bookings/view-details", "/bookings/workflow-status", "/bookings/export", "/workflows/overview", "/insights/booking-performance"]
 ---
 
-In **Cal ID**, you can maintain accurate meeting records by marking guests as "No-Show" for past appointments where attendees failed to appear. This ensures your booking history reflects reality and allows for better follow-up management.
+When an attendee doesn't appear, mark them as "No-Show" so your booking history reflects reality. In **Cal ID**, this keeps your records clean, distinguishes successful meetings from missed ones, and can trigger automated follow-up outreach.
 
-Tracking attendance helps you distinguish between successful meetings and missed sessions directly from your dashboard.
+## Mark a guest as no-show
 
-## Step-by-step instructions
-
-| **Step** | **Action** | **Description** |
-| --- | --- | --- |
-| **1** | **Navigate to Past Bookings** | Go to the **Bookings** tab and select the **Past** sub-tab to see completed meetings. |
-| **2** | **Expand Booking Details** | Click the **Details** arrow on the specific booking you wish to manage. |
-| **3** | **Mark as No-Show** | Click the **Mark no-show** button located in the bottom-right corner. |
-| **4** | **Unmark if Necessary** | If a mistake was made, click **Unmark no-show** in the same location to revert the status. |
+<Steps>
+  <Step title="Navigate to past bookings">
+    Go to the **Bookings** tab and select the **Past** sub-tab to see completed meetings.
+  </Step>
+  <Step title="Expand booking details">
+    Click the **Details** arrow on the specific booking you wish to manage.
+  </Step>
+  <Step title="Mark as no-show">
+    Click the **Mark no-show** button located in the bottom-right corner.
+  </Step>
+  <Step title="Unmark if necessary">
+    If a mistake was made, click **Unmark no-show** in the same location to revert the status.
+  </Step>
+</Steps>
 
 <Frame>
   ![Mark no-show button on a past booking](/images/bookings/no-show-1.png)
 </Frame>
 
+<Info>
+  No-show is only available for **past** bookings—meetings that have already taken place. Use the **Past** filter to isolate them.
+</Info>
+
 ## Handling multiple attendees ('n' more)
 
-For meetings with more than two attendees, Cal ID provides a streamlined way to manage group attendance:
+For meetings with more than two attendees, Cal ID provides a streamlined way to manage group attendance.
 
-- **Open the Checklist**: Click on the **Mark as no show** button, which will trigger a checklist popup for meetings with multiple participants.
+<Steps>
+  <Step title="Open the checklist">
+    Click the **Mark as no show** button, which triggers a checklist popup for meetings with multiple participants.
 
-<Frame>
-  ![No-show checklist popup for multiple attendees](/images/bookings/no-show-2.png)
-</Frame>
+    <Frame>
+      ![No-show checklist popup for multiple attendees](/images/bookings/no-show-2.png)
+    </Frame>
+  </Step>
+  <Step title="Manage in bulk">
+    Use the checklist to mark or unmark multiple guests as "No-Show" simultaneously.
 
-- **Bulk Management**: Use this checklist to mark or unmark multiple guests as "No-Show" simultaneously.
+    <Frame>
+      ![Bulk marking attendees as no-show](/images/bookings/no-show-3.png)
+    </Frame>
+  </Step>
+</Steps>
 
-<Frame>
-  ![Bulk marking attendees as no-show](/images/bookings/no-show-3.png)
-</Frame>
-
-- **Accurate Records**: This feature ensures that even in large group sessions, you can accurately record which specific individuals were present.
+This ensures that even in large group sessions, you can accurately record which specific individuals were present.
 
 ## Attendance management overview
 
-- **Filter View**: Use the **Past** filter to isolate meetings that have already occurred.
-- **Attendee Information**: You can view the attendee's name, timezone, and email address within the details section.
+- **Filter view**: Use the **Past** filter to isolate meetings that have already occurred.
+- **Attendee information**: View the attendee's name, timezone, and email address within the details section.
 
 <Tip>
-  **Professional Follow-ups:** By marking a guest as a no-show, you keep your data clean for reporting. This status can also be used as a trigger for automated workflows, such as sending a personalized email to the guest asking them to reschedule.
+  **Professional follow-ups:** By marking a guest as a no-show, you keep your data clean for reporting. This status can also be used as a trigger for automated workflows, such as sending a personalized email to the guest asking them to reschedule.
 </Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Automate follow-ups" icon="diagram-project" href="/workflows/overview">
+    Build a workflow that emails no-show guests to reschedule automatically.
+  </Card>
+  <Card title="Check workflow status" icon="bolt" href="/bookings/workflow-status">
+    Confirm which reminders and notifications actually reached your attendees.
+  </Card>
+</CardGroup>

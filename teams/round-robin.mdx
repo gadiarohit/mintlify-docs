@@ -6,25 +6,40 @@ keywords: ["round robin", "distribute bookings", "rotate meetings", "assign to t
 related: ["/teams/collective", "/teams/managed", "/availability/team-availability", "/routing/routing-forms", "/teams/overview"]
 ---
 
-## How to set round-robin scheduling?
+Round-robin scheduling creates a team event type with a pool of hosts and automatically assigns each new booking to the next available host in rotation. Cal ID checks everyone's calendar, skips busy hosts, and balances workloads across the team.
 
-Cal ID round robin scheduling creates a team event type with a pool of users, automatically assigning upcoming bookings to the next available host in rotation based on their calendars, skipping busy ones for even distribution. This balances workloads for members of the team.
+<Info>
+  **How assignment rotates:** Cal ID first computes the union of available slots across all hosts, then assigns the booking to the highest-priority (or highest-weighted) host who is free in that slot, skipping anyone unavailable. When hosts tie, the least recently booked host wins.
+</Info>
 
-## Underlying mechanism
+## Configure round-robin
 
-Round robin in Cal ID evenly distributes team bookings by first computing the union of available slots across all hosts, then assigning to the highest-priority or weighted host who's free, skipping unavailable ones for fair rotation. The mechanism has a couple of options:
+<Steps>
+  <Step title="Create a team event type">
+    From your team, create a new event type and choose **Round Robin** as the scheduling type.
+  </Step>
+  <Step title="Add your host pool">
+    Select the team members who should share these bookings.
+  </Step>
+  <Step title="Set priorities and weights">
+    Assign a priority to each host and, optionally, enable weights to fine-tune distribution.
 
-<Frame>
-  ![Round-robin mechanism options](/images/teams/round-robin-1.png)
-</Frame>
+    <Frame>
+      ![Round-robin mechanism options](/images/teams/round-robin-1.png)
+    </Frame>
+  </Step>
+  <Step title="Choose any fixed hosts">
+    Optionally mark hosts who should attend every meeting, alongside the rotating pool.
+  </Step>
+</Steps>
 
 ## Priority ranking
 
-Every round-robin host has a priority (default: medium). Higher priorities get selected first when multiple hosts are available in a slot. Ties go to the least recently booked host. This system ensures that hosts with higher designated priorities are given precedence in the booking process, optimizing the allocation of resources and streamlining event organization.
+Every round-robin host has a priority (default: **medium**). Higher priorities get selected first when multiple hosts are available in a slot. Ties go to the least recently booked host. This ensures hosts with higher designated priorities are given precedence, optimizing resource allocation and streamlining event organization.
 
-For instance, if John & Jane are both available in the same slot, but John has a priority High compared to Jane's priority of Medium, John will be booked. If several users have the same priority it will choose the least recently booked user.
+For instance, if John and Jane are both available in the same slot, but John has a priority of **High** compared to Jane's **Medium**, John will be booked. If several users share the same priority, Cal ID chooses the least recently booked user.
 
-You have the option to select priority for each host and based on their priority (and availability in the selected slot), the hosts will be booked.
+You can select a priority for each host, and based on their priority (and availability in the selected slot), the hosts will be booked.
 
 <Frame>
   ![Selecting priority for each host](/images/teams/round-robin-2.png)
@@ -32,19 +47,19 @@ You have the option to select priority for each host and based on their priority
 
 ## Weights
 
-Weights are optional and must be enabled to use. They allow you to determine how meetings should be distributed among hosts. When enabled, every host has a default weight of 100%. This means each host should end up with the same number of bookings by default. However, hosts with fewer availabilities can still end up with fewer bookings. Only confirmed bookings count towards past bookings.
+Weights are optional and must be enabled to use. They let you determine how meetings are distributed among hosts. When enabled, every host has a default weight of **100%**, meaning each host should end up with the same number of bookings by default. However, hosts with fewer availabilities can still end up with fewer bookings. Only confirmed bookings count towards past bookings.
 
-For instance, Jane Doe has a weight of 100% and already has 8 bookings while John Doe has a weight of 200% and already has 12 bookings. Assuming both of them are available, the next bookings would go to John Doe until a total of 16 bookings is reached.
+For instance, Jane Doe has a weight of 100% and already has 8 bookings, while John Doe has a weight of 200% and already has 12 bookings. Assuming both are available, the next bookings would go to John Doe until a total of 16 bookings is reached.
 
-Weight Adjustment: If new hosts are added to a round-robin event type that has weights enabled, their weights will be adjusted accordingly. New hosts will have their bookings adjusted proportionally to their weight, taking into account the bookings that existing hosts already have. This ensures a fair distribution of bookings when new hosts are added.
+**Weight adjustment:** If new hosts are added to a round-robin event type that has weights enabled, their weights will be adjusted accordingly. New hosts have their bookings adjusted proportionally to their weight, accounting for the bookings existing hosts already have. This ensures a fair distribution when new hosts are added.
 
 Example:
 
-Existing host 1: 100% weight, 5 bookings
-
-Existing host 2: 200% weight, 9 bookings
-
-New host: 50% weight
+| Host | Weight | Bookings |
+| --- | --- | --- |
+| Existing host 1 | 100% | 5 |
+| Existing host 2 | 200% | 9 |
+| New host | 50% | — |
 
 Weight Adjustment = (Bookings of existing hosts / Sum of weights of existing hosts) \* New host weight
 
@@ -52,20 +67,30 @@ Weight Adjustment = 14 / 300 \* 50 = 2.33
 
 The new host will have a weight adjustment of 2 bookings.
 
-**Least Recently Booked**
-
-This is the fallback method where the available round robin host who was booked least recently is chosen. If more than one host meets this criterion, one of them is chosen at random.
+<Note>
+  **Least recently booked** is the fallback method: the available round-robin host who was booked least recently is chosen. If more than one host meets this criterion, one is chosen at random.
+</Note>
 
 ## Fixed hosts
 
-If you wish to bring in Collective behavior into round-robin events, it is possible with Cal ID. You can now select which hosts you wish to always attend the meeting whilst the other selected team members who are booked on a round-robin basis.
+If you wish to bring Collective behavior into round-robin events, Cal ID makes it possible. You can select which hosts should always attend the meeting, while the other selected team members are booked on a round-robin basis.
 
-**Fixed Hosts** are individuals who are consistently present at every meeting.
-
-**Round-Robin Hosts** are members of a group who take turns attending meetings. Rather than everyone in this group attending every meeting, only one person from the group will attend each time.
+- **Fixed hosts** are individuals who are consistently present at every meeting.
+- **Round-robin hosts** are members of a group who take turns attending meetings. Rather than everyone attending every meeting, only one person from the group attends each time.
 
 <Frame>
   ![Configuring fixed and round-robin hosts](/images/teams/round-robin-3.png)
 </Frame>
 
 For tasks like scheduling sales calls or product demos, where you have a pool of people among whom you'd like to distribute meetings, round robin is the perfect choice.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Collective events" icon="user-group" href="/teams/collective">
+    Need everyone in the room at once? Book the whole group together.
+  </Card>
+  <Card title="Managed events" icon="layer-group" href="/teams/managed">
+    Push a consistent event type to every team member from one place.
+  </Card>
+</CardGroup>

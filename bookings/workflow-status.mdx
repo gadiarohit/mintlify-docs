@@ -6,7 +6,7 @@ keywords: ["workflow status", "reminder status", "notification sent", "booking w
 related: ["/bookings/view-details", "/workflows/overview", "/bookings/no-show", "/workflows/custom-messages", "/insights/workflow-performance"]
 ---
 
-The **Workflow Status** tool lets you see exactly what happens after a meeting is booked. It tracks every email or WhatsApp or SMS message sent by the system or by your custom workflows, so you always know if your attendee got the information.
+The **Workflow Status** tool shows you exactly what happens after a meeting is booked. It tracks every email, WhatsApp, or SMS message sent by the system or by your custom workflows—so you always know whether your attendee got the information.
 
 ## How to check the status
 
@@ -14,10 +14,10 @@ The **Workflow Status** tool lets you see exactly what happens after a meeting i
   <Step title="Go to Bookings">
     Click **Bookings** in the left menu.
   </Step>
-  <Step title="Find the Meeting">
+  <Step title="Find the meeting">
     Look for the specific meeting in your list.
   </Step>
-  <Step title="Click the Button">
+  <Step title="Open Workflow Status">
     Click the **Workflow Status** button (it has a lightning bolt icon) on the right side of the booking.
 
     <Frame>
@@ -28,39 +28,60 @@ The **Workflow Status** tool lets you see exactly what happens after a meeting i
 
 ## What the status words mean
 
-When you open the status window, you will see a list of messages and their current stage:
+When you open the status window, you'll see a list of messages, each at one of these stages:
 
-- **Scheduled / Queued**: The message is waiting and will be sent at the right time (for example, "30 minutes before the meeting").
+| Status | What it means |
+| --- | --- |
+| **Scheduled / Queued** | The message is waiting and will be sent at the right time (for example, "30 minutes before the meeting"). |
+| **Delivered** | The message was successfully sent and reached the person's inbox or phone. |
+| **Read** | The person has opened and looked at the message. |
+| **Bounced** | The message could not be delivered—usually because the email address is wrong or the inbox is full. |
+| **Failed** | An error occurred and the message could not be sent. |
+| **Cancelled** | The meeting was cancelled, so the system automatically stopped all future messages. |
+
+### Scheduled / Queued
+
+The message is waiting and will be sent at the right time.
 
 <Frame>
   ![Scheduled or Queued status](/images/bookings/workflow-status-2.png)
 </Frame>
 
-- **Delivered**: The message was successfully sent and reached the person's inbox or phone.
+### Delivered
+
+The message was successfully sent and reached the person's inbox or phone.
 
 <Frame>
   ![Delivered status](/images/bookings/workflow-status-3.png)
 </Frame>
 
-- **Read**: The person has opened and looked at the message.
+### Read
+
+The person has opened and looked at the message.
 
 <Frame>
   ![Read status](/images/bookings/workflow-status-4.png)
 </Frame>
 
-- **Bounced**: The message could not be delivered. This usually happens if the email address is wrong or the inbox is full.
+### Bounced
+
+The message could not be delivered. This usually happens if the email address is wrong or the inbox is full.
 
 <Frame>
   ![Bounced status](/images/bookings/workflow-status-5.png)
 </Frame>
 
-- **Failed**: There was an error, and the message could not be sent.
+### Failed
+
+There was an error, and the message could not be sent.
 
 <Frame>
   ![Failed status](/images/bookings/workflow-status-6.png)
 </Frame>
 
-- **Cancelled**: If you cancel the meeting, the system automatically stops all future messages and marks them as "Cancelled".
+### Cancelled
+
+If you cancel the meeting, the system automatically stops all future messages and marks them as "Cancelled".
 
 <Frame>
   ![Cancelled status](/images/bookings/workflow-status-7.png)
@@ -68,6 +89,17 @@ When you open the status window, you will see a list of messages and their curre
 
 ## Why this is helpful
 
-- **No More Guessing**: If a client says they didn't get the link, you can check here to see if it **Bounced** or was **Delivered**.
-- **Check Attendance**: If the status shows **Read**, you know the attendee is aware of the meeting.
-- **Automatic Cleanup**: You don't have to worry about reminders going out for a cancelled meeting; the system handles the **Cancellation** for you.
+- **No more guessing**: If a client says they didn't get the link, you can check here to see if it **Bounced** or was **Delivered**.
+- **Check attendance**: If the status shows **Read**, you know the attendee is aware of the meeting.
+- **Automatic cleanup**: You don't have to worry about reminders going out for a cancelled meeting; the system handles the **Cancellation** for you.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Build a workflow" icon="diagram-project" href="/workflows/overview">
+    Set up the automated reminders and notifications tracked here.
+  </Card>
+  <Card title="Customize your messages" icon="pen-line" href="/workflows/custom-messages">
+    Tailor the text of the emails and messages your workflows send.
+  </Card>
+</CardGroup>

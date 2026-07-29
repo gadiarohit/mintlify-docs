@@ -6,11 +6,19 @@ keywords: ["managed event", "managed event type", "assign event to members", "te
 related: ["/teams/round-robin", "/teams/collective", "/teams/settings", "/teams/invite-members", "/teams/overview"]
 ---
 
-Team admins now have the ability to manage event-types for their members, to facilitate creating common event-types for all members and managing them from one place. A managed event-type comes with certain fields locked by the team admin, and certain fields open to be modified by the team members receiving the managed event. Please take into account that Managed Events v2 do not support Webhooks and Apps. Subsequent releases of this feature will tackle them.
+Managed events let team admins create a common event type once and push it to every member, keeping booking rules consistent while still leaving room for individual customization. A managed event type comes with certain fields locked by the admin and others left open for members to modify.
+
+<Info>
+  A managed event type acts as a **centrally-managed template**. Once you assign it, each member receives their own regular event type generated from it — and any change you make to a locked field is pushed to every assigned member automatically.
+</Info>
+
+<Note>
+  Managed Events v2 do not support Webhooks and Apps. Subsequent releases of this feature will tackle them.
+</Note>
 
 ## Creation
 
-Be sure to be a team admin, and in case you are self-hosting, have the `managed-event-types` operational feature flag turned on. When creating a team event-type, you will be getting the option to create a Managed Event like so:
+Before you start, be sure you are a team admin, and if you are self-hosting, have the `managed-event-types` operational feature flag turned on. When creating a team event type, you'll get the option to create a Managed Event:
 
 <Frame>
   ![Option to create a Managed Event](/images/teams/managed-1.png)
@@ -22,7 +30,7 @@ Be sure to be a team admin, and in case you are self-hosting, have the `managed-
 
 ## Management
 
-Once the managed event-type is created, you will be able to set all the fields you want to manage as a team admin. You can distinguish fields that will be locked by team members by the "lock" icon next to the field label, like so:
+Once the managed event type is created, you can set all the fields you want to manage as a team admin. Fields that will be locked for team members are marked with a **"lock" icon** next to the field label:
 
 <Frame>
   ![Lock icons next to managed event fields](/images/teams/managed-3.png)
@@ -30,12 +38,24 @@ Once the managed event-type is created, you will be able to set all the fields y
 
 ## Assignment
 
-A crucial part of a managed event-type is the assignment of team members, so managed event-types can be created on your behalf.
+A crucial part of a managed event type is the assignment of team members, so managed event types can be created on their behalf. Think of the managed event you created as an event template: assigned team members get regular event types generated from it.
 
-Think of the managed-event you created as a team admin as an event template, that team members will get regular event types from it once they are assigned to it.
+- Whenever you make changes to **locked fields**, every team member gets the same change on their regular event type created from this managed event type.
+- Changes to **unlocked fields** have no effect on event types already created for assigned members — they apply only to newly assigned members.
 
-Whenever you make changes to locked fields, every team member will also get the same change on their regular event type created upon this managed event-type. Note that unlocked fields will not have any effect on already created event types for assigned members, only for newly assigned members.
+<Warning>
+  If you assign a managed event type to a team member who already has an event type with the same slug, a pop-up asks you to confirm. Confirming **deletes the conflicting event type** from that member (and notifies them) so the managed event type can be created in its place.
+</Warning>
 
-If you assign a managed event-type to a team member who already has an event-type with the same slug, a pop-up asks you to confirm. Confirming deletes the conflicting event-type from that member and notifies them, so the managed event-type can be created in its place.
+Team members who are notified will receive an email notification.
 
-For which, team members notified will be getting an email notification.
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Collective events" icon="user-group" href="/teams/collective">
+    Book several team members into the same meeting at once.
+  </Card>
+  <Card title="Round-robin scheduling" icon="arrows-rotate" href="/teams/round-robin">
+    Rotate bookings across a pool of hosts for even distribution.
+  </Card>
+</CardGroup>

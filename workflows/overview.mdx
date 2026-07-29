@@ -6,86 +6,86 @@ keywords: ["workflows", "automated reminders", "email reminders", "sms reminders
 related: ["/workflows/custom-messages", "/workflows/whatsapp-business", "/bookings/workflow-status", "/insights/workflow-performance", "/event-types/advanced/disable-confirmation-emails"]
 ---
 
-Workflows allow you to automate notifications and reminders. A workflow can be attached to different event types, has one specific trigger event, and can have several action steps. For example, you can use workflows for sending Email or SMS or WhatsApp reminders before an event starts to the person who booked the meeting to avoid no-shows.
+Workflows let you automate the messages around a booking so you never have to send a reminder or follow-up by hand. Attach a workflow to any event type to send Email, SMS, or WhatsApp reminders before a meeting starts, cutting no-shows, or to send follow-ups after it ends, such as a feedback survey, extra details, or a simple thank-you note.
 
-Workflows can also be used for sending follow-up Emails or SMS or WhatsApp messages to the attendee after a meeting ends. That could be a feedback survey, providing some additional information to the meeting, or just a simple thank you note.
+Each workflow is built from a single **trigger** (the event that starts it) and one or more **actions** (the notifications it sends).
 
-Each Workflow is made up of a single trigger and one or more actions. Triggers include things like the cancellation of an event, start times, end times, and new bookings.
-
-## Steps to set up your workflows
+## Set up your workflow
 
 <Steps>
-  <Step title="Access the Workflow tab">
-    - **Log In** to your Cal ID account.
-    - Look at the sidebar on the left side of your screen.
-    - Click on **Workflows**.
-    - You can either use the default template for the Email/ SMS/ WhatsApp or even use a custom template and use additional inputs as variables within that.
-    - For a custom template, click the **\+ Add Custom** button.
+  <Step title="Open the Workflows tab">
+    Log in to your Cal ID account, then click **Workflows** in the left sidebar.
+
+    From here you can use a default template for Email, SMS, or WhatsApp, or build a custom template with your own variables. To start a custom template, click **\+ Add Custom**.
 
     {/* TODO: missing image /images/workflows/overview-1.png — Workflows tab in the Cal ID sidebar */}
 
-    - You can also directly set it from event types: Event type \>\> Workflows \>\> Create a workflow.
+    <Tip>
+      You can also start a workflow directly from an event type: **Event type → Workflows → Create a workflow**.
+    </Tip>
 
     <Frame>
       ![Creating a workflow from event types](/images/workflows/overview-2.png)
     </Frame>
   </Step>
-  <Step title="Name and assign your workflow">
-    Before adding the logic, you need to identify what this workflow is for:
+  <Step title="Name and assign the workflow">
+    Before adding any logic, identify what this workflow is for:
 
-    - **Name your workflow:** Give it a title (e.g., **"My 24-Hour Reminder"**).
-    - **Select Event Type:** Check the boxes for the specific meetings you want this workflow to apply to.
+    - **Name your workflow:** Give it a clear title (for example, **"My 24-Hour Reminder"**).
+    - **Select event types:** Check the boxes for the specific meetings this workflow should apply to.
 
     <Frame>
       ![Naming and assigning a workflow to event types](/images/workflows/overview-3.png)
     </Frame>
   </Step>
-  <Step title="Choose your trigger (when should it happen?)">
-    A trigger is the event that **starts** the automation. Select one from the dropdown menu:
+  <Step title="Choose a trigger">
+    The trigger is the event that **starts** the automation. Pick one from the dropdown:
 
-    - Minutes/Hours/Days before an event starts
-    - When an event is cancelled
-    - When a new event is booked
-    - Minutes/Hours/Days after an event ends
-    - When event is rescheduled
+    | Trigger | Fires when |
+    | --- | --- |
+    | Before event starts | A set number of minutes, hours, or days before the event begins |
+    | Event is cancelled | A booking is cancelled |
+    | New event booked | A new booking is created |
+    | After event ends | A set number of minutes, hours, or days after the event ends |
+    | Event is rescheduled | A booking is rescheduled |
 
     <Frame>
       ![Selecting a workflow trigger](/images/workflows/overview-4.png)
     </Frame>
   </Step>
-  <Step title="Add your action (what should happen?)">
-    Now, decide how you want to reach out. Select one from the dropdown menu:
+  <Step title="Add an action">
+    The action decides how you reach out. An action is a designated notification type, for example a reminder to an attendee, a specific phone number, or an email address. Pick one from the dropdown:
 
-    - Send an email to the host
-    - Send an email to the attendee
-    - Send an SMS to the attendee
-    - Send an SMS to a specific number
-    - Send WhatsApp message to the attendee
-    - Send WhatsApp message to a specific number
-
-    Actions are a designated notification type. For example, sending a reminder to an attendee, a specific phone number or an email address.
+    | Action | Sends to |
+    | --- | --- |
+    | Send email to host | The meeting host |
+    | Send email to attendee | The person who booked |
+    | Send SMS to attendee | The person who booked |
+    | Send SMS to a specific number | A fixed phone number you enter |
+    | Send WhatsApp message to attendee | The person who booked |
+    | Send WhatsApp message to a specific number | A fixed WhatsApp number you enter |
 
     <Frame>
       ![Selecting a workflow action](/images/workflows/overview-5.png)
     </Frame>
 
-    - Save it.
+    When everything looks right, **save** the workflow.
   </Step>
 </Steps>
 
+<Check>
+  Your workflow is live. Cal ID will now send the message automatically whenever the trigger fires on the assigned event types.
+</Check>
+
 ## Custom template
 
-You can either use the default template for the email or even use a custom template and use additional inputs as variables within that.
-
-For more details, visit [Customizing your Workflow](/workflows/custom-messages).
+You can use the default template for your messages, or switch to a custom template and add your own inputs as variables. For a full walkthrough, see [Customizing your workflow](/workflows/custom-messages).
 
 ## Dynamic text variables
 
-If the location is a video conferencing app then the \{LOCATION\} would be 'Zoom' or 'Google Meet' and \{MEETING\_URL\} would be the actual link to the meeting. If the location is not a video conferencing app then \{MEETING\_URL\} is empty.
+Insert dynamic text into your messages using variables. Each one is replaced with real booking data when the message is sent.
 
-You can insert dynamic text into your messages using variables. These variables will be replaced with real booking data when the message is sent.
-
-| Variables | Description |
+| Variable | Description |
 | --- | --- |
 | `{{event_name}}` | The title or name of the scheduled event |
 | `{{event_date}}` | The date when the event is scheduled |
@@ -109,22 +109,50 @@ You can insert dynamic text into your messages using variables. These variables 
 | `{{end_time_tz_booker}}` | The event end time converted to the attendee's timezone |
 | `{{event_type_name}}` | The title or name of the event type |
 
-Workflows are one of many Cal ID tools you can use to simplify scheduling, save time, and focus on what really matters.
+<Note>
+  If the location is a video conferencing app, `{{location}}` resolves to 'Zoom' or 'Google Meet' and `{{meeting_url}}` is the actual link to the meeting. If the location is not a video conferencing app, `{{meeting_url}}` is empty.
+</Note>
 
-## For WhatsApp workflow
+## Send from your own WhatsApp number
 
-If you choose **Action = WhatsApp**, the message will be sent **by default from the Cal ID WhatsApp number**. If you want the message to be sent **from your own WhatsApp number**, you need to **integrate WhatsApp Business** from the **Cal ID App Store**. For more details, refer to this link: [Integrate WhatsApp Business](/workflows/whatsapp-business).
+If you choose **Action = WhatsApp**, the message is sent **by default from the Cal ID WhatsApp number**. To send from **your own WhatsApp number**, integrate WhatsApp Business from the Cal ID App Store. See [Integrate WhatsApp Business](/workflows/whatsapp-business) for the full setup.
 
-Steps after integrating WhatsApp Business:
+Once WhatsApp Business is integrated:
 
-- Create or edit a workflow.
-- Select **Action related to WhatsApp**.
-- Choose your **WhatsApp Business Phone Number**.
-- Select an **approved WhatsApp template** (created and approved in Meta).
-- Save the workflow.
+<Steps>
+  <Step title="Create or edit a workflow">
+    Open the workflow you want to use, or start a new one.
+  </Step>
+  <Step title="Select a WhatsApp action">
+    Choose an action related to WhatsApp.
+  </Step>
+  <Step title="Choose your number and template">
+    Select your **WhatsApp Business phone number**, then pick an **approved WhatsApp template** (created and approved in Meta).
+  </Step>
+  <Step title="Save the workflow">
+    Save your changes.
 
-<Frame>
-  ![Selecting a WhatsApp Business number and template in a workflow](/images/workflows/overview-6.png)
-</Frame>
+    <Frame>
+      ![Selecting a WhatsApp Business number and template in a workflow](/images/workflows/overview-6.png)
+    </Frame>
+  </Step>
+</Steps>
 
-Once the setup is complete, **WhatsApp messages will be sent from your Selected number to the attendee** **or to the Specific WhatsApp number.**
+Once setup is complete, WhatsApp messages are sent from your selected number to the attendee or to the specific WhatsApp number.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Customize your messages" icon="pen-to-square" href="/workflows/custom-messages">
+    Personalize sender names, subject lines, and booking variables.
+  </Card>
+  <Card title="Integrate WhatsApp Business" icon="whatsapp" href="/workflows/whatsapp-business">
+    Send reminders from your own WhatsApp Business number.
+  </Card>
+  <Card title="Track workflow status" icon="list-check" href="/bookings/workflow-status">
+    See which messages were sent for each booking.
+  </Card>
+  <Card title="Measure performance" icon="chart-line" href="/insights/workflow-performance">
+    Review how your automated messages are performing.
+  </Card>
+</CardGroup>

@@ -6,29 +6,52 @@ keywords: ["export bookings", "download bookings", "csv export", "booking report
 related: ["/bookings/view-details", "/bookings/no-show", "/bookings/workflow-status", "/insights/booking-performance", "/getting-started/contacts"]
 ---
 
-To export your booking details from **Cal ID**, follow these steps to generate a CSV or Excel file containing all your appointment data.
-
-Exporting allows you to take your scheduling data into external tools like Excel or Google Sheets for advanced reporting and analysis.
+Export your **Cal ID** bookings to a CSV or Excel file and take your scheduling data into external tools like Excel or Google Sheets for advanced reporting, invoicing, and analysis.
 
 ## How to export your data
 
-| **Step** | **Action** | **Description** |
-| --- | --- | --- |
-| **1** | **Go to Bookings** | Open the **Bookings** tab from the main sidebar. |
-| **2** | **Filter your View** | Select the category you want to export, such as **Upcoming** or **Past**. |
-| **3** | **Refine Selection** | Use the **Filter** button if you only want to export specific event types or date ranges. |
-| **4** | **Click Export** | Click the **Export** button located at the top right of the dashboard. |
-| **5** | **Check your Email** | Once you click on export, the generated CSV file will be **sent** to your registered **email address**. |
+<Steps>
+  <Step title="Go to Bookings">
+    Open the **Bookings** tab from the main sidebar.
+  </Step>
+  <Step title="Filter your view">
+    Select the category you want to export, such as **Upcoming** or **Past**.
+  </Step>
+  <Step title="Refine your selection">
+    Use the **Filter** button if you only want to export specific event types or date ranges.
+  </Step>
+  <Step title="Click Export">
+    Click the **Export** button located at the top right of the dashboard.
+  </Step>
+  <Step title="Check your email">
+    Once you click Export, the generated CSV file is **sent to your registered email address**.
+  </Step>
+</Steps>
+
+<Note>
+  The export is delivered by email rather than downloaded directly in the browser, so check your inbox (and spam folder) for the file.
+</Note>
 
 ## What is included in the export?
 
-The exported file will contain the same parameters found in your **Quick Reference** guide:
+The exported file contains the same parameters found in your **Quick Reference** guide:
 
-- **Meeting Basics**: Includes the `uid`, event `title`, `startTime`, and `endTime`.
-- **Attendee Info**: Contains the `attendeeName`, `email`, and `phone` number if provided.
-- **Contextual Data**: Includes the `location`, `description`, and whether the booking was an `isEmbed`.
-- **Timezone Details**: Lists the `hostStartTime` and `attendeeStartTime` to track global meetings accurately.
+- **Meeting basics**: Includes the `uid`, event `title`, `startTime`, and `endTime`.
+- **Attendee info**: Contains the `attendeeName`, `email`, and `phone` number if provided.
+- **Contextual data**: Includes the `location`, `description`, and whether the booking was an `isEmbed`.
+- **Timezone details**: Lists the `hostStartTime` and `attendeeStartTime` to track global meetings accurately.
 
 <Tip>
-  **Segmenting Your Data:** Before exporting, use the **Segment** dropdown next to the export button to quickly view data for specific teams or projects. This ensures your CSV only contains the relevant information you need for your specific report.
+  **Segmenting your data:** Before exporting, use the **Segment** dropdown next to the export button to quickly view data for specific teams or projects. This ensures your CSV only contains the relevant information you need for your specific report.
 </Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="See booking details" icon="list" href="/bookings/view-details">
+    Review the full information panel for any past or upcoming booking.
+  </Card>
+  <Card title="Booking performance" icon="chart-line" href="/insights/booking-performance">
+    Turn your exported data into trends with the Insights dashboard.
+  </Card>
+</CardGroup>

@@ -8,36 +8,38 @@ related: ["/teams/round-robin", "/teams/collective", "/event-types/booking-quest
 
 ## Overview
 
-Cal ID's Routing Forms helps people quickly book the right appointment with the right person.
+Cal ID's Routing Forms help people quickly book the right appointment with the right person.
 
-It works by asking the person booking to answer a few questions. Based on their answers, the system automatically directs them to the correct person, a specific event, or an external website.
+It works by asking the booker a few questions. Based on their answers, the system automatically directs them to the correct person, a specific event, or an external website—saving time for everyone and avoiding mistakes like booking with the wrong person or choosing the wrong type of meeting.
 
-This saves time for everyone and avoids mistakes, like booking with the wrong person or choosing the wrong type of meeting.
+<Info>
+  Routing rules read the booker's answers and match them against conditions you define. A qualified lead can be sent straight to a specific event type or a team's round-robin queue, while everyone else falls through to a fallback route—so the right people always land on the right booking page.
+</Info>
 
-## Step 1: Create a new form
+## Create a new form
 
 <Steps>
   <Step title="Access Routing">
     Log in to your Cal ID account and click on **Routing** in the left-hand sidebar.
   </Step>
-  <Step title="Start Creation">
+  <Step title="Start creation">
     Click the **\+ New** button (or "Create Routing form") in the top right corner.
 
     <Frame>
       ![New routing form button](/images/routing/routing-forms-1.png)
     </Frame>
   </Step>
-  <Step title="Choose Ownership">
+  <Step title="Choose ownership">
     If you are part of a team, the system will ask if this form is for your **Personal** account or for a specific **Team**.
 
     <Frame>
       ![Choose personal or team ownership](/images/routing/routing-forms-2.png)
     </Frame>
   </Step>
-  <Step title="Form Details">
+  <Step title="Add form details">
     An **Add new form** pop-up will appear:
 
-    - **Title**: Give your form a clear name (e.g., "New Client Inquiry").
+    - **Title**: Give your form a clear name (for example, "New Client Inquiry").
     - **Description**: Briefly explain the purpose of the form for your internal reference.
 
     <Frame>
@@ -49,20 +51,20 @@ This saves time for everyone and avoids mistakes, like booking with the wrong pe
   </Step>
 </Steps>
 
-## Step 2: Design the form (questions)
+## Design the form (questions)
 
 You will be redirected to the **Form** tab to build your questionnaire.
 
 <Steps>
-  <Step title="Add Questions">
+  <Step title="Add questions">
     Click the **Add question** button to create your first field. You can add as many as you want.
 
     <Frame>
       ![Add question button](/images/routing/routing-forms-4.png)
     </Frame>
   </Step>
-  <Step title="Configure Each Question">
-    - **Label**: The question the user will see (e.g., "What is your budget?").
+  <Step title="Configure each question">
+    - **Label**: The question the user will see (for example, "What is your budget?").
     - **Identifier**: A unique internal name used for setting up routing rules later.
     - **Type**: Select the format of the answer: **Short Text**, **Long Text**, **Single Select**, **Multi-select**, **Email**, **Phone**, or **Number**.
     - **Required**: Select **Yes** if the user must answer this to proceed.
@@ -83,11 +85,11 @@ You will be redirected to the **Form** tab to build your questionnaire.
   </Step>
 </Steps>
 
-## Step 3: Set up routing rules
+## Set up routing rules
 
 Navigate to the **Routing** tab to decide where users go based on their answers.
 
-If you don't want to add any route, then set the Fallback route, where you want to send the booker after filling out the required questions.
+If you don't want to add any route, then set the **Fallback route**, where you want to send the booker after they fill out the required questions.
 
 <Frame>
   ![Routing tab with fallback route](/images/routing/routing-forms-7.png)
@@ -96,22 +98,22 @@ If you don't want to add any route, then set the Fallback route, where you want 
 To add a route:
 
 <Steps>
-  <Step title="Add a new Route">
+  <Step title="Add a new route">
     Click **\+ Add a new Route** to add a route.
 
     <Frame>
       ![Add a new route button](/images/routing/routing-forms-8.png)
     </Frame>
   </Step>
-  <Step title="Add Rules">
-    Click **\+ Add rule** to link a question to a value (e.g., "If Budget is Greater than 5000").
+  <Step title="Add rules">
+    Click **\+ Add rule** to link a question to a value (for example, "If Budget is Greater than 5000").
 
     <Frame>
       ![Add rule to a route](/images/routing/routing-forms-9.png)
     </Frame>
   </Step>
-  <Step title="Define Logic">
-    If you add more than one Rule then you have to define logic. Next to "For responses matching the following criteria," select a logic filter:
+  <Step title="Define logic">
+    If you add more than one rule, you have to define logic. Next to "For responses matching the following criteria," select a logic filter:
 
     - **All**: The user must meet **every** rule in this route to be redirected.
     - **Any**: The user only needs to meet **one** of the rules.
@@ -121,26 +123,26 @@ To add a route:
       ![Logic filter options](/images/routing/routing-forms-10.png)
     </Frame>
   </Step>
-  <Step title="Select Destination (Send Booker To)">
+  <Step title="Select a destination (Send Booker To)">
     - **Custom Page**: Display a specific "Thank You" or "Waitlist" message.
 
     <Frame>
       ![Custom page destination](/images/routing/routing-forms-11.png)
     </Frame>
 
-    - **External Redirect**: Send the user to another website (e.g., your homepage).
+    - **External Redirect**: Send the user to another website (for example, your homepage).
 
     <Frame>
       ![External redirect destination](/images/routing/routing-forms-12.png)
     </Frame>
 
-    - **Event Redirect**: Send the user directly to a specific booking page (e.g., a "Career Counselling" event).
+    - **Event Redirect**: Send the user directly to a specific booking page (for example, a "Career Counselling" event).
 
     <Frame>
       ![Event redirect destination](/images/routing/routing-forms-13.png)
     </Frame>
   </Step>
-  <Step title="Fallback Route">
+  <Step title="Set a fallback route">
     At the bottom, set a **Fallback route** for users who do not match any of your specific rules.
 
     <Frame>
@@ -149,9 +151,13 @@ To add a route:
   </Step>
 </Steps>
 
-If you want to embed the routing form on your website or page, then follow Step 4.
+<Tip>
+  Rules are evaluated top to bottom, and the first matching route wins—so place your most specific routes first and rely on the fallback route to catch everyone else.
+</Tip>
 
-## Step 4: Embed the form on your website
+If you want to embed the routing form on your website or page, continue with the next section.
+
+## Embed the form on your website
 
 Once your logic is set, go to the **Embed** tab and select the type.
 
@@ -160,14 +166,14 @@ Once your logic is set, go to the **Embed** tab and select the type.
 </Frame>
 
 <Steps>
-  <Step title="Configure Settings">
+  <Step title="Configure settings">
     Adjust the display settings for your form (such as theme, width, or Brand Color) if needed.
 
     <Frame>
       ![Embed display settings](/images/routing/routing-forms-16.png)
     </Frame>
   </Step>
-  <Step title="Copy Code">
+  <Step title="Copy code">
     Click the **Copy Code** button. A pop-up will appear showing the snippet.
 
     <Frame>
@@ -178,3 +184,14 @@ Once your logic is set, go to the **Embed** tab and select the type.
     Paste this code into your website's HTML where you want the form to appear.
   </Step>
 </Steps>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Routing performance" icon="chart-line" href="/insights/routing-performance">
+    Measure how your form routes bookers and spot where leads drop off.
+  </Card>
+  <Card title="Round-robin assignment" icon="users" href="/teams/round-robin">
+    Route qualified bookers into a team's round-robin queue.
+  </Card>
+</CardGroup>

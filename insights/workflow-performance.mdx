@@ -6,19 +6,19 @@ keywords: ["workflow insights", "workflow analytics", "workflow performance", "a
 related: ["/insights/booking-performance", "/insights/routing-performance", "/workflows/overview", "/workflows/custom-messages"]
 ---
 
-The Workflows insight tab allows you to monitor your automation health. It ensures that your reminders, follow-ups, and notifications are being delivered reliably to your guests.
+Keep your automation healthy. The **Workflows** insight tab lets you confirm that reminders, follow-ups, and notifications are being delivered reliably to your guests, and catch failures before they cost you a booking.
 
-## Navigating to workflow insights
+## Open the Workflows dashboard
 
 <Steps>
   <Step title="Log in to Cal ID">
     Access your dashboard at [Cal ID](https://cal.id/home).
   </Step>
   <Step title="Open Insights">
-    Click the **Insights** in the left-hand sidebar.
+    Click **Insights** in the left-hand sidebar.
   </Step>
-  <Step title="Select Tab">
-    Click on the **Workflows** tab at the top of the dashboard.
+  <Step title="Select the Workflows tab">
+    Click the **Workflows** tab at the top of the dashboard.
   </Step>
 </Steps>
 
@@ -26,12 +26,16 @@ The Workflows insight tab allows you to monitor your automation health. It ensur
 
 ### Execution scorecards
 
-- **Total Triggered**: The total number of times an automation was kicked off by an event.
-- **Workflows Queued**: Number of workflows that are in queue and will be delivered.
-- **Workflows Delivered**: The number of Emails, SMS, or WhatsApp messages successfully sent.
-- **Workflows Read**: The number of workflow messages that recipients have opened.
-- **Workflows Failed**: Automations that did not complete (often due to invalid contact info or integration errors).
-- **Workflows Cancelled**: Actions that were scheduled but stopped (e.g., a reminder was cancelled because the meeting was cancelled/deleted).
+These scorecards summarize how your automations performed across the selected date range.
+
+| Metric | What it tells you |
+| --- | --- |
+| **Total Triggered** | The total number of times an automation was kicked off by an event. |
+| **Workflows Queued** | Number of workflows that are in queue and will be delivered. |
+| **Workflows Delivered** | The number of Emails, SMS, or WhatsApp messages successfully sent. |
+| **Workflows Read** | The number of workflow messages that recipients have opened. |
+| **Workflows Failed** | Automations that did not complete (often due to invalid contact info or integration errors). |
+| **Workflows Cancelled** | Actions that were scheduled but stopped (e.g., a reminder cancelled because the meeting was cancelled or deleted). |
 
 <Frame>
   ![Workflow execution scorecards](/images/insights/workflow-performance-1.png)
@@ -47,8 +51,23 @@ The Workflows insight tab allows you to monitor your automation health. It ensur
 
 ## Filtering and account selection
 
+<Info>
+  Both filters apply to every scorecard and graph on the page. Set them before reading the numbers so you're comparing the right period and account.
+</Info>
+
 - **Date Range**: Use the top-right filter to see how many automations ran during a specific campaign or month.
 - **Team vs. Personal**: Switch the account filter at the top left to see if team-wide workflows are performing differently than your personal ones.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Booking performance" icon="chart-line" href="/insights/booking-performance">
+    Track booking efficiency, meeting trends, and no-show rates across your events.
+  </Card>
+  <Card title="Routing performance" icon="filter" href="/insights/routing-performance">
+    See how visitors move through your routing forms and where they drop off.
+  </Card>
+</CardGroup>
 
 ## Related docs
 

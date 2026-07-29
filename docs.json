@@ -40,6 +40,12 @@
         "tab": "Event Types",
         "groups": [
           {
+            "group": "Overview",
+            "pages": [
+              "event-types/overview"
+            ]
+          },
+          {
             "group": "Basics",
             "pages": [
               "event-types/basics/overview",
@@ -124,6 +130,12 @@
         "tab": "Scheduling & Teams",
         "groups": [
           {
+            "group": "Overview",
+            "pages": [
+              "scheduling/overview"
+            ]
+          },
+          {
             "group": "Availability",
             "pages": [
               "availability/create",
@@ -180,6 +192,12 @@
         "tab": "Apps & Integrations",
         "groups": [
           {
+            "group": "Overview",
+            "pages": [
+              "apps/overview"
+            ]
+          },
+          {
             "group": "Calendars & Conferencing",
             "pages": [
               "apps/google-calendar",
@@ -218,6 +236,12 @@
       {
         "tab": "Customization & Settings",
         "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "customization/overview"
+            ]
+          },
           {
             "group": "Appearance",
             "pages": [
@@ -264,6 +288,12 @@
       {
         "tab": "Developers",
         "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "developers/overview"
+            ]
+          },
           {
             "group": "API & Webhooks",
             "pages": [

@@ -6,105 +6,62 @@ keywords: ["api key", "generate api key", "authentication", "api token", "develo
 related: ["/developers/api-integration", "/developers/webhooks", "/developers/event-type-id", "/apps/make"]
 ---
 
-The Cal ID API Key is a secure credential used to connect your scheduling data with external applications, custom websites, or our API documentation. It allows different software systems to communicate with your Cal ID account safely.
+The Cal ID API key is a secure credential that connects your scheduling data with external applications, custom websites, or the API docs. It lets different software systems communicate with your Cal ID account safely.
 
-## Step-by-step instructions to get your API key
+## Create your API key
 
-### Access the developer dashboard
+<Steps>
+  <Step title="Open the developer dashboard">
+    Log in to your **Cal ID** account, click **Settings**, then scroll the left sidebar to the **Developer** section and click **API Keys**.
 
-- **Log in** to your **Cal ID** account.
-- Click on the **Settings**.
-- Scroll down the left-hand sidebar menu until you see the **Developer** category.
-- **Click API Keys** to open your management dashboard.
+    <Frame>
+      ![API Keys management dashboard](/images/developers/api-key-1.png)
+    </Frame>
+  </Step>
+  <Step title="Start a new key">
+    Click **Create an API Key**. A configuration window appears.
 
-<Frame>
-  ![API Keys management dashboard](/images/developers/api-key-1.png)
-</Frame>
+    <Frame>
+      ![Create an API Key button](/images/developers/api-key-2.png)
+    </Frame>
+  </Step>
+  <Step title="Name the key">
+    Enter a descriptive name in the **Name this key** field — for example, "My Personal Portfolio" or "Zapier Integration." A clear name makes it easy to tell later which app uses which key.
+  </Step>
+  <Step title="Set an expiration">
+    Decide how long the key stays active.
 
-### Start the creation process
+    <Tabs>
+      <Tab title="Never expires">
+        Switch the **Never expires** toggle **ON**. The key stays active until you manually delete it.
+      </Tab>
+      <Tab title="Set an expiry date">
+        Leave the toggle **OFF**, open the **Expiration date** dropdown, and choose **7 days**, **30 days**, **3 months**, or **1 year**.
 
-- Click the button labeled **Create an API Key**.
-- A configuration window will appear.
+        <Note>
+          Once this date passes, the key expires and the integration stops working until you create a new one.
+        </Note>
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Create and copy the key">
+    Click **Create**. Your secret key is shown **once** — click the copy icon and paste it somewhere safe, like a password manager.
 
-<Frame>
-  ![Create an API Key button](/images/developers/api-key-2.png)
-</Frame>
-
-### Fill in the details
-
-- **Name:** Enter a descriptive name in the "Name this key" field.
-- **Example:** "My Personal Portfolio" or "Zapier Integration."
-- **Why?** This helps you identify which app is using which key later on.
-
-### Set the expiration (choose one)
-
-You must decide how long this key should remain active:
-
-**Option A: Long-term Use**
-
-- Switch the **"Never expires"** toggle button to **ON**.
-- The key will remain active until you manually delete it.
-
-**Option B: Temporary/Secure Use**
-
-- Leave the toggle **OFF**.
-- Go to the **"Expiration date"** dropdown field.
-- Select your preferred duration: **7 days**, **30 days**, **3 months**, or **1 year**.
-
-<Note>
-  Once this time passes, the key will expire and the integration will stop working until you create a new one.
-</Note>
-
-### Finalize and save
-
-- Click the **Create** button.
-- A "Secret Key" will be displayed on your screen.
-
-### Copy and secure your key (important)
-
-- **Copy immediately:** Click the copy icon or highlight the text and copy it.
-- **Store safely:** Paste this key into a secure location like a password manager.
-
-<Warning>
-  For your protection, **Cal ID will never show this key to you again.** If you close the window without copying it, you will have to delete the entry and create a new one.
-</Warning>
-
-## Using this key with API documentation
-
-You can use your newly created key to get live data and endpoints on our official documentation page.
-
-### Try our Swagger collection
-
-- We've created a small collection of frequently made API calls that you can try in our [API docs](https://cal.id/docs/api/).
-- **Authorize:** Look for the **"Authorize"** button (a lock icon at the start of the page).
-
-<Frame>
-  ![Authorize button in API docs](/images/developers/api-key-3.png)
-</Frame>
-
-- **Enter Key:** Paste your API Key into the value field and click on the Authorize button.
-
-<Frame>
-  ![Enter API key to authorize](/images/developers/api-key-4.png)
-</Frame>
-
-- You can now try any endpoint (like `/event-types`) to see your real account data in action.
-
-## Key security rules
-
-- **Never Share:** Do not share your API key in emails, chat messages, or public code repositories like GitHub.
-- **Multiple Keys:** You can create different keys for different purposes. This is safer than using one key for everything.
-- **Revoking Access:** If you no longer use an integration, go back to the **API Keys** page and click the **Delete** (trash icon) next to the key to instantly revoke its access.
+    <Warning>
+      For your protection, **Cal ID will never show this key again.** If you close the window without copying it, delete the entry and create a new one.
+    </Warning>
+  </Step>
+</Steps>
 
 ## Make your first request
 
-To make your first request, send an authenticated request to the `me` endpoint. This will share your profile details.
+Send an authenticated request to the `me` endpoint to confirm your key works — it returns your profile details.
 
 ```text
 GET https://api.cal.id/users/me
 ```
 
-Take a look at how you might call this method via `curl`:
+Here's the same call with `curl`:
 
 ```bash
 curl -X 'GET' \
@@ -114,3 +71,24 @@ curl -X 'GET' \
 ```
 
 Replace `calid_XXXXXX` with your API key.
+
+<Tip>
+  Prefer to explore interactively? Open the [API Reference](/api-reference/introduction), click **Authorize**, paste your key, and run any endpoint against your live account right from the docs.
+</Tip>
+
+## Key security rules
+
+- **Never share** your API key in emails, chat messages, or public code repositories like GitHub.
+- **Use separate keys** for different integrations — safer than reusing one key everywhere.
+- **Revoke unused keys** from the **API Keys** page with the **Delete** (trash) icon to cut off access instantly.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Explore the API Reference" icon="code" href="/api-reference/introduction">
+    Authorize once, then try every endpoint against your live account.
+  </Card>
+  <Card title="Create your first booking" icon="calendar-plus" href="/developers/guides/create-a-booking">
+    A step-by-step recipe for booking through the API.
+  </Card>
+</CardGroup>

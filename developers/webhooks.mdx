@@ -6,26 +6,46 @@ keywords: ["webhooks", "event webhooks", "webhook payload", "booking webhook", "
 related: ["/developers/api-key", "/developers/api-integration", "/developers/event-type-id", "/event-types/event-webhooks"]
 ---
 
-Webhooks offer a great way to automate the flow with other apps when invitees schedule, cancel, or reschedule events, or when the meeting ends. The webhook subscription allows you to listen to specific trigger events, such as when a booking has been scheduled, for example. You can always listen to the webhook by providing a custom subscriber URL with your own development work. However, if you wish to trigger automations without any development work, you can use the integration with Zapier which connects Cal ID to your apps. Please note that the webhooks can be associated with a user as well as individual event types, including team event types.
+Webhooks let you automate downstream flows the moment something happens in Cal ID — a booking is scheduled, rescheduled, cancelled, paid for, and more. You subscribe to specific trigger events by pointing Cal ID at a subscriber URL that receives a JSON payload each time a trigger fires. Webhooks can be attached to your account or to individual event types, including team event types.
 
-## Creating a webhook subscription
+<Info>
+  Prefer no-code? You can trigger automations without building a listener by connecting Cal ID to your other apps through an automation platform. For the full payload schemas and delivery details, see the [Webhook events reference](/api-reference/webhook-events).
+</Info>
 
-To create a new webhook subscription, visit `/settings/webhooks` and proceed to enter the following details:
+## Available triggers
 
-1. **Subscriber URL**: This is the listener URL where the payload will be sent when an event trigger is activated.
-2. **Event triggers**: You can choose which specific triggers to listen to. Currently available triggers include:
-   - `Booking Created`
-   - `Booking Requested`
-   - `Booking Rescheduled`
-   - `Booking Cancelled`
-   - `Booking Rejected`
-   - `Booking Payment Initiated`
-   - `Booking Paid`
-   - `Booking No-show Updated`
-   - `Form Submitted`
-   - `Out-of-office Created`
-3. **Secret**: You can provide a secret key with this webhook to **verify it** on the subscriber URL when receiving a payload. This helps confirm whether the payload is authentic or has been tampered with. You can leave it blank if you don't wish to secure the webhook with a secret key.
-4. **Custom Payload**: You have the option to **customize the payload** that you receive when a subscribed event is triggered.
+| Trigger | Code | Fires when |
+| --- | --- | --- |
+| Booking Created | `BOOKING_CREATED` | A booking is confirmed |
+| Booking Requested | `BOOKING_REQUESTED` | A booking needs your confirmation |
+| Booking Rescheduled | `BOOKING_RESCHEDULED` | An existing booking is moved |
+| Booking Cancelled | `BOOKING_CANCELLED` | A booking is cancelled |
+| Booking Rejected | `BOOKING_REJECTED` | You decline a requested booking |
+| Booking Payment Initiated | `BOOKING_PAYMENT_INITIATED` | Checkout begins for a paid booking |
+| Booking Paid | `BOOKING_PAID` | Payment for a booking succeeds |
+| Booking No-show Updated | `BOOKING_NO_SHOW_UPDATED` | An attendee is marked as a no-show |
+| Form Submitted | `FORM_SUBMITTED` | A routing form is submitted |
+| Out-of-office Created | `OOO_CREATED` | An out-of-office entry is created |
+
+## Create a webhook subscription
+
+<Steps>
+  <Step title="Open webhook settings">
+    Visit `/settings/webhooks` and start a new subscription.
+  </Step>
+  <Step title="Enter the Subscriber URL">
+    This is the listener URL that receives the payload whenever a subscribed trigger fires.
+  </Step>
+  <Step title="Choose your event triggers">
+    Select which triggers to listen to from the list above.
+  </Step>
+  <Step title="Add a secret (optional)">
+    Provide a secret key to verify incoming payloads on your subscriber URL — this confirms a payload is authentic and hasn't been tampered with. Leave it blank to skip.
+  </Step>
+  <Step title="Customize the payload (optional)">
+    Optionally tailor the payload you receive when a subscribed event fires (see [custom payload templates](#adding-a-custom-payload-template) below).
+  </Step>
+</Steps>
 
 <Frame>
   ![Creating a webhook subscription](/images/developers/webhooks-1.png)
@@ -130,16 +150,28 @@ To create a new webhook subscription, visit `/settings/webhooks` and proceed to 
 }
 ```
 
-## Verifying the authenticity of the received payload
+## Verify the authenticity of a payload
 
-1. Simply add a new **secret key** to your webhook and save.
-2. Wait for the webhook to be triggered (event created, cancelled, rescheduled, or meeting ended).
-3. Use the **secret key** to create an `hmac`, and update that with the webhook payload received to create an SHA256.
-4. Compare the hash received in the header of the webhook (`X-Cal-Signature-256`) with the one created using the **secret key** and the body of the payload. If they don't match, the received payload was adulterated and cannot be trusted.
+When you set a secret, Cal ID signs each request so you can confirm it genuinely came from Cal ID.
+
+<Steps>
+  <Step title="Add a secret key">
+    Add a secret key to your webhook and save.
+  </Step>
+  <Step title="Wait for a trigger">
+    Wait for the webhook to fire — a booking is created, cancelled, rescheduled, and so on.
+  </Step>
+  <Step title="Compute an HMAC">
+    Use the secret key to create an `hmac`, then combine it with the received webhook payload to produce a SHA256 signature.
+  </Step>
+  <Step title="Compare signatures">
+    Compare your computed hash with the one in the webhook's `X-Cal-Signature-256` header. If they don't match, the payload was altered and can't be trusted.
+  </Step>
+</Steps>
 
 ## Adding a custom payload template
 
-Customizable webhooks are a great way to reduce the development effort and in many cases remove the need for a developer to build an additional integration service. An example of a custom payload template is provided here:
+Customizable webhooks are a great way to reduce development effort — in many cases they remove the need to build an additional integration service. Here's an example custom payload template:
 
 ```json
 {
@@ -151,19 +183,19 @@ Customizable webhooks are a great way to reduce the development effort and in ma
 }
 ```
 
-where `{{type}}` represents the event type slug and `{{title}}` represents the title of the event type. Note that the variables should be added with a double parenthesis as shown above. Here's a breakdown of the payload that you would receive via an incoming webhook, with an exhaustive list of all the supported variables provided below:
+Here `{{type}}` represents the event type slug and `{{title}}` represents the title of the event type. Variables must be wrapped in double curly braces as shown above. The full set of supported variables is listed below.
 
 ### Webhook variable list
 
 | Variable | Type | Description |
 | --- | --- | --- |
-| triggerEvent | String | The name of the trigger event \[`BOOKING_CREATED`, `BOOKING_RESCHEDULED`, `BOOKING_CANCELLED`, `MEETING_ENDED`, `BOOKING_REJECTED`, `BOOKING_REQUESTED`, `BOOKING_PAYMENT_INITIATED`, `FORM_SUBMITTED`, `MEETING_STARTED`, `BOOKING_PAID`, `BOOKING_NO_SHOW_UPDATED`\] |
+| triggerEvent | String | The name of the trigger event \[`BOOKING_CREATED`, `BOOKING_REQUESTED`, `BOOKING_RESCHEDULED`, `BOOKING_CANCELLED`, `BOOKING_REJECTED`, `BOOKING_PAYMENT_INITIATED`, `BOOKING_PAID`, `BOOKING_NO_SHOW_UPDATED`, `FORM_SUBMITTED`, `OOO_CREATED`\] |
 | createdAt | Datetime | The time of the webhook |
 | type | String | The event type slug |
 | title | String | The event type name |
 | startTime | Datetime | The event's start time |
 | endTime | Datetime | The event's end time |
-| description | String | The event's description as described in the event type settings |
+| description | String | The event's description as set in the event type settings |
 | location | String | Location of the event |
 | organizer | Person | The organizer of the event |
 | attendees | Person | The event booker & any guests |
@@ -173,7 +205,7 @@ where `{{type}}` represents the event type slug and `{{title}}` represents the t
 | rejectionReason | String | Reason for rejection |
 | team.name | String | Name of the team booked |
 | team.members | String | Members of the team booked |
-| metadata | JSON | Contains metadata of the booking, including the meeting URL (videoCallUrl) in case of Google Meet. |
+| metadata | JSON | Contains metadata of the booking, including the meeting URL (videoCallUrl) in the case of Google Meet. |
 
 ### Person structure
 
@@ -183,3 +215,14 @@ where `{{type}}` represents the event type slug and `{{title}}` represents the t
 | email | Email | Email of the individual |
 | timezone | String | Timezone of the individual (e.g., "America/New\_York", "Asia/Kolkata") |
 | language?.locale | String | Locale of the individual (e.g., "en", "fr") |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Webhook events reference" icon="webhook" href="/api-reference/webhook-events">
+    Full trigger list, payload schemas, and signature verification details.
+  </Card>
+  <Card title="Build a webhook receiver" icon="server" href="/developers/guides/webhook-receiver">
+    A step-by-step recipe for verifying and handling webhook deliveries.
+  </Card>
+</CardGroup>

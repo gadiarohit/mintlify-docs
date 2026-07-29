@@ -4,11 +4,11 @@ description: "Automatically rotate incoming team bookings to the next available 
 icon: "arrows-rotate"
 ---
 
-## How to Set Round-robin scheduling?
+## How to set round-robin scheduling?
 
 Cal ID round robin scheduling creates a team event type with a pool of users, automatically assigning upcoming bookings to the next available host in rotation based on their calendars, skipping busy ones for even distribution. This balances workloads for members of the team.
 
-## Underlying Mechanism
+## Underlying mechanism
 
 Round robin in Cal ID evenly distributes team bookings by first computing the union of available slots across all hosts, then assigning to the highest-priority or weighted host who's free, skipping unavailable ones for fair rotation. The mechanism has a couple of options:
 
@@ -16,7 +16,7 @@ Round robin in Cal ID evenly distributes team bookings by first computing the un
   ![Round-robin mechanism options](/images/teams/round-robin-1.png)
 </Frame>
 
-## Priority Ranking
+## Priority ranking
 
 Every round-robin host has a priority (default: medium). Higher priorities get selected first when multiple hosts are available in a slot. Ties go to the least recently booked host. This system ensures that hosts with higher designated priorities are given precedence in the booking process, optimizing the allocation of resources and streamlining event organization.
 

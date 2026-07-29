@@ -20,7 +20,7 @@ https://yoursite.com/booking-success?uid=xyz123&title=30min%20Meeting&startTime=
   ![Redirect to a custom URL setting](/images/event-types/success-redirect-params-1.png)
 </Frame>
 
-## Quick Reference
+## Quick reference
 
 | **Parameter** | **Always Included** | **Description** |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ https://yoursite.com/booking-success?uid=xyz123&title=30min%20Meeting&startTime=
 - Included when location is set
 - Example: `integrations:gmeet` (Gmeet), `integrations:zoom` (Zoom). More possible values [here](https://cal.com/help/bookings/prefill-fields#pre-selecting-a-video-meeting)
 
-## Host/Organizer Parameters
+## Host/organizer parameters
 
 **`hostName`** - Host name(s), comma-separated for multiple hosts
 
@@ -86,7 +86,7 @@ https://yoursite.com/booking-success?uid=xyz123&title=30min%20Meeting&startTime=
 - Included when host timezone available
 - Example: `2024-01-15T09:00:00-05:00`
 
-## Attendee Parameters
+## Attendee parameters
 
 **`attendeeName`** - Name of the person who booked
 
@@ -134,7 +134,7 @@ https://yoursite.com/booking-success?uid=xyz123&title=30min%20Meeting&startTime=
 
 ## Troubleshooting
 
-### Common Issues
+### Common issues
 
 **Missing Parameters**
 
@@ -151,7 +151,7 @@ https://yoursite.com/booking-success?uid=xyz123&title=30min%20Meeting&startTime=
 - `hostStartTime` and `attendeeStartTime` include timezone information
 - Convert to local time as needed for display
 
-## Security Considerations
+## Security considerations
 
 - Always validate and sanitize parameters before using in database queries
 - Don't trust parameter values - validate against your expected data types

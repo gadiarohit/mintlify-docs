@@ -6,15 +6,19 @@ keywords: ["group events", "group booking", "multiple attendees", "class booking
 related: ["/event-types/recurring", "/event-types/embed", "/event-types/advanced/offer-seats", "/event-types/enable-apps"]
 ---
 
-In **Cal ID**, you can combine the **Offer seats** feature with specific availability rules to host a one-time event, such as a webinar or a Group Discussion (GD). This ensures that many people can book into the same specific time slot.
+Host a webinar or Group Discussion (GD) where many people book into one shared time slot. In **Cal ID**, you combine the **Offer seats** feature with specific availability rules so a single session can hold a whole group — and no other days or times distract the booker.
 
 ## Why use this setup?
 
-- **Host Large Groups**: Allow multiple guests to join a single session at once.
-- **Lock-in a Specific Time**: Ensure the event only happens when you want it to, without showing other daily availability.
-- **Control Attendance**: Set a maximum capacity for your webinar or discussion.
+- **Host large groups**: Allow multiple guests to join a single session at once.
+- **Lock in a specific time**: Ensure the event only happens when you want it to, without showing other daily availability.
+- **Control attendance**: Set a maximum capacity for your webinar or discussion.
 
 ## How to set it up
+
+<Note>
+  A locked group event comes from three settings working together: **Offer seats** (capacity), **Limit future bookings** (the date), and a **Date Override** (the exact time). Set all three and every booking funnels into one slot.
+</Note>
 
 ### Enable group seating
 
@@ -42,7 +46,7 @@ In **Cal ID**, you can combine the **Offer seats** feature with specific availab
 
 <Steps>
   <Step title="Find Limit future bookings">
-    In the same **Limits** tab, find [**Limit future bookings**](/event-types/limits/future-booking).
+    In the **Limits** tab, find [**Limit future bookings**](/event-types/limits/future-booking).
   </Step>
   <Step title="Choose the event date">
     Choose the specific date or the date range of your event. This hides all other days on your calendar so guests only see the event day.
@@ -79,9 +83,9 @@ In **Cal ID**, you can combine the **Offer seats** feature with specific availab
 
 ## How it works & looks for the booker
 
-- **Limited Calendar View**: When the booker opens your link, they will see most dates "greyed out". Only the specific date(s) you chose in **Limit future bookings** will be clickable.
-- **Specific Time Slots**: After selecting the date, the booker will see only the specific time slots you created via the **Date Override** (e.g., 10:00 AM or 4:00 PM).
-- **Seat Availability**: The booking page may show how many seats are remaining, helping to create a sense of urgency for the event.
+- **Limited calendar view**: When the booker opens your link, they will see most dates "greyed out". Only the specific date(s) you chose in **Limit future bookings** will be clickable.
+- **Specific time slots**: After selecting the date, the booker will see only the specific time slots you created via the **Date Override** (e.g., 10:00 AM or 4:00 PM).
+- **Seat availability**: The booking page may show how many seats are remaining, helping to create a sense of urgency for the event.
 - **Confirmation**: Once they book, they receive a confirmation for that exact time, and the "seat count" for that slot automatically decreases by one.
 
 <Frame>
@@ -89,5 +93,16 @@ In **Cal ID**, you can combine the **Offer seats** feature with specific availab
 </Frame>
 
 <Tip>
-  **The Perfect Webinar Setup:** By following these steps, you create a "locked" event. Because you selected a date range in **Limit Future Bookings** and set a **Date Override** for the time, all available seats are forced into that one specific slot. Your event is now scheduled for a single specific date and a single specific time, making it easy for everyone to join at once!
+  **The perfect webinar setup:** By following these steps, you create a "locked" event. Because you selected a date range in **Limit future bookings** and set a **Date Override** for the time, all available seats are forced into that one specific slot. Your event is now scheduled for a single specific date and a single specific time, making it easy for everyone to join at once!
 </Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Offer Seats" icon="chair" href="/event-types/advanced/offer-seats">
+    Fine-tune capacity, seat visibility, and how attendees share a slot.
+  </Card>
+  <Card title="Recurring Events" icon="repeat" href="/event-types/recurring">
+    Turn a one-time session into a repeating series attendees can subscribe to.
+  </Card>
+</CardGroup>

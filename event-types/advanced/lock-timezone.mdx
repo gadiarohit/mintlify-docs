@@ -6,11 +6,13 @@ keywords: ["lock timezone", "fixed timezone", "in person timezone", "timezone lo
 related: ["/event-types/setup/location", "/event-types/advanced/reschedule-past", "/event-types/advanced/custom-event-name", "/event-types/advanced/add-to-calendar"]
 ---
 
-In **Cal ID**, the **Lock timezone on booking page** feature is an essential setting for events that happen at a specific physical location or for webinars tied to a fixed broadcast time. It prevents the booking page from automatically detecting and switching to the guest's local timezone.
+Lock your **Cal ID** booking page to one fixed timezone so every guest sees the same "master" clock, no matter where they are booking from. It's the essential setting for events tied to a physical location or a fixed broadcast time.
 
-## Locking the timezone on your booking page
+By default, scheduling platforms translate your availability into the booker's local time. Enabling **Lock timezone on booking page** stops that translation and keeps the display fixed to the timezone you choose.
 
-Typically, scheduling platforms automatically translate your availability into the booker's local time. Enabling this feature stops that translation and keeps the display fixed to your chosen timezone.
+<Info>
+  Reach for this feature when the event happens at a specific place or a fixed moment: in-person workshops, destination tours, and live-streamed webinars. For purely virtual events where each guest joins from their own location, leave it off so times show in their local timezone.
+</Info>
 
 ## Why use "Lock Timezone"?
 
@@ -61,3 +63,14 @@ Typically, scheduling platforms automatically translate your availability into t
 <Tip>
   If you have multiple event types where some are virtual (needs local timezone) and some are in-person (needs locked timezone), make sure to check this setting individually for each event. This is an event-level setting, not a global one!
 </Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Set the event location" icon="location-dot" href="/event-types/setup/location">
+    Pair a locked timezone with a physical address so guests know exactly where and when to show up.
+  </Card>
+  <Card title="Allow rescheduling past events" icon="clock-rotate-left" href="/event-types/advanced/reschedule-past">
+    Keep the reschedule link working even after a fixed-time event has passed.
+  </Card>
+</CardGroup>

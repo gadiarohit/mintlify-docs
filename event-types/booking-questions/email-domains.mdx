@@ -6,23 +6,23 @@ keywords: ["email domains", "restrict email", "allowed domains", "block domains"
 related: ["/event-types/booking-questions/verify-email", "/event-types/booking-questions/pre-booking-questions", "/event-types/booking-questions/captcha", "/event-types/booking-questions/disable-guests"]
 ---
 
-In [**Cal ID**](https://cal.id/home), you can precisely control who is allowed to book meetings with you by utilizing the validation rules within the **Email** booking question. This allows you to automatically filter out personal accounts or limit bookings to specific professional organizations.
+Control exactly who can book with you by using the validation rules built into the **Email** booking question in [**Cal ID**](https://cal.id/home). Automatically filter out personal accounts or limit bookings to specific professional organizations, so your calendar stays reserved for the right audience.
 
-## Require or exclude email domains
+<Info>
+  **Allow vs. block.** *Require* rules act as an allowlist — only the domains you list can book. *Exclude* rules act as a blocklist — the domains you list are turned away, and everyone else is allowed.
+</Info>
 
-By configuring domain rules, you can ensure your calendar remains reserved for the right audience, whether that is internal staff or verified business prospects.
+## Why use domain filtering?
 
-### Why use domain filtering?
-
-- **Filter Out Spam:** Block common personal email providers to ensure you only speak with business prospects.
-- **Internal Use Only:** Set up a link that only allows people with your company's domain to book.
-- **Competitor Blocking:** Prevent specific competitors from booking by excluding their known domains.
+- **Filter out spam:** Block common personal email providers so you only speak with business prospects.
+- **Internal use only:** Set up a link that only allows people with your company's domain to book.
+- **Competitor blocking:** Prevent specific competitors from booking by excluding their known domains.
 
 ## How to set it up
 
 <Steps>
-  <Step title="Login and open Event Types">
-    Login to [**Cal ID**](https://cal.id/home) and navigate to the **Event Types** tab.
+  <Step title="Open Event Types">
+    Log in to [**Cal ID**](https://cal.id/home) and navigate to the **Event Types** tab.
   </Step>
   <Step title="Edit your event type">
     Click **Edit** on the specific event type you want to restrict.
@@ -52,19 +52,19 @@ By configuring domain rules, you can ensure your calendar remains reserved for t
 
 ## Booker experience & error messages
 
-If a guest attempts to book with a restricted email address, the system will block the submission and display a specific error message upon clicking **Confirm**:
+If a guest attempts to book with a restricted email address, the system blocks the submission and displays a specific error message when they click **Confirm**:
 
-- **When Excluded:** If you have blocked a domain (like a personal Gmail account), the guest will see:
+- **When excluded:** If you've blocked a domain (like a personal Gmail account), the guest sees:
   > **"Please enter a valid work email address"**
   <Frame>
     ![Error message shown when an excluded email domain is used](/images/event-types/email-domains-3.png)
   </Frame>
-- **When Required:** If you have limited the event to specific domains and the guest uses a different one, they will see:
+- **When required:** If you've limited the event to specific domains and the guest uses a different one, they see:
   > **"You are not allowed to book with this email domain. Please contact the owner of this link."**
   <Frame>
     ![Error message shown when a required email domain is not used](/images/event-types/email-domains-4.png)
   </Frame>
 
 <Tip>
-  **Professional Prospecting:** For Sales Discovery calls, it is common practice to exclude `gmail.com`, `outlook.com`, and `yahoo.com`. This ensures you collect professional contact information, making it easier to research your prospects and maintain a high-quality lead list.
+  **Professional prospecting:** For Sales Discovery calls, it's common practice to exclude `gmail.com`, `outlook.com`, and `yahoo.com`. This ensures you collect professional contact information, making it easier to research your prospects and maintain a high-quality lead list.
 </Tip>

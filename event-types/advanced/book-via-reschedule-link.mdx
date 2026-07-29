@@ -6,7 +6,11 @@ keywords: ["reschedule link", "rebook", "book via reschedule", "reuse link", "re
 related: ["/event-types/advanced/reschedule-past", "/event-types/advanced/disable-reschedule-cancel", "/event-types/advanced/private-links", "/event-types/advanced/success-url"]
 ---
 
-In [**Cal ID**](https://cal.id/home), the **Allow booking through reschedule link** feature provides a safety net for your scheduling process. It ensures that if a meeting is cancelled, the guest can still use that original link to create a completely new appointment rather than being met with an "invalid link" error.
+Give guests a safety net after a cancellation. In [**Cal ID**](https://cal.id/home), the **Allow booking through reschedule link** feature lets a guest reuse their original link to create a completely new appointment instead of hitting an "invalid link" error.
+
+<Info>
+  Turn this on for events where cancelled guests often come back. Without it, the reschedule link tied to a cancelled booking expires and can no longer be used.
+</Info>
 
 ## Why use "Allow booking through reschedule link"?
 
@@ -50,3 +54,14 @@ In [**Cal ID**](https://cal.id/home), the **Allow booking through reschedule lin
 <Note>
   This feature is different from **Allow rescheduling past events**. While "Past Events" focuses on meetings that actually occurred (or were no-shows), "Allow booking through reschedule link" focuses specifically on meetings that were **officially cancelled**. For the most flexible guest experience, many users choose to enable both settings.
 </Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Allow rescheduling past events" icon="clock-rotate-left" href="/event-types/advanced/reschedule-past">
+    Keep the reschedule link working after a meeting time has passed or was missed.
+  </Card>
+  <Card title="Redirect on booking" icon="link" href="/event-types/advanced/success-url">
+    Send guests to a custom URL once their new booking is confirmed.
+  </Card>
+</CardGroup>

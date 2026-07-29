@@ -6,23 +6,23 @@ keywords: ["meeting location", "zoom link", "google meet", "in person meeting", 
 related: ["/event-types/setup/multiple-durations", "/event-types/setup/event-availability", "/apps/zoom", "/apps/google-calendar", "/event-types/basics/edit-details"]
 ---
 
-## Setting the location for your event
-
-In **Cal ID**, the location determines where the meeting happens—whether it's a digital space, a physical office, or a phone call. You can even give your guests the freedom to choose their preferred spot.
+Set where each meeting happens—a video call, a physical office, or a phone call—and even let guests choose their preferred option at booking time. In **Cal ID**, the location is defined per event type, so different meetings can meet in different places.
 
 ## Supported location types
 
-Cal ID offers a wide variety of ways to connect. When setting up your event, you can choose from:
+Cal ID offers a wide variety of ways to connect. When setting up your event, you can choose from any of the following:
 
-- **In Person:** Ideal for physical venues. This accepts a text input where you can type a specific address or office name.
-- **Link:** Use this for a custom or permanent meeting link (like a static personal Zoom room or a proprietary URL).
-- **Attendee Phone Number:** Cal ID will prompt the guest to provide their phone number during booking so you can call them.
-- **Organizer Phone Number:** You provide your own phone number as the designated meeting spot for the guest to call.
-- **Jitsi Video Global:** Use Jitsi's native global video conferencing as your booking location.
-- **Third-Party Web Conference:** Select from integrated apps like **Google Meet, Zoom, Microsoft Teams**, and more.
+| Location type | What it does |
+| --- | --- |
+| **In Person** | Ideal for physical venues. Accepts a text input where you type a specific address or office name. |
+| **Link** | Use a custom or permanent meeting link (like a static personal Zoom room or a proprietary URL). |
+| **Attendee Phone Number** | Cal ID prompts the guest to provide their phone number during booking so you can call them. |
+| **Organizer Phone Number** | You provide your own phone number as the designated meeting spot for the guest to call. |
+| **Jitsi Video Global** | Use Jitsi's native global video conferencing as your booking location. |
+| **Third-Party Web Conference** | Select from integrated apps like **Google Meet, Zoom, Microsoft Teams**, and more. |
 
 <Note>
-  These apps must be integrated from the [**Cal ID App Store**](/apps/install-app).
+  Third-party web conferencing apps must be integrated from the [**Cal ID App Store**](/apps/install-app) before they appear as a location option.
 </Note>
 
 <Frame>
@@ -33,9 +33,9 @@ Cal ID offers a wide variety of ways to connect. When setting up your event, you
   ![Location dropdown](/images/event-types/location-2.png)
 </Frame>
 
-<Note>
-  **Important Note on Defaults:** If you do not select any specific location during the event setup, Cal ID will set the location to **Jitsi** by default.
-</Note>
+<Info>
+  If you do not select any specific location during the event setup, Cal ID sets the location to **Jitsi** by default.
+</Info>
 
 ## How to set or change the location
 
@@ -68,15 +68,13 @@ Cal ID offers a wide variety of ways to connect. When setting up your event, you
 
 ### Multiple locations (attendee choice)
 
-You can offer more than one way to meet for a single event! For example, you can let a guest choose between a "Zoom Call" and an "In-person Meeting."
-
-- Simply add multiple location options in the event settings.
+You can offer more than one way to meet for a single event. For example, you can let a guest choose between a "Zoom Call" and an "In-person Meeting." Simply add multiple location options in the event settings.
 
 <Frame>
   ![Multiple location options](/images/event-types/location-4.png)
 </Frame>
 
-- **Attendee Experience:** When the guest selects their time slot, they will see an **additional required question** on the booking form. They must pick their preferred location from your list before they can confirm the meeting.
+When the guest selects their time slot, they will see an **additional required question** on the booking form. They must pick their preferred location from your list before they can confirm the meeting.
 
 <Frame>
   ![Location choice on the booking form](/images/event-types/location-5.png)
@@ -85,3 +83,14 @@ You can offer more than one way to meet for a single event! For example, you can
 ### Privacy option: show after booking
 
 For sensitive locations (like a private office or home address), you can choose to hide the details from the public booking page. The full location will only be revealed to the guest in the **Confirmation Email** after they have successfully booked.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Set multiple durations" icon="clock" href="/event-types/setup/multiple-durations">
+    Offer several meeting lengths within a single event type.
+  </Card>
+  <Card title="Set event availability" icon="calendar-check" href="/event-types/setup/event-availability">
+    Control which hours are bookable for this event.
+  </Card>
+</CardGroup>

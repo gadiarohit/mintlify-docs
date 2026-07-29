@@ -6,7 +6,7 @@ keywords: ["time slot intervals", "slot frequency", "start times", "booking incr
 related: ["/event-types/limits/buffers", "/event-types/limits/booking-frequency", "/event-types/limits/first-slot-only", "/event-types/setup/multiple-durations", "/event-types/limits/minimum-notice"]
 ---
 
-In **Cal ID**, the **Time-slot intervals** setting determines how your available times are displayed to your guests. It controls the "frequency" of the slots shown on your booking page, allowing you to create a specific rhythm for your calendar.
+In **Cal ID**, the **Time-slot intervals** setting controls how often available start times appear on your booking page, letting you create a specific rhythm for your calendar, independent of your meeting duration.
 
 ## Customizing time-slot intervals
 
@@ -14,9 +14,9 @@ This feature allows you to decide if guests see slots every 15 minutes, every 30
 
 ### Why use time-slot intervals?
 
-- **Clean Calendar Look:** Avoid a cluttered booking page by offering fewer, well-spaced start times.
-- **Standardized Start Times:** Force meetings to start at consistent times (like 9:00, 9:30, 10:00) rather than random times like 9:15 or 10:45.
-- **Better Scheduling Control:** By setting larger intervals, you can ensure your day follows a specific block-based structure.
+- **Clean calendar look:** Avoid a cluttered booking page by offering fewer, well-spaced start times.
+- **Standardized start times:** Force meetings to start at consistent times (like 9:00, 9:30, 10:00) rather than random times like 9:15 or 10:45.
+- **Better scheduling control:** By setting larger intervals, you can ensure your day follows a specific block-based structure.
 
 ## How to set it up
 
@@ -24,7 +24,7 @@ This feature allows you to decide if guests see slots every 15 minutes, every 30
   <Step title="Go to Event Types">
     Click on **Event Types** in the left sidebar.
   </Step>
-  <Step title="Select an Event">
+  <Step title="Select an event">
     Click on the specific event you want to edit.
   </Step>
   <Step title="Navigate to Limits">
@@ -33,7 +33,7 @@ This feature allows you to decide if guests see slots every 15 minutes, every 30
   <Step title="Find Time-slot intervals">
     Locate the dropdown menu on the right side of the screen labeled **Time-slot intervals**.
   </Step>
-  <Step title="Choose Your Interval">
+  <Step title="Choose your interval">
     - Select from the list of options (e.g., **15, 30, or 60 minutes**).
     - If you leave this blank, the system will typically use the event's duration as the interval.
 
@@ -48,9 +48,14 @@ This feature allows you to decide if guests see slots every 15 minutes, every 30
 
 ## How it looks for the booker
 
-- If you set a **30-minute interval**, the guest will see choices like **10:00 AM, 10:30 AM, 11:00 AM**, and so on.
-- If you set a **60-minute interval**, the guest will only see slots at the top of the hour, such as **10:00 AM, 11:00 AM, 12:00 PM**.
-- The system will only show intervals that fit within your **Availability Schedule** and don't conflict with other bookings.
+The interval you choose sets the spacing between the start times a guest can pick:
+
+| Interval | Start times the guest sees |
+| --- | --- |
+| **30 minutes** | 10:00 AM, 10:30 AM, 11:00 AM, and so on |
+| **60 minutes** | 10:00 AM, 11:00 AM, 12:00 PM (top of the hour only) |
+
+The system will only show intervals that fit within your **Availability Schedule** and don't conflict with other bookings.
 
 <Tip>
   If you want to ensure you always start meetings on the hour, set your interval to **60 minutes**. This is very helpful for "batching" your work and keeping your calendar predictable.

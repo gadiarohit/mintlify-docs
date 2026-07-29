@@ -6,17 +6,19 @@ keywords: ["first slot only", "look busy", "limit availability", "show fewer slo
 related: ["/event-types/limits/time-slot-intervals", "/event-types/advanced/look-busy", "/event-types/limits/buffers", "/event-types/limits/booking-frequency", "/event-types/setup/event-availability"]
 ---
 
-In **Cal ID**, the **Only show the first slot of each day as available** feature is a powerful tool for controlling your schedule and maximizing your daily productivity. This setting ensures that your availability is limited to just one appointment per day, specifically the earliest time slot you have open.
+Cap an event type at one appointment per day by showing bookers only your earliest open slot. The **Only show the first slot of each day as available** setting is a simple way to protect the rest of your day and keep your calendar from filling with back-to-back meetings.
 
 ## Managing daily availability limits
 
-This setting is found under the **Limits** tab and is used to prevent your calendar from being overwhelmed with multiple back-to-back bookings on the same day.
+This setting lives under the **Limits** tab and prevents your calendar from being overwhelmed with multiple bookings on the same date.
 
 ### Why use this feature?
 
-- **Prioritize Deep Work:** By limiting your availability to only the first open slot, you protect the rest of your day for focused tasks and long-term projects.
-- **Control Daily Load:** It ensures you never have more than one meeting of this specific event type per day, which is ideal for intensive consultations or high-energy workshops.
-- **Maintain Consistency:** If you prefer to handle all your external meetings at the start of your day, this setting automates that preference.
+| Benefit | What it does for you |
+| --- | --- |
+| **Prioritize deep work** | Limits you to the first open slot, protecting the rest of your day for focused tasks and long-term projects. |
+| **Control daily load** | Guarantees no more than one meeting of this event type per day — ideal for intensive consultations or high-energy workshops. |
+| **Maintain consistency** | Automates a "meetings at the start of the day" preference so external calls stay grouped. |
 
 ## How to set it up
 
@@ -30,7 +32,7 @@ This setting is found under the **Limits** tab and is used to prevent your calen
   <Step title="Navigate to Limits">
     Click on the **Limits** tab in the top navigation bar of the "Edit event" screen.
   </Step>
-  <Step title="Toggle the Setting">
+  <Step title="Toggle the setting">
     Locate the section titled **Only show the first slot of each day as available**.
   </Step>
   <Step title="Enable">
@@ -45,12 +47,27 @@ This setting is found under the **Limits** tab and is used to prevent your calen
   </Step>
 </Steps>
 
+<Check>
+  You're set — bookers will now see only the earliest open slot for each day on your booking page.
+</Check>
+
 ## How it works for the booker
 
-- **Earliest Option Only:** When a guest views your booking page, they will only see the very first available time slot you have defined for each day.
-- **Dynamic Hiding:** Once that first slot is booked for a specific day, all other slots for that day will automatically be hidden from future bookers.
-- **Schedule Restriction:** This effectively restricts your availability to a single appointment per day, scheduled at your earliest available time.
+- **Earliest option only:** When a guest views your booking page, they see only the very first available time slot you have defined for each day.
+- **Dynamic hiding:** Once that first slot is booked for a specific day, all other slots for that day are automatically hidden from future bookers.
+- **Schedule restriction:** This effectively restricts your availability to a single appointment per day, scheduled at your earliest available time.
 
 <Note>
-  This feature is an "all-or-nothing" limit for the day. If you want to allow more than one booking but still limit the total count, you should use the [**Limit booking frequency**](/event-types/limits/booking-frequency) setting located just above this toggle.
+  This feature is an "all-or-nothing" limit for the day. If you want to allow more than one booking but still limit the total count, use the [**Limit booking frequency**](/event-types/limits/booking-frequency) setting located just above this toggle.
 </Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Limit booking frequency" icon="gauge" href="/event-types/limits/booking-frequency">
+    Allow more than one booking per day while still capping the total count.
+  </Card>
+  <Card title="Look busy" icon="user-clock" href="/event-types/advanced/look-busy">
+    Hide a percentage of open slots to make your calendar appear fuller.
+  </Card>
+</CardGroup>

@@ -6,17 +6,17 @@ keywords: ["private links", "single use link", "one time link", "secret booking 
 related: ["/event-types/basics/secret-events", "/event-types/advanced/book-via-reschedule-link", "/event-types/advanced/disable-reschedule-cancel", "/event-types/advanced/success-url"]
 ---
 
-In **Cal ID**, the **Private Links** feature offers a layer of security and exclusivity for your scheduling by allowing you to generate unique, restricted URLs that do not expose your main profile.
+Share a booking invite without revealing your public profile. In **Cal ID**, the **Private Links** feature generates unique, restricted URLs that can expire after a single use or on a set date, giving your scheduling an added layer of security and exclusivity.
 
 ## Using private links for maximum privacy
 
-While standard event types have public URLs associated with your username, Private Links allow you to invite attendees without sharing your direct booking page path.
+Standard event types have public URLs tied to your username. Private Links let you invite attendees without sharing your direct booking page path.
 
 ## Why use private links?
 
-- **Protect Your Username:** This feature prevents attendees from seeing your main **Cal ID** username, which otherwise leads directly to all your public booking options.
-- **Single-Use Security:** You can generate a link that regenerates or expires after each use, ensuring an attendee cannot reuse the same URL to book your time repeatedly.
-- **Control Distribution:** It prevents your link from being shared around unintentionally, helping you better manage incoming booking requests and maintain a clean schedule.
+- **Protect your username:** Attendees never see your main **Cal ID** username, which otherwise leads directly to all of your public booking options.
+- **Single-use security:** Generate a link that regenerates or expires after each use, so an attendee cannot reuse the same URL to book your time repeatedly.
+- **Control distribution:** Prevent your link from being shared around unintentionally, helping you manage incoming booking requests and keep a clean schedule.
 
 ## How to set it up
 
@@ -31,22 +31,27 @@ While standard event types have public URLs associated with your username, Priva
       ![Private Links toggle](/images/event-types/private-links-1.png)
     </Frame>
   </Step>
-  <Step title="Configure Link Settings">
-    Click the **Settings (gear icon)** next to the generated link.
+  <Step title="Configure link settings">
+    Click the **Settings (gear icon)** next to the generated link, then choose an expiration type.
 
-    - Select **Usage-based expiration** and set it to **1 booking** to ensure the link regenerates and cannot be reused.
+    <Tabs>
+      <Tab title="Single-use">
+        Select **Usage-based expiration** and set it to **1 booking** to ensure the link regenerates and cannot be reused.
 
-    <Frame>
-      ![Usage-based expiration setting](/images/event-types/private-links-2.png)
-    </Frame>
+        <Frame>
+          ![Usage-based expiration setting](/images/event-types/private-links-2.png)
+        </Frame>
+      </Tab>
+      <Tab title="Time-based">
+        Choose **Time-based expiration** if the link should only be active until a specific date.
 
-    - Alternatively, choose **Time-based expiration** if the link should only be active until a specific date.
-
-    <Frame>
-      ![Time-based expiration setting](/images/event-types/private-links-3.png)
-    </Frame>
+        <Frame>
+          ![Time-based expiration setting](/images/event-types/private-links-3.png)
+        </Frame>
+      </Tab>
+    </Tabs>
   </Step>
-  <Step title="Copy and Share">
+  <Step title="Copy and share">
     Use the **Copy** icon to grab the unique URL and share it with your attendee.
   </Step>
   <Step title="Save">
@@ -56,6 +61,10 @@ While standard event types have public URLs associated with your username, Priva
 
 ## How it works for the attendee
 
-- The attendee sees a clean booking page that allows them to pick a time for that specific event.
+- The attendee sees a clean booking page that lets them pick a time for that specific event.
 - They do not see your public profile or other event types you may have.
-- Once they complete the booking (if set to 1 use), the link will immediately become invalid for any future attempts.
+- Once they complete the booking (if set to 1 use), the link immediately becomes invalid for any future attempts.
+
+<Info>
+  Private Links restrict access to a single event type. To keep an entire event hidden from your public profile, pair this with [secret events](/event-types/basics/secret-events).
+</Info>

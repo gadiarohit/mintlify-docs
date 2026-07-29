@@ -6,28 +6,28 @@ keywords: ["custom event name", "event title", "rename event", "calendar event n
 related: ["/event-types/advanced/custom-reply-to", "/event-types/advanced/add-to-calendar", "/event-types/advanced/hide-organizer-email", "/event-types/advanced/success-redirect-params"]
 ---
 
-In **Cal ID**, the **Custom Event Names** feature allows you to change how meetings appear on both your calendar and the guest's calendar. Instead of a generic title, you can use dynamic variables to include specific details from the booking automatically.
+Change how meetings appear on both your calendar and your guest's calendar. With **Custom Event Names**, you can replace the generic default title with dynamic variables that pull in specific details from each booking automatically.
 
-## Setting up custom event names
-
-By default, Cal ID often titles events as "\{Event type title\} with \{Scheduler\}". This feature lets you break away from that default to make your calendar more scannable.
+By default, Cal ID often titles events as `\{Event type title\} with \{Scheduler\}`. Customizing this makes your calendar far more scannable.
 
 ## Why use custom event names?
 
-- **Instant Context:** Identify who you are meeting with and the topic without opening the event details.
-- **Better Organization:** Useful if you manage multiple locations or a high volume of similar meetings.
-- **Professional Branding:** Create clear, customized titles.
+- **Instant context:** Identify who you're meeting with and the topic without opening the event details.
+- **Better organization:** Useful if you manage multiple locations or a high volume of similar meetings.
+- **Professional branding:** Create clear, customized titles.
 
 ## Available variables
 
-You can use these tags to pull information directly from the booking request:
+Use these tags to pull information directly from the booking request. Keep them wrapped in backticks or escaped so Cal ID treats them as tokens.
 
-- **`{Event type title}`**: The name you gave the event (e.g., "Weekly Sync").
-- **`{Event Duration}`**: The Event Duration.
-- **`{Organiser}`**: Your full name.
-- **`{Organiser first name}`**: Your first name.
-- **`{Scheduler}`**: The full name of the person who booked the meeting.
-- **`{Scheduler first name}`**: The first name of the person who booked the meeting.
+| Variable | Inserts |
+| --- | --- |
+| `{Event type title}` | The name you gave the event (e.g., "Weekly Sync") |
+| `{Event Duration}` | The event duration |
+| `{Organiser}` | Your full name |
+| `{Organiser first name}` | Your first name |
+| `{Scheduler}` | The full name of the person who booked the meeting |
+| `{Scheduler first name}` | The first name of the person who booked the meeting |
 
 ## How to set it up
 
@@ -35,7 +35,7 @@ You can use these tags to pull information directly from the booking request:
   <Step title="Go to Event Types">
     Click on **Event Types** in the left sidebar.
   </Step>
-  <Step title="Select an Event">
+  <Step title="Select an event">
     Click on the event you want to customize.
   </Step>
   <Step title="Navigate to Advanced">
@@ -48,7 +48,7 @@ You can use these tags to pull information directly from the booking request:
       ![Event name field](/images/event-types/custom-event-name-1.png)
     </Frame>
   </Step>
-  <Step title="Edit the Title">
+  <Step title="Edit the title">
     Type your desired format using the variables (e.g., `{Event type title} | {Scheduler}`).
 
     <Frame>
@@ -61,5 +61,5 @@ You can use these tags to pull information directly from the booking request:
 </Steps>
 
 <Note>
-  **Important Note on "Split Names":** If you have enabled "Split full name into first and last name" on your booking page, you can also use more specific variables like **`{Scheduler first name}`** in your event title.
+  **Split names:** If you've enabled "Split full name into first and last name" on your booking page, you can also use more specific variables like `{Scheduler first name}` in your event title.
 </Note>

@@ -6,16 +6,20 @@ keywords: ["booker limit", "limit bookings per person", "per booker cap", "restr
 related: ["/event-types/limits/booking-frequency", "/event-types/limits/total-duration", "/event-types/limits/future-booking", "/event-types/limits/minimum-notice", "/event-types/limits/buffers"]
 ---
 
+Stop one guest from monopolizing your schedule by capping how many active (upcoming) appointments they can hold for the same event at once. The **Booker active booking limit** identifies guests by email and blocks new bookings once they hit the cap.
+
 ## Enforcing booker active booking limits
 
-The **Booker active booking limit** is a specialized privacy and control setting that prevents a single guest from monopolising your schedule. It ensures that an attendee can only have a set number of "active" (upcoming) appointments.
+The **Booker active booking limit** is a privacy and control setting that ensures an attendee can only have a set number of "active" (upcoming) appointments at any one time.
 
 ### Why use a booker active booking limit?
 
-- **Prevent Calendar Hogging:** This setting ensures that one guest cannot book multiple slots for the same event type (e.g., booking five consecutive Mondays).
-- **Fair Resource Distribution:** In high-demand scenarios like coaching, office hours, or limited consultations, it ensures all your clients have a fair chance to access your time.
-- **Reduce No-Show Impact:** If a guest books ten slots and fails to show up, it can ruin your entire week. Limiting them to one active booking at a time significantly reduces the risk to your schedule.
-- **Manage Service Tiers:** If your service model only allows limited sessions, this tool automates that restriction based on the guest's email address.
+| Reason | What it prevents |
+| --- | --- |
+| **Prevent calendar hogging** | One guest booking multiple slots for the same event type (e.g. five consecutive Mondays). |
+| **Fair resource distribution** | Uneven access in high-demand scenarios like coaching, office hours, or limited consultations. |
+| **Reduce no-show impact** | A single guest booking ten slots and ruining your week by failing to show. |
+| **Manage service tiers** | Guests exceeding the limited sessions your service model allows, enforced by email address. |
 
 ## How to set it up
 
@@ -29,18 +33,18 @@ The **Booker active booking limit** is a specialized privacy and control setting
   <Step title="Navigate to Limits">
     Click on the **Limits** tab in the top navigation bar.
   </Step>
-  <Step title="Enable the Limit">
+  <Step title="Enable the limit">
     Find **Booker active booking limit** and switch the toggle to **ON**.
   </Step>
-  <Step title="Set the Count">
+  <Step title="Set the count">
     Enter the maximum number of active bookings allowed (typically set to **1**).
 
     <Frame>
       ![Setting the booker active booking limit count in the Limits tab](/images/event-types/booker-limit-1.png)
     </Frame>
   </Step>
-  <Step title="Enable Rescheduling (Optional)">
-    Toggle **ON** the sub-option **Offer to reschedule last active booking to chosen time slot** if you want to allow them to move their current meeting instead of just blocking them.
+  <Step title="Enable rescheduling (optional)">
+    Toggle **ON** the sub-option **Offer to reschedule last active booking to chosen time slot** if you want to let guests move their current meeting instead of just blocking them.
 
     <Frame>
       ![Enabling the offer to reschedule sub-option](/images/event-types/booker-limit-2.png)
@@ -53,12 +57,23 @@ The **Booker active booking limit** is a specialized privacy and control setting
 
 ## How it works for the booker
 
-- **The Restriction:** If a guest tries to book an additional appointment using the same email address while they already have an upcoming session, the system will block the request.
-- **The Error Message:** The Booker will see a notification stating:
+- **The restriction:** If a guest tries to book an additional appointment using the same email address while they already have an upcoming session, the system blocks the request.
+- **The error message:** The booker sees a notification stating:
   > **Could not book the meeting.** **Booker maximum active booking limit exceeded.**
-- **The Reschedule Option:** If you enabled the "Offer to reschedule" feature, the system will recognise their existing appointment and ask:
+- **The reschedule option:** If you enabled the "Offer to reschedule" feature, the system recognises their existing appointment and asks:
   > **Could not reschedule the meeting.** **You already have a booking for this event on Friday, January 30, 2026 5:00 am (Scheduled\_time). Would you like to reschedule to the new selected time?**
 
 <Note>
-  This feature identifies the Booker primarily by their **email address**. If a guest uses a different email address, the system will treat them as a new user. Additionally, for **Collective or Team events**, this limit applies specifically to that event type to ensure fair access across the entire team's availability.
+  This feature identifies the booker primarily by their **email address**. If a guest uses a different email address, the system treats them as a new user. For **Collective or Team events**, this limit applies specifically to that event type to ensure fair access across the entire team's availability.
 </Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Limit booking frequency" icon="gauge" href="/event-types/limits/booking-frequency">
+    Cap the total number of bookings per day, week, or month across all guests.
+  </Card>
+  <Card title="Limit future booking" icon="calendar-days" href="/event-types/limits/future-booking">
+    Control how far into the future guests can book this event.
+  </Card>
+</CardGroup>

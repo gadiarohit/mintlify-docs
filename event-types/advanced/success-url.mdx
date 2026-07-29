@@ -6,18 +6,18 @@ keywords: ["success url", "custom redirect", "redirect after booking", "confirma
 related: ["/event-types/advanced/success-redirect-params", "/event-types/advanced/custom-event-name", "/event-types/advanced/add-to-calendar", "/event-types/advanced/private-links"]
 ---
 
-In **Cal ID**, the **Redirect on booking** feature (also known as the **Booking Success URL**) allows you to bypass the standard confirmation screen and send your guests directly to a specific webpage of your choice immediately after they finish scheduling.
+Send guests straight to a page of your choosing the moment they finish booking. In **Cal ID**, the **Redirect on booking** feature (also known as the **Booking Success URL**) bypasses the standard confirmation screen and sends guests directly to a specific webpage right after they schedule.
 
 ## Setting up a booking success redirect
 
-This feature is ideal for moving guests further down your funnel, whether that's to a "Thank You" page, a resource download, or a payment portal.
+This feature is ideal for moving guests further down your funnel — whether that's a "Thank You" page, a resource download, or a payment portal.
 
 ## Why use a custom success URL?
 
-- **Track Conversions:** By redirecting to a specific page on your website (e.g., `/thank-you`), you can easily track successful bookings in Google Analytics or Facebook Pixel.
-- **Provide Next Steps:** Send guests to a page with a video greeting, a preparation form, or a "What to expect" guide.
+- **Track conversions:** Redirect to a specific page on your website (e.g., `/thank-you`) to easily track successful bookings in Google Analytics or Facebook Pixel.
+- **Provide next steps:** Send guests to a page with a video greeting, a preparation form, or a "What to expect" guide.
 - **Branding:** Keep the experience entirely within your own website domain rather than showing the Cal ID confirmation screen.
-- **Offer Downloads:** Automatically deliver a PDF, whitepaper, or digital asset the moment they book a session.
+- **Offer downloads:** Automatically deliver a PDF, whitepaper, or digital asset the moment they book a session.
 
 ## How to set it up
 
@@ -25,7 +25,7 @@ This feature is ideal for moving guests further down your funnel, whether that's
   <Step title="Go to Event Types">
     Click on **Event Types** in the left sidebar.
   </Step>
-  <Step title="Select an Event">
+  <Step title="Select an event">
     Click on the specific event where you want to add the redirect.
   </Step>
   <Step title="Navigate to Advanced">
@@ -34,10 +34,12 @@ This feature is ideal for moving guests further down your funnel, whether that's
   <Step title='Find "Redirect on booking"'>
     Locate the section labeled **Redirect on booking**.
   </Step>
-  <Step title="Enter Your URL">
+  <Step title="Enter your URL">
     Paste the full destination URL into the field.
 
-    **Important:** You must include the protocol (e.g., `https://www.yourwebsite.com/success`).
+    <Warning>
+      You must include the protocol (e.g., `https://www.yourwebsite.com/success`).
+    </Warning>
 
     <Frame>
       ![Redirect on booking URL field](/images/event-types/success-url-1.png)
@@ -51,9 +53,20 @@ This feature is ideal for moving guests further down your funnel, whether that's
 ## What the guest experiences
 
 - The guest fills out your **Booking Questions** and clicks "Confirm".
-- Instead of seeing the default "Meeting Confirmed" message from Cal ID, their browser will automatically load your custom URL.
+- Instead of seeing the default "Meeting Confirmed" message from Cal ID, their browser automatically loads your custom URL.
 - The transition is typically seamless, keeping the guest engaged with your brand.
 
 ## Technical tip: passing data (advanced)
 
-Many scheduling platforms allow you to "forward" the guest's information (like their name or email) to your success page via the URL. This allows your "Thank You" page to say something like, **"Thanks for booking, John!"** automatically.
+<Tip>
+  Many scheduling platforms let you "forward" the guest's information (like their name or email) to your success page via the URL, so your "Thank You" page can automatically say something like **"Thanks for booking, John!"**
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Success redirect parameters" icon="link" href="/event-types/advanced/success-redirect-params">
+    See every query parameter Cal ID forwards to your custom URL.
+  </Card>
+  <Card title="Private links" icon="link-slash" href="/event-types/advanced/private-links">
+    Share restricted, single-use or time-based booking links.
+  </Card>
+</CardGroup>

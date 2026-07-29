@@ -6,24 +6,22 @@ keywords: ["hide field", "prefill answers", "hidden fields", "prefilled booking"
 related: ["/event-types/booking-questions/pre-booking-questions", "/event-types/booking-questions/split-name", "/event-types/booking-questions/disable-guests", "/event-types/booking-questions/email-domains"]
 ---
 
-## Hiding and prefilling booking questions
+Pre-fill information you already know about a client, or hide fields meant only for internal tracking (like referral sources or Lead IDs), to keep your **Cal ID** booking form short and friction-free while your calendar stays organized.
 
-In **Cal ID**, you can streamline the booking experience by pre-filling information you already know about your client or hiding specific fields that are only meant for internal tracking (like referral sources or Lead IDs). This ensures your calendar stays organized while keeping the booking form short and friction-free.
-
-## Step 1: Accessing the event type settings
+## Step 1: Add a booking question
 
 <Steps>
-  <Step title="Login to Cal ID">
-    Login to your Cal ID account.
+  <Step title="Log in to Cal ID">
+    Log in to your Cal ID account.
   </Step>
   <Step title="Select your event">
-    Navigate to the **Event Types** tab in the left sidebar and select the specific event you wish to modify.
+    Navigate to the **Event Types** tab in the left sidebar and select the event you want to modify.
   </Step>
   <Step title="Open the Advanced tab">
-    Click on the **Advanced** tab in the top navigation bar.
+    Click the **Advanced** tab in the top navigation bar.
   </Step>
   <Step title="Add a question">
-    In the **Booking questions** section, click on **\+ Add a question**.
+    In the **Booking questions** section, click **\+ Add a question**.
 
     <Frame>
       ![The Add a question button in the Booking questions section](/images/event-types/hide-prefill-1.png)
@@ -31,7 +29,7 @@ In **Cal ID**, you can streamline the booking experience by pre-filling informat
   </Step>
   <Step title="Fill out the question details">
     - **Label:** The question text (e.g., "Referral Source").
-    - **Identifier:** Take note of this unique ID (e.g., `referral`). You will need this exact word to pre-fill the data later.
+    - **Identifier:** Take note of this unique ID (e.g., `referral`). You'll need this exact word to pre-fill the data later.
 
     <Frame>
       ![Setting the label and identifier for a new booking question](/images/event-types/hide-prefill-2.png)
@@ -42,23 +40,23 @@ In **Cal ID**, you can streamline the booking experience by pre-filling informat
   </Step>
 </Steps>
 
-## Step 2: Hiding a booking question
+## Step 2: Hide a booking question
 
-If you want a field to be recorded in your calendar but kept invisible to the attendee, you can hide it:
+To record a field in your calendar while keeping it invisible to the attendee, hide it:
 
 <Steps>
   <Step title="Locate your question">
-    Locate your newly added question in the list.
+    Find your newly added question in the list.
   </Step>
-  <Step title="Disable the toggle">
+  <Step title="Set it to Hidden">
     Click the switch next to the question to set it to **Hidden**.
 
     <Frame>
       ![Setting a booking question to Hidden](/images/event-types/hide-prefill-3.png)
     </Frame>
   </Step>
-  <Step title="Optional Security">
-    If you want to ensure a user cannot change a pre-filled value even if they find the field, click **Edit** and check the box: **"Disable input if the URL identifier is prefilled"**.
+  <Step title="Lock the value (optional)">
+    To ensure a user cannot change a pre-filled value even if they find the field, click **Edit** and check the box **"Disable input if the URL identifier is prefilled"**.
 
     <Frame>
       ![The Disable input if the URL identifier is prefilled option](/images/event-types/hide-prefill-4.png)
@@ -69,12 +67,12 @@ If you want a field to be recorded in your calendar but kept invisible to the at
   </Step>
 </Steps>
 
-## Step 3: Pre-filling the booking question
+## Step 3: Pre-fill the booking question
 
-To automatically fill a field, you must append a **query parameter** to your booking URL that matches your question's **Identifier**.
+To automatically fill a field, append a **query parameter** to your booking URL that matches your question's **Identifier**.
 
-- **The Logic:** Use a `?` for the first parameter and an `&` for any additional parameters.
-- **The Structure:** `URL?identifier=value`
+- **The logic:** Use a `?` for the first parameter and an `&` for any additional parameters.
+- **The structure:** `URL?identifier=value`
 
 <Frame>
   ![Appending a query parameter to a booking URL](/images/event-types/hide-prefill-5.png)
@@ -82,9 +80,9 @@ To automatically fill a field, you must append a **query parameter** to your boo
 
 ### Example scenario
 
-- **Your Booking URL:** `https://cal.id/username/eventtype`
-- **Your Identifier:** `referral`
-- **The Value you want to set:** `Instagram`
+- **Your booking URL:** `https://cal.id/username/eventtype`
+- **Your identifier:** `referral`
+- **The value you want to set:** `Instagram`
 
 **Your modified URL becomes:** `https://cal.id/username/eventtype?referral=Instagram`
 
@@ -92,8 +90,28 @@ To automatically fill a field, you must append a **query parameter** to your boo
 
 If your URL already has parameters (like `?overlayCalendar=true`), use the `&` symbol to add your pre-fill data: `https://cal.id/username/eventtype?overlayCalendar=true&referral=Instagram`
 
+### URL parameter behavior
+
+| Parameter pattern | Effect |
+| --- | --- |
+| `?identifier=value` | First parameter — pre-fills the matching question with `value`. |
+| `&identifier=value` | Additional parameter — appended after an existing `?`. |
+| Hidden question + parameter | Value is captured silently; the booker never sees the field. |
+| "Disable input if the URL identifier is prefilled" enabled | The pre-filled value is locked and cannot be edited by the booker. |
+
 ## Why use this method?
 
-- **Data Integrity:** As long as the question is **Hidden**, the booker will not see it on the page, but the information (e.g., "Referral: Instagram") will still appear in your **Google/Outlook Calendar** and your **Cal ID Dashboard** once scheduled.
-- **Seamless Personalization:** You can send custom links to different partners, each with their own name pre-filled, to see exactly who is driving your bookings.
-- **Clean Forms:** Keeps the visible form short by capturing background data (like Campaign IDs or User IDs) behind the scenes.
+- **Data integrity:** As long as the question is **Hidden**, the booker won't see it on the page, but the information (e.g., "Referral: Instagram") still appears in your **Google/Outlook Calendar** and your **Cal ID Dashboard** once scheduled.
+- **Seamless personalization:** Send custom links to different partners, each with their own name pre-filled, to see exactly who is driving your bookings.
+- **Clean forms:** Keep the visible form short by capturing background data (like Campaign IDs or User IDs) behind the scenes.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Add pre-booking questions" icon="circle-question" href="/event-types/booking-questions/pre-booking-questions">
+    Explore every input type and build your intake form.
+  </Card>
+  <Card title="Require or exclude email domains" icon="at" href="/event-types/booking-questions/email-domains">
+    Control who can book with domain validation rules.
+  </Card>
+</CardGroup>

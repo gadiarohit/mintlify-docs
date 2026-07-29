@@ -6,32 +6,38 @@ keywords: ["disable confirmation emails", "turn off emails", "no confirmation em
 related: ["/event-types/advanced/add-to-calendar", "/event-types/advanced/custom-reply-to", "/event-types/advanced/requires-confirmation", "/event-types/advanced/hide-organizer-email"]
 ---
 
-By default, Cal ID sends an automatic confirmation email to attendees once they successfully book a meeting. This feature allows you to disable that automated email, enabling you to use custom **Workflows** to send personalized confirmations instead.
+Turn off Cal ID's automatic attendee confirmation email for an event type so you can send your own personalized confirmation from a custom **Workflow** instead.
+
+By default, Cal ID sends an automatic confirmation email to attendees once they successfully book a meeting. Disabling it hands that job over to a Workflow you control.
+
+<Warning>
+  This toggle only becomes available once at least one active workflow on this event type sends a booking confirmation to attendees. Set up that replacement workflow first — otherwise your bookers would receive no confirmation at all.
+</Warning>
 
 ## Steps to disable default confirmation emails
 
-<Note>
-  This toggle can only be turned on if at least one workflow is active on this event type that sends a booking confirmation to the attendees. This ensures your bookers still receive a confirmation via your custom workflow.
-</Note>
-
 <Steps>
-  <Step title="Access Event Editor">
+  <Step title="Access the event editor">
     Navigate to your [**Event Types**](https://cal.id/event-types) dashboard and click the **Edit** icon on the specific event you wish to modify.
   </Step>
-  <Step title="Open Advanced Settings">
+  <Step title="Open Advanced settings">
     Click on the **Advanced** tab at the top of the event configuration screen.
   </Step>
-  <Step title="Locate the Setting">
+  <Step title="Locate the setting">
     Scroll to the bottom of the page to find **Disable default confirmation emails for attendees**.
   </Step>
-  <Step title="Enable the Feature">
+  <Step title="Enable the feature">
     Click the toggle switch to the right of the setting to enable it.
 
     <Frame>
       ![Disable default confirmation emails toggle](/images/event-types/disable-confirmation-emails-1.png)
     </Frame>
   </Step>
-  <Step title="Save Changes">
+  <Step title="Save changes">
     Click the **Save** button in the top right corner to apply your changes.
   </Step>
 </Steps>
+
+<Note>
+  With the default email off, your active workflow is now the only confirmation attendees receive. Send yourself a test booking to confirm it delivers as expected.
+</Note>

@@ -6,7 +6,7 @@ keywords: ["enable apps", "event apps", "install apps", "app integrations", "con
 related: ["/apps/app-store", "/apps/install-app", "/event-types/embed", "/event-types/event-webhooks"]
 ---
 
-While you can install apps from the Cal ID App Store, you have the flexibility to choose exactly which apps are active for each individual event. This allows you to tailor the experience—for example, using **Razorpay** only for paid consultations while keeping it disabled for internal team syncs.
+Turn installed apps on or off per event type so each meeting gets exactly the experience it needs. Install apps once from the Cal ID App Store, then decide which are active for each event—for example, using **Razorpay** only for paid consultations while keeping it disabled for internal team syncs.
 
 ## How to enable an app for a particular event
 
@@ -14,33 +14,48 @@ While you can install apps from the Cal ID App Store, you have the flexibility t
   <Step title="Go to Event Types">
     From your main dashboard, click the [**Event Types**](https://cal.id/event-types) tab in the left-hand sidebar.
   </Step>
-  <Step title="Select and Edit">
+  <Step title="Select and edit">
     Find the event type you want to customize and click the **Edit** icon (pencil).
   </Step>
-  <Step title="Navigate to the Apps Tab">
+  <Step title="Navigate to the Apps tab">
     In the top navigation menu of the event editor, click on the **Apps** tab.
 
     <Frame>
       ![Apps tab in the event editor](/images/event-types/enable-apps-1.png)
     </Frame>
   </Step>
-  <Step title="Find Your App">
+  <Step title="Find your app">
     Scroll through the list of installed apps to find the one you want to enable (e.g., Google Analytics, Zoom, Stripe, etc.).
   </Step>
-  <Step title="Toggle to Enable">
+  <Step title="Toggle to enable">
     Switch the toggle next to the app name to the **ON** position.
   </Step>
-  <Step title="Configure Values (If Required)">
+  <Step title="Configure values (if required)">
     - Some apps require specific information to work for that event (e.g., a specific **Tracking ID** for analytics or a **Price** for a payment app).
     - Enter these values in the input fields provided under the app name.
   </Step>
-  <Step title="Save Your Changes">
+  <Step title="Save your changes">
     Click the **Save** button in the top right corner to apply these settings.
   </Step>
 </Steps>
 
+<Info>
+  Only apps you've already installed appear in this list. If you don't see the app you want, install it first from the [App Store](/apps/app-store).
+</Info>
+
 ## Key benefits of event-specific apps
 
-- **Tailored Automation**: Connect different automation tools (like **Make**, **Viasocket**, or **Zapier**) to specific events to streamline unique workflows, such as updating different CRM pipelines based on the meeting type.
-- **Selective Payments**: Only trigger payment requests for specific "Premium" service types.
-- **Targeted Tracking**: Use unique tracking codes to see which specific services are converting the most leads.
+- **Tailored automation**: Connect different automation tools (like **Make**, **Viasocket**, or **Zapier**) to specific events to streamline unique workflows, such as updating different CRM pipelines based on the meeting type.
+- **Selective payments**: Only trigger payment requests for specific "Premium" service types.
+- **Targeted tracking**: Use unique tracking codes to see which specific services are converting the most leads.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Browse the App Store" icon="grid-2" href="/apps/app-store">
+    Discover integrations you can install and enable for your events.
+  </Card>
+  <Card title="Install an App" icon="download" href="/apps/install-app">
+    Add a new app to your account before enabling it per event type.
+  </Card>
+</CardGroup>

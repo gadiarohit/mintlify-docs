@@ -6,7 +6,11 @@ keywords: ["recurring events", "repeating meetings", "recurring bookings", "week
 related: ["/event-types/group-events", "/event-types/embed", "/event-types/setup/multiple-durations", "/event-types/enable-apps"]
 ---
 
-The **Recurring** feature allows you to create a series of meetings based on a schedule, enabling attendees to subscribe to a recurring series rather than just booking a single occurrence.
+The **Recurring** feature lets you create a series of meetings on a fixed schedule, so attendees subscribe to the whole series in one booking instead of reserving each occurrence separately.
+
+<Info>
+  Attendees don't book each session one by one. They pick a starting slot on your public page, choose (or confirm) how many sessions the series includes, and a single confirmation books every occurrence at once — that's how they "subscribe" to the series.
+</Info>
 
 ## How to enable recurring events
 
@@ -14,24 +18,24 @@ The **Recurring** feature allows you to create a series of meetings based on a s
   <Step title="Open Event Types">
     From your Cal ID dashboard, click on [**Event Types**](https://cal.id/event-types) in the left-hand menu.
   </Step>
-  <Step title="Edit Your Event">
+  <Step title="Edit your event">
     Find the event you want to make recurring and click the **Edit** (pencil) icon.
   </Step>
-  <Step title="Go to the Recurring Tab">
+  <Step title="Go to the Recurring tab">
     In the top settings bar, click on **Recurring**.
 
     <Frame>
       ![Recurring tab in the event editor](/images/event-types/recurring-1.png)
     </Frame>
   </Step>
-  <Step title="Turn it On">
+  <Step title="Turn it on">
     Switch the **Recurring Event** toggle to **ON**.
 
     <Frame>
       ![Recurring Event toggle switched on](/images/event-types/recurring-2.png)
     </Frame>
   </Step>
-  <Step title="Set the Frequency">
+  <Step title="Set the frequency">
     - **Repeats every**: Enter a number and choose the interval (Daily, Weekly, Monthly, or Yearly).
     - **Example: "Repeats every 1 week" means the meeting happens every seven days.**
 
@@ -43,68 +47,69 @@ The **Recurring** feature allows you to create a series of meetings based on a s
 
 ## Choosing the booking style
 
-Cal ID gives you two ways to handle how many sessions an attendee books:
+Cal ID gives you two ways to handle how many sessions an attendee books.
 
-### Option A: allow attendee to choose (flexible)
+<Tabs>
+  <Tab title="Attendee chooses (flexible)">
+    Use this if you want the attendee to decide how many sessions they need within your limits.
 
-Use this if you want the attendee to decide how many sessions they need within your limits.
+    - Choose: For what you want to set up
 
-- Choose: For what you want to set up
+    <Frame>
+      ![Flexible occurrence option](/images/event-types/recurring-4.png)
+    </Frame>
 
-<Frame>
-  ![Flexible occurrence option](/images/event-types/recurring-4.png)
-</Frame>
+    - **Maximum occurrences**: The number of sessions available in the series.
 
-- **Maximum occurrences**: The number of sessions available in the series.
+    <Frame>
+      ![Maximum occurrences setting](/images/event-types/recurring-5.png)
+    </Frame>
 
-<Frame>
-  ![Maximum occurrences setting](/images/event-types/recurring-5.png)
-</Frame>
+    - **Minimum occurrences**: The smallest number of sessions a user **must** book to complete the checkout.
 
-- **Minimum occurrences**: The smallest number of sessions a user **must** book to complete the checkout.
+    <Frame>
+      ![Minimum occurrences setting](/images/event-types/recurring-6.png)
+    </Frame>
 
-<Frame>
-  ![Minimum occurrences setting](/images/event-types/recurring-6.png)
-</Frame>
+    - **Default occurrences**: The number of sessions that will be automatically selected when the attendee opens the page.
 
-- **Default occurrences**: The number of sessions that will be automatically selected when the attendee opens the page.
+    <Frame>
+      ![Default occurrences setting](/images/event-types/recurring-7.png)
+    </Frame>
+  </Tab>
+  <Tab title="Fixed number of sessions (mandatory)">
+    Use this if the series requires a set number of meetings (e.g., a "10-Session Masterclass").
 
-<Frame>
-  ![Default occurrences setting](/images/event-types/recurring-7.png)
-</Frame>
+    - Select the **Fixed number of sessions** option.
+    - **Number of occurrences**: Enter the exact number of meetings the attendee is required to book.
 
-### Option B: fixed number of sessions (mandatory)
+    <Frame>
+      ![Fixed number of sessions setting](/images/event-types/recurring-8.png)
+    </Frame>
 
-Use this if the series requires a set number of meetings (e.g., a "10-Session Masterclass").
+    - On your public page, the attendee will see exactly how many times the event occurs (e.g., "Occurs 10 times").
 
-- Select the **Fixed number of sessions** option.
-- **Number of occurrences**: Enter the exact number of meetings the attendee is required to book.
+    <Frame>
+      ![Public page showing fixed occurrence count](/images/event-types/recurring-9.png)
+    </Frame>
 
-<Frame>
-  ![Fixed number of sessions setting](/images/event-types/recurring-8.png)
-</Frame>
-
-- On your public page, the attendee will see exactly how many times the event occurs (e.g., "Occurs 10 times").
-
-<Frame>
-  ![Public page showing fixed occurrence count](/images/event-types/recurring-9.png)
-</Frame>
-
-<Frame>
-  ![Public page recurring event view](/images/event-types/recurring-10.png)
-</Frame>
+    <Frame>
+      ![Public page recurring event view](/images/event-types/recurring-10.png)
+    </Frame>
+  </Tab>
+</Tabs>
 
 ## How it works for the attendee
 
 <Steps>
-  <Step title="Pick the First Slot">
+  <Step title="Pick the first slot">
     The attendee chooses their starting date and time.
 
     <Frame>
       ![Attendee picking the first slot](/images/event-types/recurring-11.png)
     </Frame>
   </Step>
-  <Step title="Select Quantity">
+  <Step title="Select quantity">
     If you enabled "User-Defined" occurrences, the attendee can use a \+, - symbol or enter the value to choose how many sessions they want.
 
     - They cannot go below your **Minimum** or above your **Maximum**.
@@ -130,3 +135,14 @@ Use this if the series requires a set number of meetings (e.g., a "10-Session Ma
 | **Minimum** | Ensures the attendee books at least X number of sessions. |
 | **Fixed Number** | Forces the attendee to book a specific, non-negotiable amount. |
 | **Default** | Pre-fills the session count to make booking faster for the user. |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Group Events" icon="users" href="/event-types/group-events">
+    Host a one-time webinar or GD where many attendees share a single slot.
+  </Card>
+  <Card title="Multiple Durations" icon="clock" href="/event-types/setup/multiple-durations">
+    Let attendees pick from several meeting lengths on the same event type.
+  </Card>
+</CardGroup>

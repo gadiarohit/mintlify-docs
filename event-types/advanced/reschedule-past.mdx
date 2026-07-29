@@ -6,7 +6,11 @@ keywords: ["reschedule past", "past bookings", "reschedule old booking", "resche
 related: ["/event-types/advanced/disable-reschedule-cancel", "/event-types/advanced/book-via-reschedule-link", "/event-types/advanced/lock-timezone", "/event-types/advanced/requires-confirmation"]
 ---
 
-In [**Cal ID**](https://cal.id/home), the **Allow rescheduling past events** feature provides flexibility for both organizers and guests by permitting changes to meetings even after their scheduled time has passed.
+Let guests reschedule from their original booking link even after the meeting time has passed. In [**Cal ID**](https://cal.id/home), the **Allow rescheduling past events** feature gives both organizers and guests the flexibility to recover no-shows and late reschedules without starting over.
+
+<Info>
+  Keep this turned on when you want to salvage missed meetings gracefully. With it off, the reschedule link in the confirmation email stops working the moment the scheduled time passes.
+</Info>
 
 ## Why use "Allow rescheduling past events"?
 
@@ -46,3 +50,14 @@ In [**Cal ID**](https://cal.id/home), the **Allow rescheduling past events** fea
 - **Active Links:** Typically, once a meeting time passes, the "Reschedule" link in the confirmation email becomes inactive. With this setting enabled, that link remains functional.
 - **Seamless Updates:** When the guest clicks the link from a past event, they are taken back to your calendar to select a new, upcoming time slot.
 - **Automatic Notification:** Once they select a new time, the original "past" event is updated or replaced with the new time, and you both receive a new confirmation.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Book through reschedule link" icon="calendar-plus" href="/event-types/advanced/book-via-reschedule-link">
+    Let guests create a brand-new booking from a reschedule link after a cancellation.
+  </Card>
+  <Card title="Manage reschedule & cancel" icon="ban" href="/event-types/advanced/disable-reschedule-cancel">
+    Control whether guests can reschedule or cancel their bookings at all.
+  </Card>
+</CardGroup>

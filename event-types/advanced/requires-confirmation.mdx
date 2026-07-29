@@ -6,18 +6,22 @@ keywords: ["requires confirmation", "approve bookings", "manual approval", "conf
 related: ["/event-types/advanced/disable-confirmation-emails", "/event-types/advanced/disable-reschedule-cancel", "/event-types/advanced/look-busy", "/event-types/advanced/offer-seats"]
 ---
 
-## Using the "requires confirmation" feature
+Keep the final say over who gets on your calendar. With **Requires confirmation** enabled, bookings for an event type wait for your manual approval before anything is finalized.
 
-In **Cal ID**, the **Requires confirmation** feature acts as a "gatekeeper" for your appointments. When enabled, bookings must be manually approved before they are finalized, pushed to your calendar integrations, or a confirmation email is sent to the guest.
+<Info>
+  **Requires confirmation** acts as a "gatekeeper" for your appointments. When enabled, bookings must be manually approved before they are finalized, pushed to your calendar integrations, or a confirmation email is sent to the guest.
+</Info>
 
 ## Configuration options
 
 Once you toggle the feature **ON**, you can customize exactly when and how confirmation is triggered:
 
-- **Always:** Every single booking for this event type will require your manual approval.
-- **When booked with less than \[X\] notice:** (e.g., 30 mins/hours/days). This allows for "instant" bookings if they are far in the future, but requires your approval for last-minute requests that might disrupt your immediate flow.
-- **Unconfirmed bookings still block calendar slots:** If checked, the time slot the guest requested will be held (marked as busy) while you decide whether to approve or reject it.
-- **Only require confirmation for free email providers:** This automatically approves guests using professional/work domains (e.g., @company.com) while requiring you to manually vet guests using free services like **@gmail.com** or **@outlook.com**.
+| Option | What it does |
+| --- | --- |
+| **Always** | Every single booking for this event type will require your manual approval. |
+| **When booked with less than \[X\] notice** | (e.g., 30 mins/hours/days) Allows "instant" bookings if they are far in the future, but requires your approval for last-minute requests that might disrupt your immediate flow. |
+| **Unconfirmed bookings still block calendar slots** | If checked, the time slot the guest requested will be held (marked as busy) while you decide whether to approve or reject it. |
+| **Only require confirmation for free email providers** | Automatically approves guests using professional/work domains (e.g., @company.com) while requiring you to manually vet guests using free services like **@gmail.com** or **@outlook.com**. |
 
 ## How to set it up
 
@@ -80,3 +84,14 @@ Once you toggle the feature **ON**, you can customize exactly when and how confi
 If more than one user submits a booking request for confirmation for the same slot and date, you can accept only one booking from those requests. Once you accept a booking, the remaining bookings will remain in **unconfirmed** status.
 
 If you want to accept another user's booking from the remaining requests, you must first **cancel the booking that was previously accepted** for that slot and date. After canceling that booking, you will then be able to **accept another booking request**.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Disable confirmation emails" icon="envelope" href="/event-types/advanced/disable-confirmation-emails">
+    Fine-tune which emails go out once a booking is approved.
+  </Card>
+  <Card title="Disable rescheduling and cancelling" icon="lock" href="/event-types/advanced/disable-reschedule-cancel">
+    Lock in appointments once you have confirmed them.
+  </Card>
+</CardGroup>

@@ -6,40 +6,55 @@ keywords: ["split name", "first name last name", "separate name fields", "name f
 related: ["/event-types/booking-questions/pre-booking-questions", "/event-types/booking-questions/hide-prefill", "/event-types/booking-questions/phone-only", "/event-types/booking-questions/attachments"]
 ---
 
-By default, Cal ID booking page has a full name text input field for the scheduler to put their name in. This usually works just fine for most people. However, at times, it is preferable to take the first name and last name of the scheduler as separate inputs in the booking form.
+Split the single **Full name** field on your Cal ID booking page into separate **First name** and **Last name** inputs, so your CRM and workflows receive cleaner, structured contact data.
 
-Cal ID provides the option to split the full name input field in the booking form into first name and last name. To do that, you can do the following:
+By default, the Cal ID booking page has a full name text input field for the scheduler to put their name in. This usually works just fine for most people. However, at times, it is preferable to take the first name and last name of the scheduler as separate inputs in the booking form.
 
-- Head to the event type where you wish to split the full name into first name and last name.
-- Click on the three dots (at the right side of the event) and choose Edit.
-- Navigate to the Advanced tab.
-- Scroll to the Booking questions section.
-- Click on the **Edit** button in front of the "Your name" field.
+## How to split the name field
 
-<Frame>
-  ![Editing the Your name booking question](/images/event-types/split-name-1.png)
-</Frame>
+<Steps>
+  <Step title="Open the event type">
+    Head to the event type where you wish to split the full name into first name and last name. Click the three dots at the right side of the event and choose **Edit**.
+  </Step>
+  <Step title="Go to the Advanced tab">
+    Navigate to the **Advanced** tab, then scroll to the **Booking questions** section.
+  </Step>
+  <Step title="Edit the Your name field">
+    Click the **Edit** button in front of the "Your name" field.
 
-- In the dialog that opens, click on the toggle that says **`Split "Full name" into "First name" and "Last name"`**.
+    <Frame>
+      ![Editing the Your name booking question](/images/event-types/split-name-1.png)
+    </Frame>
+  </Step>
+  <Step title="Enable the split toggle">
+    In the dialog that opens, click the toggle that says **`Split "Full name" into "First name" and "Last name"`**.
 
-<Frame>
-  ![The toggle to split full name into first and last name](/images/event-types/split-name-2.png)
-</Frame>
+    <Frame>
+      ![The toggle to split full name into first and last name](/images/event-types/split-name-2.png)
+    </Frame>
+  </Step>
+  <Step title="Set labels and save the field">
+    Fill in the label and optional placeholder values, then click **Save**.
 
-- Fill the label and optional placeholder values, and click on **Save**.
+    <Frame>
+      ![Setting labels and placeholders for the first and last name fields](/images/event-types/split-name-3.png)
+    </Frame>
+  </Step>
+  <Step title="Save the event type">
+    Remember to click the **Save** button at the top right of the event type settings as well.
+  </Step>
+  <Step title="Verify on the booking page">
+    Head to the public booking page of this event type. You will notice the Full name is now split into First name and Last name with the labels provided by you.
 
-<Frame>
-  ![Setting labels and placeholders for the first and last name fields](/images/event-types/split-name-3.png)
-</Frame>
+    <Frame>
+      ![The public booking page showing separate first and last name fields](/images/event-types/split-name-4.png)
+    </Frame>
+  </Step>
+</Steps>
 
-- Remember to click on the **save** (at top right) button in the event type settings as well.
-- Head to the public booking page of this event type, you will notice the Full name is now split into First name and Last name with the labels provided by you.
-
-<Frame>
-  ![The public booking page showing separate first and last name fields](/images/event-types/split-name-4.png)
-</Frame>
-
-You're all set!
+<Check>
+  You're all set — your booking page now collects First name and Last name as separate fields.
+</Check>
 
 ## How this affects the Booking API requests?
 

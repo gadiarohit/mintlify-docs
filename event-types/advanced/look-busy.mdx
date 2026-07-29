@@ -6,18 +6,18 @@ keywords: ["look busy", "hide availability", "appear busy", "reduce slots", "hid
 related: ["/event-types/advanced/requires-confirmation", "/event-types/advanced/offer-seats", "/event-types/limits/booking-frequency", "/event-types/advanced/custom-event-name"]
 ---
 
-The **Look Busy** feature allows you to control how much of your actual availability is visible to bookers on your public page. Instead of showing all open slots, you can configure it to display only a specific percentage of your available time, creating a sense of urgency or managing your meeting load.
+Show bookers only a percentage of your real open slots. The **Look Busy** feature hides part of your availability to create a sense of urgency and manage your meeting load, without changing your actual schedule.
 
-## Steps to enable and configure "look busy"
+## Steps to enable and configure "Look Busy"
 
 <Steps>
   <Step title="Go to Event Types">
     From your main dashboard, click the [**Event Types**](https://cal.id/event-types) tab in the left-hand sidebar.
   </Step>
-  <Step title="Select and Edit">
-    Find the specific event type you want to modify and click on the three dots and choose **Edit**.
+  <Step title="Select and edit">
+    Find the event type you want to modify, click the three dots, and choose **Edit**.
   </Step>
-  <Step title="Navigate to Advanced Tab">
+  <Step title="Navigate to the Advanced tab">
     In the top navigation menu of the event editor, click on the **Advanced** tab.
   </Step>
   <Step title="Toggle Look Busy">
@@ -27,24 +27,30 @@ The **Look Busy** feature allows you to control how much of your actual availabi
       ![Look Busy toggle](/images/event-types/look-busy-1.png)
     </Frame>
   </Step>
-  <Step title="Configure Availability Limits">
-    - **Percentage of Slots**: Use the dropdown to select the percentage of your total available slots to make visible (e.g., set to 50% to hide half of your available times).
+  <Step title="Configure availability limits">
+    Set how much availability bookers can see:
+
+    - **Percentage of slots:** Use the dropdown to select the percentage of your total available slots to make visible (e.g., set to 50% to hide half of your available times).
 
     <Frame>
       ![Percentage of slots dropdown](/images/event-types/look-busy-2.png)
     </Frame>
 
-    - **Time Horizon**: Define how far into the future bookers can see availability by entering a number in the **Days** field and selecting **calendar days** or **business days** from the dropdown.
+    - **Time horizon:** Define how far into the future bookers can see availability by entering a number in the **Days** field and selecting **calendar days** or **business days** from the dropdown.
 
     <Frame>
       ![Time horizon days field](/images/event-types/look-busy-3.png)
     </Frame>
   </Step>
-  <Step title="Save Your Changes">
+  <Step title="Save your changes">
     Click the **Save** button in the top right corner to apply these limits to your public booking page.
   </Step>
 </Steps>
 
+<Tip>
+  Look Busy only affects what bookers *see* — your real availability is untouched, so you can still manually block or open time whenever you need to.
+</Tip>
+
 ## Use case
 
-If you are available all day Monday from 9:00 AM to 5:00 PM (8 hours total) but set **Look Busy** to **50%**, Cal ID will only show **4 hours** worth of slots to your bookers, making your calendar look more in-demand while reserving the rest of the time for yourself.
+If you're available all day Monday from 9:00 AM to 5:00 PM (8 hours total) but set **Look Busy** to **50%**, Cal ID shows only **4 hours** worth of slots to your bookers, making your calendar look more in-demand while reserving the rest of the time for yourself.

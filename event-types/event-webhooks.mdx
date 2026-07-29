@@ -6,7 +6,7 @@ keywords: ["webhooks", "event webhooks", "booking webhook", "http callback", "au
 related: ["/developers/webhooks", "/event-types/enable-apps", "/event-types/embed", "/apps/make"]
 ---
 
-Webhooks allow you to send real-time data from Cal ID to another application whenever a booking event occurs. Setting them up at the **Event Type** level gives you fine-grained control, ensuring notifications are only sent for specific meetings.
+Webhooks send real-time data from Cal ID to another application whenever a booking event occurs. Setting them up at the **Event Type** level gives you fine-grained control, so notifications fire only for the specific meeting you choose.
 
 ## Steps to create a webhook for an event type
 
@@ -14,33 +14,33 @@ Webhooks allow you to send real-time data from Cal ID to another application whe
   <Step title="Access Event Types">
     Log in to your [Cal ID](https://cal.id/home) account and navigate to the **Event Types** tab in your dashboard.
   </Step>
-  <Step title="Edit Event Type">
+  <Step title="Edit event type">
     Locate the specific event type you want to track, click the **three dots** on its card, and select **Edit**.
   </Step>
-  <Step title="Open Webhooks Tab">
+  <Step title="Open the Webhooks tab">
     Within the event editor, click on the **Webhooks** tab at the top of the page.
   </Step>
-  <Step title="Add New Webhook">
+  <Step title="Add new webhook">
     Click the **\+ Create** button.
 
     <Frame>
       ![Create button in the Webhooks tab](/images/event-types/event-webhooks-1.png)
     </Frame>
   </Step>
-  <Step title="Configure Webhook Details">
+  <Step title="Configure webhook details">
     - **Subscriber URL**: Paste the listener URL provided by the application you are sending data to (e.g., Zapier, Pipedream, or your own server).
 
     <Frame>
       ![Subscriber URL field](/images/event-types/event-webhooks-2.png)
     </Frame>
 
-    - **Secret (Optional but Recommended)**: Enter a secret key to verify that the payload is authentic and has not been tampered with.
+    - **Secret (optional but recommended)**: Enter a secret key to verify that the payload is authentic and has not been tampered with.
 
     <Frame>
       ![Secret key field](/images/event-types/event-webhooks-3.png)
     </Frame>
 
-    - **Event Triggers**: Select the specific events that will trigger this webhook, such as **Booking Created**, **Booking Cancelled**, or **Meeting Ended**.
+    - **Event triggers**: Select the specific events that will trigger this webhook, such as **Booking Created**, **Booking Cancelled**, or **Meeting Ended**.
 
     <Frame>
       ![Event triggers selection](/images/event-types/event-webhooks-4.png)
@@ -51,8 +51,12 @@ Webhooks allow you to send real-time data from Cal ID to another application whe
   </Step>
 </Steps>
 
-### Important considerations
+## Important considerations
 
-- **Scopes**: Event-type level webhooks trigger only for that specific event. To track all events for a user or team, you should create a webhook at the **User** or **Team** level instead. To create a webhook at the user or team level, visit [**Webhook in Cal ID**](/developers/webhooks).
-- **Team Managed Events**: For team-managed events, it is highly recommended to create the webhook directly on the **parent event type** within the team dashboard to ensure it captures all bookings.
-- **Custom Payloads**: You can customize the data structure sent to your URL by using custom payload templates.
+- **Scopes**: Event-type level webhooks trigger only for that specific event. To track all events for a user or team, create a webhook at the **User** or **Team** level instead. To do that, visit [**Webhook in Cal ID**](/developers/webhooks).
+- **Team managed events**: For team-managed events, it is highly recommended to create the webhook directly on the **parent event type** within the team dashboard to ensure it captures all bookings.
+- **Custom payloads**: You can customize the data structure sent to your URL by using custom payload templates.
+
+<Card title="Webhook events reference" icon="webhook" href="/api-reference/webhook-events">
+  See the full list of webhook triggers and their JSON payload schemas in the API reference.
+</Card>

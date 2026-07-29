@@ -6,30 +6,28 @@ keywords: ["booking questions", "custom questions", "intake form", "booking form
 related: ["/event-types/booking-questions/hide-prefill", "/event-types/booking-questions/split-name", "/event-types/booking-questions/phone-only", "/event-types/booking-questions/verify-email", "/event-types/booking-questions/attachments"]
 ---
 
-In **Cal ID**, the **Booking Questions** section allows you to customize the information your bookers must provide before they can schedule a meeting with you. You can tailor these questions to gather exactly the data you need, using a wide variety of input types.
+The **Booking Questions** section in **Cal ID** lets you collect exactly the information you need before someone can schedule with you. Add, edit, hide, or reorder fields — using a wide range of input types — to build an intake form tailored to your workflow.
 
-## Customizing booking questions
+By default, Cal ID asks for a **name** and **email address**. Everything below shows how to go further.
 
-By default, Cal ID asks for a name and email address. However, you can add, edit, or hide fields to streamline your intake process.
-
-## How to add a question
+## Add a question
 
 <Steps>
-  <Step title="Navigate to Event Types">
-    Open your desired event and go to the **Advanced** tab.
+  <Step title="Open the Advanced tab">
+    Open your desired event under **Event Types** and go to the **Advanced** tab.
   </Step>
-  <Step title="Locate Booking Questions">
+  <Step title="Locate Booking questions">
     Scroll down to the **Booking questions** section.
   </Step>
-  <Step title="Add New">
+  <Step title="Add a new question">
     Click the **\+ Add a question** button.
 
     <Frame>
       ![The Add a question button in the Booking questions section](/images/event-types/pre-booking-questions-1.png)
     </Frame>
   </Step>
-  <Step title="Configure">
-    A pop-up will appear where you can select the **Input type**, set a **Label** (the question text), and provide a **Placeholder** (example text).
+  <Step title="Configure the question">
+    In the pop-up, select the **Input type**, set a **Label** (the question text), and add a **Placeholder** (example text).
 
     <Frame>
       ![Configuring a new booking question input type and label](/images/event-types/pre-booking-questions-2.png)
@@ -39,16 +37,16 @@ By default, Cal ID asks for a name and email address. However, you can add, edit
       ![Setting the label and placeholder for a booking question](/images/event-types/pre-booking-questions-3.png)
     </Frame>
   </Step>
-  <Step title="Required Toggle">
-    Choose **Yes** or **No** to determine if the booker must answer the question to proceed.
+  <Step title="Set whether it's required">
+    Choose **Yes** or **No** to determine whether the booker must answer the question to proceed.
   </Step>
 </Steps>
 
 ## Available input types
 
-You can select from a robust list of input types to ensure data is formatted correctly:
+Choose the input type that matches the data you're collecting so answers are formatted correctly:
 
-| Input Type | Best Used For... |
+| Input type | Best used for |
 | --- | --- |
 | **Email** | Collecting additional contact emails. |
 | **Phone** | Capturing contact numbers for SMS or calls. |
@@ -64,34 +62,45 @@ You can select from a robust list of input types to ensure data is formatted cor
 | **URL** | Collecting website links or social media profiles. |
 | **Attachment** | Allowing guests to upload resumes, briefs, or screenshots. |
 
-## Managing existing questions
+## Manage existing questions
 
-- **Editing:** Click the **Edit** button next to any question to change its type, label, or requirement status.
+- **Edit:** Click **Edit** next to any question to change its type, label, or requirement status.
 
 <Frame>
   ![Editing an existing booking question](/images/event-types/pre-booking-questions-4.png)
 </Frame>
 
-- **Hiding:** Use the toggle switch to make a question **Hidden**. This is useful for internal tracking via URL identifiers.
+- **Hide:** Use the toggle switch to make a question **Hidden**. This is useful for internal tracking via URL identifiers.
 
 <Frame>
   ![Hiding a booking question with the toggle switch](/images/event-types/pre-booking-questions-5.png)
 </Frame>
 
-- **Reordering:** Use the arrow icons next to a question to move it up or down in the list.
+- **Reorder:** Use the arrow icons next to a question to move it up or down in the list.
 
 <Frame>
   ![Reordering booking questions with the arrow icons](/images/event-types/pre-booking-questions-6.png)
 </Frame>
 
 <Tip>
-  If you use **URL identifiers**, you can pre-fill certain fields for your guests by appending data to the end of your booking link. You can even **Disable input if the URL identifier is prefilled** to prevent guests from changing that specific data.
+  With **URL identifiers**, you can pre-fill fields for your guests by appending data to the end of your booking link. You can even **Disable input if the URL identifier is prefilled** to prevent guests from changing that specific data.
 </Tip>
 
 ## Booking field identifier
 
-The `identifier` for booking questions is a unique text input that users provide when creating a booking question. This identifier serves as a distinctive key for each specific booking question, establishing a clear and unique reference that can be used throughout the platform wherever that question is addressed or its answers are processed.
+The `identifier` for a booking question is a unique text key you set when creating the question. It gives each question a distinct reference used throughout the platform wherever that question is addressed or its answers are processed.
 
-The primary utility of the identifier emerges when individuals schedule meetings. As they fill out booking forms, the responses they provide are tied back to the specific booking questions via these identifiers. This system ensures precision and clarity, as each answer is unmistakably linked to its corresponding question, eliminating any potential confusion especially when similar or related questions are present.
+The identifier's main value appears when people schedule meetings. As guests fill out booking forms, their responses are tied back to the specific question via these identifiers. This keeps every answer unmistakably linked to its corresponding question, eliminating confusion — especially when similar or related questions are present.
 
-By utilizing the `identifier` for booking questions, users benefit from a more organized, efficient, and error-resistant way of handling booking data, both within the platform and in conjunction with external systems. This streamlined approach not only enhances data management and integrity but also contributes significantly to the overall user experience.
+Using the `identifier` gives you a more organized, efficient, and error-resistant way to handle booking data, both within the platform and in conjunction with external systems. This improves data management and integrity and contributes to a smoother overall experience.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Hide & prefill questions" icon="eye-slash" href="/event-types/booking-questions/hide-prefill">
+    Pre-fill known data and hide internal-only fields using URL parameters.
+  </Card>
+  <Card title="Add attachments" icon="paperclip" href="/event-types/booking-questions/attachments">
+    Collect resumes, briefs, and other files before the meeting.
+  </Card>
+</CardGroup>

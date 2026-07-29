@@ -6,11 +6,17 @@ keywords: ["redirect parameters", "success redirect", "url parameters", "query p
 related: ["/event-types/advanced/success-url", "/event-types/advanced/custom-event-name", "/event-types/advanced/book-via-reschedule-link", "/event-types/advanced/private-links"]
 ---
 
-When a booking is successfully created in Cal ID, users can be redirected to a custom success page by enabling 'Redirect to a custom URL after a successful booking' option in the Event Type's Advanced settings page. This guide documents all the query parameters that are forwarded to your custom success URL when 'Forward parameters' option is enabled (which is the default).
+Cal ID can append booking details to your custom success URL as query parameters, so your thank-you page can display the booking, track the source, or hand off to your own systems automatically.
+
+When a booking is successfully created, guests can be redirected to a custom success page by enabling **Redirect to a custom URL after a successful booking** in the Event Type's **Advanced** settings. This page documents every query parameter that is forwarded to that URL.
+
+<Info>
+  Parameters are only forwarded when the **Forward parameters** option is enabled, which is the default.
+</Info>
 
 ## Overview
 
-Cal ID automatically appends booking information as query parameters to your custom success redirect URL. These parameters allow you to display booking details, or integrate with your own systems.
+Cal ID automatically appends booking information as query parameters to your custom success redirect URL. These parameters let you display booking details or integrate with your own systems.
 
 **Example redirect URL:**
 
@@ -24,136 +30,82 @@ https://yoursite.com/booking-success?uid=xyz123&title=30min%20Meeting&startTime=
 
 ## Quick reference
 
-| **Parameter** | **Always Included** | **Description** |
+| Parameter | Always included | Description |
 | --- | --- | --- |
-| **uid** | Yes | Unique booking identifier. |
-| **title** | Yes | Event type title. |
-| **startTime** | Yes | Start time in UTC. |
-| **endTime** | Yes | End time in UTC. |
-| **email** | Yes | Primary attendee email. |
-| **isEmbed** | Yes | Boolean flag indicating embed booking. |
-| **description** | When available | Event description (when available). |
-| **location** | When available | Meeting location (when set). |
-| **hostName** | When available | Host name(s) (when available). |
-| **hostStartTime** | When available | Start time in host timezone (when available). |
-| **attendeeName** | When available | Attendee name (when available). |
-| **attendeeStartTime** | When available | Start time in attendee timezone (when available). |
-| **attendeeFirstName** | When available | First name from booking form (when provided). |
-| **attendeeLastName** | When available | Last name from booking form (when provided). |
-| **guestEmails** | When available | Guest emails (when guests added). |
-| **phone** | When available | Phone number (when provided). |
+| `uid` | Yes | Unique booking identifier. |
+| `title` | Yes | Event type title. |
+| `startTime` | Yes | Start time in UTC. |
+| `endTime` | Yes | End time in UTC. |
+| `email` | Yes | Primary attendee email. |
+| `isEmbed` | Yes | Boolean flag indicating an embed booking. |
+| `description` | When available | Event description (when available). |
+| `location` | When available | Meeting location (when set). |
+| `hostName` | When available | Host name(s) (when available). |
+| `hostStartTime` | When available | Start time in host timezone (when available). |
+| `attendeeName` | When available | Attendee name (when available). |
+| `attendeeStartTime` | When available | Start time in attendee timezone (when available). |
+| `attendeeFirstName` | When available | First name from booking form (when provided). |
+| `attendeeLastName` | When available | Last name from booking form (when provided). |
+| `guestEmails` | When available | Guest emails (when guests added). |
+| `phone` | When available | Phone number (when provided). |
 
 ## Core booking parameters
 
-**`uid`** - Unique identifier for the booking
+| Parameter | Included | Example | Notes |
+| --- | --- | --- | --- |
+| `uid` | Always | `8uyWEaseQCpJHthpxH0CBO` | Unique identifier for the booking. Use it to fetch additional booking details via API or store in your database. |
+| `title` | Always | `30 Minute Meeting` | The event type title. |
+| `description` | When event has a description | `Quick sync meeting to discuss project updates` | Event type description. |
+| `startTime` | Always | `2024-01-15T14:00:00.000Z` | ISO 8601 start time in UTC. |
+| `endTime` | Always | `2024-01-15T14:30:00.000Z` | ISO 8601 end time in UTC. |
+| `location` | When location is set | `integrations:gmeet` (Gmeet), `integrations:zoom` (Zoom) | Meeting location or video conference URL. More possible values [here](https://cal.com/help/bookings/prefill-fields#pre-selecting-a-video-meeting). |
 
-- Always included
-- Example: `8uyWEaseQCpJHthpxH0CBO`
-- Usage: Use this to fetch additional booking details via API or store in your database
+## Host / organizer parameters
 
-**`title`** - The event type title
-
-- Always included
-- Example: `30 Minute Meeting`
-
-**`description`** - Event type description
-
-- Included when event has description
-- Example: `Quick sync meeting to discuss project updates`
-
-**`startTime`** - ISO 8601 formatted start time in UTC
-
-- Always included
-- Example: `2024-01-15T14:00:00.000Z`
-
-**`endTime`** - ISO 8601 formatted end time in UTC
-
-- Always included
-- Example: `2024-01-15T14:30:00.000Z`
-
-**`location`** - Meeting location or video conference URL
-
-- Included when location is set
-- Example: `integrations:gmeet` (Gmeet), `integrations:zoom` (Zoom). More possible values [here](https://cal.com/help/bookings/prefill-fields#pre-selecting-a-video-meeting)
-
-## Host/organizer parameters
-
-**`hostName`** - Host name(s), comma-separated for multiple hosts
-
-- Included when host information available
-- Example: `Jane Smith,Mike Johnson`
-
-**`hostStartTime`** - Start time formatted in host's timezone
-
-- Included when host timezone available
-- Example: `2024-01-15T09:00:00-05:00`
+| Parameter | Included | Example | Notes |
+| --- | --- | --- | --- |
+| `hostName` | When host information available | `Jane Smith,Mike Johnson` | Host name(s), comma-separated for multiple hosts. |
+| `hostStartTime` | When host timezone available | `2024-01-15T09:00:00-05:00` | Start time formatted in the host's timezone. |
 
 ## Attendee parameters
 
-**`attendeeName`** - Name of the person who booked
-
-- Included when primary attendee name available
-- Example: `John Doe`
-
-**`attendeeStartTime`** - Start time in attendee's timezone
-
-- Included when attendee timezone available
-- Example: `2024-01-15T06:00:00-08:00`
-
-**`attendeeFirstName`** - First name from booking form
-
-- Included when first name provided in booking form
-- Example: `John`
-
-**`attendeeLastName`** - Last name from booking form
-
-- Included when last name provided in booking form
-- Example: `Doe`
-
-**`guestEmails`** - Comma-separated list of guest emails
-
-- Included when additional guests added
-- Example: `guest1@example.com,guest2@example.com`
+| Parameter | Included | Example | Notes |
+| --- | --- | --- | --- |
+| `attendeeName` | When primary attendee name available | `John Doe` | Name of the person who booked. |
+| `attendeeStartTime` | When attendee timezone available | `2024-01-15T06:00:00-08:00` | Start time in the attendee's timezone. |
+| `attendeeFirstName` | When first name provided in booking form | `John` | First name from the booking form. |
+| `attendeeLastName` | When last name provided in booking form | `Doe` | Last name from the booking form. |
+| `guestEmails` | When additional guests added | `guest1@example.com,guest2@example.com` | Comma-separated list of guest emails. |
 
 ## Booking context parameters
 
-**`email`** - Primary attendee's email address
-
-- Always included
-- Example: `john@example.com`
-
-**`phone`** - Phone number from booking form
-
-- Included when phone number provided
-- Example: `+1234567890`
+| Parameter | Included | Example | Notes |
+| --- | --- | --- | --- |
+| `email` | Always | `john@example.com` | Primary attendee's email address. |
+| `phone` | When phone number provided | `+1234567890` | Phone number from the booking form. |
 
 ## System context parameters
 
-**`isEmbed`** - Boolean flag indicating if booking was made via embed
-
-- Always included
-- Example: `false`
+| Parameter | Included | Example | Notes |
+| --- | --- | --- | --- |
+| `isEmbed` | Always | `false` | Boolean flag indicating whether the booking was made via embed. |
 
 ## Troubleshooting
 
-### Common issues
-
-**Missing Parameters**
-
-- Some parameters are only included when data is available
-
-**URL Encoding Issues**
-
-- Always use `decodeURIComponent()` in JavaScript or equivalent in other languages
-- Special characters like `@`, `+`, spaces are URL encoded
-
-**Date/Time Handling**
-
-- `startTime` and `endTime` are always in UTC (ISO 8601 format)
-- `hostStartTime` and `attendeeStartTime` include timezone information
-- Convert to local time as needed for display
+<AccordionGroup>
+  <Accordion title="Missing parameters">
+    Some parameters are only included when data is available.
+  </Accordion>
+  <Accordion title="URL encoding issues">
+    Always use `decodeURIComponent()` in JavaScript or the equivalent in other languages. Special characters like `@`, `+`, and spaces are URL encoded.
+  </Accordion>
+  <Accordion title="Date / time handling">
+    `startTime` and `endTime` are always in UTC (ISO 8601 format). `hostStartTime` and `attendeeStartTime` include timezone information. Convert to local time as needed for display.
+  </Accordion>
+</AccordionGroup>
 
 ## Security considerations
 
-- Always validate and sanitize parameters before using in database queries
-- Don't trust parameter values - validate against your expected data types
+<Warning>
+  Always validate and sanitize parameters before using them in database queries. Don't trust parameter values — validate them against your expected data types.
+</Warning>

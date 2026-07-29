@@ -6,7 +6,7 @@ keywords: ["booking frequency", "limit bookings per day", "daily booking limit",
 related: ["/event-types/limits/booker-limit", "/event-types/limits/total-duration", "/event-types/limits/buffers", "/event-types/limits/future-booking", "/event-types/limits/minimum-notice"]
 ---
 
-In **Cal ID**, the **Limit booking frequency** feature gives you total control over your workload. It allows you to restrict how many times a specific event type can be booked over a set period, ensuring you never feel overwhelmed by too many meetings.
+In **Cal ID**, **Limit booking frequency** lets you cap how many times a specific event type can be booked over a set period, so you stay in control of your workload and never feel overwhelmed by too many meetings.
 
 ## Setting booking frequency limits
 
@@ -14,9 +14,9 @@ This setting is perfect for high-energy tasks, such as interviews or deep-dive c
 
 ### Why use booking frequency limits?
 
-- **Prevent Burnout:** Limit intense event types so you have enough energy for other responsibilities.
-- **Balanced Workload:** Distribute your meetings evenly across the week or month instead of having them all clump down in a single day.
-- **Quality Control:** By limiting the number of sessions, you ensure you can give 100% of your attention to every guest.
+- **Prevent burnout:** Limit intense event types so you have enough energy for other responsibilities.
+- **Balanced workload:** Distribute your meetings evenly across the week or month instead of having them all clump down in a single day.
+- **Quality control:** By limiting the number of sessions, you ensure you can give 100% of your attention to every guest.
 
 ## How to set it up
 
@@ -24,16 +24,16 @@ This setting is perfect for high-energy tasks, such as interviews or deep-dive c
   <Step title="Go to Event Types">
     Click on **Event Types** in the left sidebar.
   </Step>
-  <Step title="Select an Event">
+  <Step title="Select an event">
     Click on the specific event you want to limit.
   </Step>
   <Step title="Navigate to Limits">
     Click on the **Limits** tab in the top navigation bar of the event editor.
   </Step>
-  <Step title="Enable Frequency Limits">
+  <Step title="Enable frequency limits">
     Find the **Limit booking frequency** section and toggle the switch to **ON** (it will turn blue).
   </Step>
-  <Step title="Define Your Rules">
+  <Step title="Define your rules">
     - Enter the maximum number of bookings you want to allow (e.g., "3").
     - Select the time period from the dropdown menu (e.g., **per day, per week, or per month**).
 
@@ -46,6 +46,14 @@ This setting is perfect for high-energy tasks, such as interviews or deep-dive c
   </Step>
 </Steps>
 
+You can combine caps across periods to shape both your daily and longer-term load:
+
+| Period | What it caps | Example |
+| --- | --- | --- |
+| **Per day** | Bookings allowed in a single day | 2 interviews per day |
+| **Per week** | Bookings allowed across the week | 5 interviews per week |
+| **Per month** | Bookings allowed across the month | 15 interviews per month |
+
 ## How it works for the booker
 
 - Once your set limit is reached for that period, the event will automatically show as **"Unavailable"** on your booking page for the remainder of that day, week, or month.
@@ -53,8 +61,16 @@ This setting is perfect for high-energy tasks, such as interviews or deep-dive c
 
 ## Additional control options
 
-On the same **Limits** page, you can find other powerful tools to manage your time:
+On the same **Limits** page, you can find other powerful tools to manage your time.
 
-- **Limit total booking duration:** Cap the total amount of time (in minutes or hours) that this event can be booked for in a day.
-- **Limit future bookings:** Restrict how far into the future (e.g., only 30 days out) guests are allowed to book.
-- **Booker active booking limit:** Prevent a single person from booking too many active meetings at once.
+<CardGroup cols={3}>
+  <Card title="Limit total booking duration" icon="clock" href="/event-types/limits/total-duration">
+    Cap the total amount of time (in minutes or hours) that this event can be booked for in a day.
+  </Card>
+  <Card title="Limit future bookings" icon="calendar-days" href="/event-types/limits/future-booking">
+    Restrict how far into the future (e.g., only 30 days out) guests are allowed to book.
+  </Card>
+  <Card title="Booker active booking limit" icon="user-lock" href="/event-types/limits/booker-limit">
+    Prevent a single person from booking too many active meetings at once.
+  </Card>
+</CardGroup>

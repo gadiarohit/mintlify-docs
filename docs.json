@@ -819,5 +819,8 @@
       "source": "/en/article/webhook-in-cal-id-5fwxgn",
       "destination": "/developers/webhooks"
     }
-  ]
+  ],
+  "thumbnails": {
+    "background": "https://cal.id/og-default.png"
+  }
 }

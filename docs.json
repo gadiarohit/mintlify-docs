@@ -338,7 +338,7 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
+        "label": "Email Us",
         "href": "mailto:support@cal.id"
       }
     ],
@@ -870,9 +870,6 @@
       "destination": "/api-reference/introduction"
     }
   ],
-  "thumbnails": {
-    "background": "https://cal.id/og-default.png"
-  },
   "errors": {
     "404": {
       "redirect": false,
